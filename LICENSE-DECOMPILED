@@ -1,0 +1,11 @@
+Reconstructed source notice
+
+The files under src/ are reconstructed source derived from the retail
+executable described in docs/PROVENANCE.md. They are provided for study,
+documentation, and interoperability research only.
+
+No licence is granted to the original program, its assets, or any Nintendo
+intellectual property. This repository is not a distribution of the game and
+contains no part of it. The reconstructed source is provided "as is", without
+warranty of any kind, and must not be used to create or distribute a playable
+copy.

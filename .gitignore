@@ -1,0 +1,73 @@
+# ---------- copyrighted game data: never commit ----------
+*.wux
+*.wud
+*.wua
+*.app
+*.h3
+*.rpx
+*.rpl
+*.ti0
+*.tik
+*.tmd
+*.cert
+*.nus
+*.nfc
+*.elf
+
+# ---------- keys and licences: never commit ----------
+*.key
+common.key
+game.key
+keys.txt
+keys.py
+otp.bin
+otp*
+*.otp
+*.lck
+*.lky
+
+# ---------- extracted / derived game trees ----------
+/orig/
+/asm/
+/build/
+/build-*/
+/out/
+/probe/
+/scratch/
+
+# ---------- proprietary toolchain ----------
+/toolchain/
+/Cafe_SDK/
+/Cafe_SDK-*/
+/*SDK*/
+/MULTI-*/
+*_master.lck
+/MSYS2/
+/devkitPro/
+
+# ---------- Ghidra projects ----------
+/ghidra*/
+*.gpr
+*.rep/
+*.lock
+*.lock~
+*.keep
+
+# ---------- local scratch ----------
+*.log
+*.tmp
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+.cloud-attachments/
+
+# ---------- Python ----------
+__pycache__/
+*.pyc
+
+# ---------- OS junk ----------
+Thumbs.db
+desktop.ini
+.DS_Store

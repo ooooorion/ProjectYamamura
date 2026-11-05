@@ -1,0 +1,6 @@
+symbol	start	end	sites	imports	modules
+func_02527114	02527114	02527158	1	coreinit.IMGetTimeBeforeAPD	coreinit
+func_026E4004	026E4004	026E4048	1	coreinit.OSGetCoreId	coreinit
+func_026E432C	026E432C	026E4384	1	coreinit.OSGetCoreId	coreinit
+func_028274E0	028274E0	0282758C	1	coreinit.DCZeroRange	coreinit
+startup_register	02BCF5D0	02BCF634	3	coreinit.__ghsLock; coreinit.__ghsUnlock	coreinit

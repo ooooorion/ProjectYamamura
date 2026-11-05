@@ -1,0 +1,10 @@
+# Section boundaries measured from the retail ELF (Block.elf).
+# name       vma         size
+.text        0x02000020  0x00C6E278
+.rodata      0x10000000  0x00181034
+.data        0x10181040  0x0002784C
+.bss         0x101A9000  0x001A3978
+
+# Import stubs are not in the file. The Ghidra labeler creates an uninitialized
+# executable block at 0x02C6E2A8, size 0x8DE0, holding 594 import functions and
+# the 8,704 call sites that target them.

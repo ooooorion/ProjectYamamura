@@ -1,0 +1,71 @@
+# Address -> name map.
+# Format: name = 0xADDRESS;
+# Grows by accretion. Every entry should be justified by a match or by an
+# observed call site, never by a guess.
+
+# Bootstrap chain, measured in docs/BOOTSTRAP.md.
+_start              = 0x02B8AECC;  # ELF e_entry, zero callers
+__init              = 0x02B8AE48;  # walks the constructor table below
+startup_register    = 0x02BCF5D0;  # provisional: one call from _start
+runtime_init        = 0x02711500;  # stores r3/r4, calls __init and main
+main                = 0x02713190;  # provisional: single caller, startup markers
+
+# Data.
+__init_array        = 0x1018003C;  # 1,021 pointers + null, all into .text
+__init_guard        = 0x101A4FC0;  # set to 1 by __init before the table walk
+
+# First matched functions (docs/DECOMPILATION.md).
+func_02015FCC = 0x02015FCC;
+func_02017320 = 0x02017320;
+func_02023DC0 = 0x02023DC0;
+func_0202655C = 0x0202655C;
+
+# Second pass (docs/DECOMPILATION.md): relocation-free leaves in the early band.
+func_02010A14 = 0x02010A14;
+func_020117FC = 0x020117FC;
+func_020163DC = 0x020163DC;
+func_020180E8 = 0x020180E8;
+func_0201AA84 = 0x0201AA84;
+func_02020410 = 0x02020410;
+func_02021C48 = 0x02021C48;
+func_02022860 = 0x02022860;
+func_02022874 = 0x02022874;
+func_02023C64 = 0x02023C64;
+func_02023DD8 = 0x02023DD8;
+func_02025B94 = 0x02025B94;
+func_02029ADC = 0x02029ADC;
+func_0202C748 = 0x0202C748;
+func_0202C758 = 0x0202C758;
+func_0202EBDC = 0x0202EBDC;
+func_0202EBF0 = 0x0202EBF0;
+
+# Third pass (docs/DECOMPILATION.md): first tools/crack.py batch.
+func_02030854 = 0x02030854;
+func_02031278 = 0x02031278;
+func_020312A4 = 0x020312A4;
+func_02031724 = 0x02031724;
+func_02035890 = 0x02035890;
+func_020358A0 = 0x020358A0;
+func_02035914 = 0x02035914;
+func_0203593C = 0x0203593C;
+func_02035954 = 0x02035954;
+func_020359B4 = 0x020359B4;
+
+# runtime_init data cells (docs/BOOTSTRAP.md).
+runtime_arg0 = 0x10189810;
+runtime_arg1 = 0x10189814;
+
+# startup_register support (docs/BOOTSTRAP.md).
+startup_callback = 0x02C745E0;
+startup_table = 0x1034C000;
+startup_link = 0x1034C1B0;
+__ghsLock = 0x02C74448;
+__ghsUnlock = 0x02C74450;
+_savegprlr_30 = 0x02BD6094;
+_restgprlr_30 = 0x02BD60A8;
+_savesmall_16 = 0x02BD6094;
+_restsmall_16 = 0x02BD60A8;
+lbl_10317010 = 0x10317010;
+lbl_10110444 = 0x10110444;
+lbl_10110CF0 = 0x10110CF0;
+lbl_10110E84 = 0x10110E84;
