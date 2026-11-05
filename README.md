@@ -63,7 +63,7 @@ and [`docs/BOOTSTRAP.md`](docs/BOOTSTRAP.md) for the bootstrap map.
 ## What this repository contains
 
 - `include/` -- reconstructed headers, currently `block.h` with the shared scalar types
-- `src/` -- reconstructed C for matched functions, one function per file, plus non-matching candidates under `src/near/`
+- `src/` -- reconstructed C for matched functions, one function per file, plus [non-matching candidates](src/near/)
 - `config/` -- `symbols.txt`, `splits.txt`, and generated `function_names.tsv` / `function_imports.tsv` / `function_strings.tsv` / `function_groups.tsv` evidence inventories
 - `docs/` -- the extraction pipeline, bootstrap map, decompilation notes, provenance, roadmap, source-shape plan, and the naming/grouping/readability guides
 - `tools/` -- import indexing, a Ghidra labeler, an m2c slicer, a candidate loop, a batch driver, the byte matcher, and the structure analyzer

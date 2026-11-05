@@ -1,5 +1,10 @@
 # Reconstructed source
 
+> **GitHub file-list limit:** this directory has more than 1,000 entries, so
+> GitHub omits `near/` and `functions.tsv` from the file listing. Both are
+> tracked: [near-miss archive](near/README.md) and
+> [functions.tsv](functions.tsv).
+
 One function per file. `functions.tsv` maps each file to its address range;
 the optional fifth field holds full compiler flags for that row. The size is
 what `tools/match.py` verifies.
@@ -46,6 +51,12 @@ in `functions.tsv` or changes what the matcher verifies. See
 | `startup_register` | `0x02BCF5D0..0x02BCF634` | 104 B | lock, callback, 36-slot registry |
 | `func_02BCF5CC` | `0x02BCF5CC..0x02BCF5CC` | 4 B | tail thunk to `func_02BCF67C` |
 | `func_02BCF688` | `0x02BCF688..0x02BCF6AC` | 40 B | link-insertion helper |
+
+## Near-miss archive
+
+[`near/`](near/README.md) holds the 705 candidates that decompiled but are
+not byte-identical to `Block.elf`. They are not in `functions.tsv` and are
+not claims of a match; `tools/match.py` ignores them.
 
 These 35 representative rows are byte-identical to the retail build at
 `-O2`; the full 1,439-row table is in `functions.tsv`. See
