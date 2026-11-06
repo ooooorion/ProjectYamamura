@@ -1,0 +1,6 @@
+component	class	target_size	evidence	status	notes
+sead	sead::TaskBase	0x74	0x02783658	supported	target alloc 116; reference 0x74; constructor chain
+sead	sead::CalculateTask	0xC8	0x02781D14	supported	target alloc 200; reference 0xC8; calls 0x02783658
+sead	sead::ControllerMgr	0xE8	0x02771C2C	verified	target alloc 232; reference 0xE8; direct class-name xref 0x100EA354
+sead	sead::TaskMgr	0x1A4	0x0278423C	verified	target alloc 420; final MethodTreeNode at +0x150..+0x1A3; reference 0x1A8 trailing fields absent
+gsys	gsys::SystemTask	0x364	0x0294377C	observed	constructor-like; name xref 0x1012DB38; six 0x54-byte method entries at +0x7C

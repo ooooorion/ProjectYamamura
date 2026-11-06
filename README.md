@@ -14,9 +14,9 @@ and nothing here can be assembled into a playable game. See
 |:---|:---|
 | **TARGET** | `Block.elf` (20,927,360 B, PowerPC big-endian) |
 | **FUNCTIONS IDENTIFIED** | 27,267 |
-| **FUNCTIONS MATCHED** | 1,439 |
-| **FUNCTIONS NEAR** | 705 |
-| **TOTAL DONE** | **2,144 / 27,267** (~7.86%) |
+| **FUNCTIONS MATCHED** | 1,556 |
+| **FUNCTIONS NEAR** | 1,518 |
+| **TOTAL DONE** | **3,074 / 27,267** (~11.27%) |
 
 ## SECONDARY STATUS
 
@@ -50,10 +50,10 @@ game-facing text belongs in history.
 
 ## Progress
 
-Twenty-four passes have matched **1,439 functions / 70,692 bytes** (5.28% of
-the 27,267 starts) and archived **705 near misses**. The work began with early
+Twenty-five passes have matched **1,556 functions / 75,380 bytes** (5.71% of
+the 27,267 starts) and archived **1,518 near misses**. The work began with early
 leaf functions and the bootstrap chain, then added call-aware matching, the
-selector-family repair, and leaf-first sweeps through `0x02858000`. The first
+selector-family repair, and leaf-first sweeps through `0x02958000`. The first
 subsystem -- entry point, chain, and constructor table -- is mapped, with both
 bootstrap runtime functions reconstructed; `__init` is still a near miss.
 
@@ -64,9 +64,9 @@ and [`docs/BOOTSTRAP.md`](docs/BOOTSTRAP.md) for the bootstrap map.
 
 - `include/` -- reconstructed headers, currently `block.h` with the shared scalar types
 - `src/` -- reconstructed C for matched functions, one function per file, plus [non-matching candidates](src/near/)
-- `config/` -- `symbols.txt`, `splits.txt`, and generated `function_names.tsv` / `function_imports.tsv` / `function_strings.tsv` / `function_groups.tsv` evidence inventories
-- `docs/` -- the extraction pipeline, bootstrap map, decompilation notes, provenance, roadmap, source-shape plan, and the naming/grouping/readability guides
-- `tools/` -- import indexing, a Ghidra labeler, an m2c slicer, a candidate loop, a batch driver, the byte matcher, and the structure analyzer
+- `config/` -- `symbols.txt`, `splits.txt`, `target_layouts.tsv`, `gsys_methods.tsv`, and generated `function_names.tsv` / `function_imports.tsv` / `function_strings.tsv` / `function_groups.tsv` evidence inventories
+- `docs/` -- the extraction pipeline, bootstrap map, decompilation notes, provenance, roadmap, source-shape plan, the naming/grouping/readability guides, the [external reference map](docs/REFERENCE_LIBRARIES.md), the [RTTI index](docs/RTTI_INDEX.md), the [middleware audit](docs/MIDDLEWARE_AUDIT.md), and the [target layout verification](docs/LAYOUT_VERIFICATION.md)
+- `tools/` -- import indexing, a Ghidra labeler, an m2c slicer, a candidate loop, a batch driver, the byte matcher, the structure analyzer, and the RPX section extractor
 
 ## What it does NOT contain, and never will
 
@@ -80,6 +80,8 @@ and [`docs/BOOTSTRAP.md`](docs/BOOTSTRAP.md) for the bootstrap map.
 | Tool | Purpose |
 |---|---|
 | `tools/import_index.py` | Build `imports_by_name.tsv` and `import_calls.tsv` from `.rela.text` |
+| `tools/rtti_index.py` | Build `config/rtti_classes.tsv` from the local middleware string dump |
+| `tools/rpx_extract.py` | Decompress a local Wii U RPX/RPL into an ignored ELF-like file for target-side layout and relocation analysis |
 | `tools/LabelImports.java` | Ghidra script: create import stubs and name all 594 imports |
 | `tools/fn2m2c.py` | Slice one function out of `main.s` into m2c-parsable assembly |
 | `tools/match.py` | Compile a source file with GHS `ccppc`, apply its relocations and optional per-row flags, and diff it against the ELF word for word |
@@ -117,7 +119,7 @@ include/    reconstructed headers (block.h)
 src/        matched C, one function per file; near misses in src/near/
 config/     address map (symbols) and section boundaries (splits)
 docs/       pipeline, entry point and bootstrap map, decompilation notes, provenance, roadmap
-tools/      indexer, labeler, slicer, batch driver, matcher
+tools/      indexer, labeler, slicer, batch driver, matcher, RPX extractor
 ```
 
 ## Provenance

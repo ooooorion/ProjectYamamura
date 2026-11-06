@@ -15,7 +15,7 @@ The 144 open `0x0250` candidates are archived in
 
 ## `0x028` bands
 
-The twenty-first, twenty-second and twenty-fourth passes added fifteen band
+The twenty-first, twenty-second, twenty-fourth and twenty-fifth passes added nineteen band
 archives. Each chunk directory has its own README with the full candidate
 table.
 
@@ -37,9 +37,20 @@ table.
 | [`02850000_02854000`](02850000_02854000/) | 1 | 33 | 34 |
 | [`02854000_02858000`](02854000_02858000/) | 5 | 28 | 33 |
 
+The twenty-fifth pass added four 256 KB shard archives:
+
+| Band | Candidates |
+|---|---:|
+| [`02858000_02898000`](02858000_02898000/) | 212 |
+| [`02898000_028D8000`](02898000_028D8000/) | 270 |
+| [`028D8000_02918000`](028D8000_02918000/) | 198 |
+| [`02918000_02958000`](02918000_02958000/) | 133 |
+| **Total** | **813** |
+
 Those passes added 173 and 138 candidates respectively. Fourteen close
 call-bearing candidates were repaired and promoted to `src/functions.tsv`, and
-the twenty-fourth pass added 179 more; the archive now holds 705 sources.
+the twenty-fourth pass added 179 more; the twenty-fifth pass added 813, taking
+the archive to 1,518 archived candidates.
 
 | File | Range | Status | Words | First diff |
 |---|---|---|---|---|

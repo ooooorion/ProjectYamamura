@@ -1,4 +1,4 @@
-# Decompilation notes -- first through twenty-fourth passes (Stage 7)
+# Decompilation notes -- first through twenty-fifth passes (Stage 7)
 
 Working notes for the decompilation and byte-match passes against
 `Block.elf`. Every number here came from a command that was run; the exact
@@ -8,8 +8,8 @@ commands are at the bottom.
 
 | | |
 |---|---|
-| Functions decompiled | 1,439 |
-| Byte-identical to `Block.elf` | **1,439 of 1,439** |
+| Functions decompiled | 1,556 |
+| Byte-identical to `Block.elf` | **1,556 of 1,556** |
 | Compiler | GHS `ccppc` 5.3.27 (licensed locally; licence material is not included) |
 | Harness | `tools/match.py` (table, applies object relocations), `tools/crack.py` (one candidate, with relocations) and `tools/batch.py` (an address band) |
 | Sources | `src/fn_*.c`, table in `src/functions.tsv` |
@@ -761,6 +761,27 @@ All 40 were registered and the full table passes `tools/match.py`: 1,439
 functions, 70,692 bytes, 5.28% of the 27,267 starts. The 179 non-matches are
 archived under `src/near/`, taking the archive to 705.
 
+## Twenty-fifth pass -- 117 exacts through `0x02958000`
+
+The next 1 MB was split into four 256 KB shards and swept in parallel with
+`tools/batch.py` (`--allow-calls --max-insn 60 --limit 0`). Each shard ran
+against its own `build/batch/shardNN/` output directory, and its exact rows
+were registered as soon as the shard finished.
+
+| Shard | Range | Candidates | Exact | Archived |
+|---|---|---:|---:|---:|
+| 1 | `02858000..02898000` | 235 | 23 | 212 |
+| 2 | `02898000..028D8000` | 309 | 39 | 270 |
+| 3 | `028D8000..02918000` | 228 | 30 | 198 |
+| 4 | `02918000..02958000` | 158 | 25 | 133 |
+| **Total** |  | **930** | **117** | **813** |
+
+The 117 exacts add 4,688 bytes. All were registered and the full table passes
+`tools/match.py`: 1,556 functions, 75,380 bytes, 5.71% of the 27,267 starts.
+The 813 non-matches are archived under `src/near/`, taking the archive to
+1,518 candidates. Two archived rows have no generated source; the shard tables
+retain their result status.
+
 ## Commands used
 
 ```
@@ -791,10 +812,10 @@ powerpc-eabi-objdump -d build/func_02025E2C.o
   but a relocation-bearing function still needs every referenced symbol in
   `config/symbols.txt`; otherwise the matcher reports `BLOCKED` rather than
   guessing.
-- 1,439 functions is 5.28% of the 27,267 starts. It proves the loop and gives
+- 1,556 functions is 5.71% of the 27,267 starts. It proves the loop and gives
   repeatable shapes, not the project; the year-end goal needs bulk export.
 - The `-O` level is narrowed to three indistinguishable levels, not pinned to
   one; other GHS flags of the original build are still unknown.
-- The 705 archived candidates show that byte equality can depend on
+- The 1,518 archived candidates show that byte equality can depend on
   scratch-register allocation that no source spelling tried here controls; the
   archive keeps every failed shape reviewable.

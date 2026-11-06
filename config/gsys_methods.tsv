@@ -1,0 +1,7 @@
+component	class	method	target_address	evidence	status
+gsys	gsys::SystemTask	PreCalc	0x0294525C	0x0294377C entry +0x7C; delegate word node+0x38; name 0x1012DAE0	observed
+gsys	gsys::SystemTask	PostCalc	0x029459C8	0x0294377C entry +0xD0; delegate word node+0x38; name 0x1012DB4C	observed
+gsys	gsys::SystemTask	DrawTV	0x02946B14	0x0294377C entry +0x124; delegate word node+0x38; name 0x1012DB68	observed
+gsys	gsys::SystemTask	DrawDRC	0x02946CCC	0x0294377C entry +0x178; delegate word node+0x38; name 0x1012DAFC	observed
+gsys	gsys::SystemTask	PostDrawTV	0x02946D70	0x0294377C entry +0x1CC; delegate word node+0x38; name 0x1012DB84	observed
+gsys	gsys::SystemTask	PostDrawDRC	0x02946E0C	0x0294377C entry +0x220; delegate word node+0x38; name 0x1012DB18	observed
