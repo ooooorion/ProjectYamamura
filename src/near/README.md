@@ -13,9 +13,9 @@ treating an archived file as verified code.
 The 144 open `0x0250` candidates are archived in
 [`0250/`](0250/README.md); that directory has its own manifest.
 
-## `0x028` bands
+## `0x028`-`0x029` bands
 
-The twenty-first, twenty-second, twenty-fourth and twenty-fifth passes added nineteen band
+The twenty-first, twenty-second, twenty-fourth, twenty-fifth and twenty-sixth passes added twenty-three band
 archives. Each chunk directory has its own README with the full candidate
 table.
 
@@ -47,10 +47,21 @@ The twenty-fifth pass added four 256 KB shard archives:
 | [`02918000_02958000`](02918000_02958000/) | 133 |
 | **Total** | **813** |
 
+The twenty-sixth pass added four contiguous shard archives covering the next
+512 KB:
+
+| Band | Candidates |
+|---|---:|
+| [`02958000_02980C54`](02958000_02980C54/) | 125 |
+| [`02980C54_029AD558`](02980C54_029AD558/) | 126 |
+| [`029AD558_029C5334`](029AD558_029C5334/) | 131 |
+| [`029C5334_029D8000`](029C5334_029D8000/) | 123 |
+| **Total** | **505** |
+
 Those passes added 173 and 138 candidates respectively. Fourteen close
 call-bearing candidates were repaired and promoted to `src/functions.tsv`, and
-the twenty-fourth pass added 179 more; the twenty-fifth pass added 813, taking
-the archive to 1,518 archived candidates.
+the twenty-fourth pass added 179 more; the twenty-fifth pass added 813 and the twenty-sixth added 505, taking
+the archive to 2,023 archived candidates.
 
 | File | Range | Status | Words | First diff |
 |---|---|---|---|---|
