@@ -14,9 +14,9 @@ and nothing here can be assembled into a playable game. See
 |:---|:---|
 | **TARGET** | `Block.elf` (20,927,360 B, PowerPC big-endian) |
 | **FUNCTIONS IDENTIFIED** | 27,267 |
-| **FUNCTIONS MATCHED** | 1,641 |
-| **FUNCTIONS NEAR** | 2,005 |
-| **TOTAL DONE** | **3,646 / 27,267** (~13.37%) |
+| **FUNCTIONS MATCHED** | 1,667 |
+| **FUNCTIONS NEAR** | 2,782 |
+| **TOTAL DONE** | **4,449 / 27,267** (~16.32%) |
 
 ## SECONDARY STATUS
 
@@ -50,11 +50,11 @@ game-facing text belongs in history.
 
 ## Progress
 
-The twenty-sixth pass and its recovery audit have matched
-**1,641 functions / 78,996 bytes** (6.02% of the 27,267 starts) and archived
-**2,005 near misses**. The work began with early
+Twenty-seven passes have matched
+**1,667 functions / 79,760 bytes** (6.11% of the 27,267 starts) and archived
+**2,782 near misses**. The work began with early
 leaf functions and the bootstrap chain, then added call-aware matching, the
-selector-family repair, and leaf-first sweeps through `0x029D8000`. The first
+selector-family repair, and leaf-first sweeps through `0x02A58000`. The first
 subsystem -- entry point, chain, and constructor table -- is mapped, with both
 bootstrap runtime functions reconstructed; `__init` is still a near miss.
 

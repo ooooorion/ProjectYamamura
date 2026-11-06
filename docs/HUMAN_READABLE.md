@@ -6,7 +6,7 @@ sometimes the whole m2c compatibility macro header. That shape is cheap to
 compile, diff and revert. Readability is a second pass, not a replacement for
 the verification scaffold.
 
-This guide applies to the 1,641 byte-matched rows in `src/functions.tsv`. The
+This guide applies to the 1,667 byte-matched rows in `src/functions.tsv`. The
 generated [name catalog](FUNCTION_NAMES.md) and [grouping candidates](FUNCTION_GROUPS.md)
 are evidence inventories; they do not rename or move anything.
 
