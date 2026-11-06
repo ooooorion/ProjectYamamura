@@ -52,16 +52,16 @@ The twenty-sixth pass added four contiguous shard archives covering the next
 
 | Band | Candidates |
 |---|---:|
-| [`02958000_02980C54`](02958000_02980C54/) | 125 |
+| [`02958000_02980C54`](02958000_02980C54/) | 122 |
 | [`02980C54_029AD558`](02980C54_029AD558/) | 126 |
-| [`029AD558_029C5334`](029AD558_029C5334/) | 131 |
-| [`029C5334_029D8000`](029C5334_029D8000/) | 123 |
-| **Total** | **505** |
+| [`029AD558_029C5334`](029AD558_029C5334/) | 123 |
+| [`029C5334_029D8000`](029C5334_029D8000/) | 119 |
+| **Total** | **490** |
 
 Those passes added 173 and 138 candidates respectively. Fourteen close
 call-bearing candidates were repaired and promoted to `src/functions.tsv`, and
-the twenty-fourth pass added 179 more; the twenty-fifth pass added 813 and the twenty-sixth added 505, taking
-the archive to 2,023 archived candidates.
+the twenty-fourth pass added 179 more; the twenty-fifth pass added 813 and the twenty-sixth added 505. The
+pass-26 recovery then promoted fifteen candidates, taking the archive to 2,008 archived candidates.
 
 | File | Range | Status | Words | First diff |
 |---|---|---|---|---|

@@ -8,8 +8,8 @@ commands are at the bottom.
 
 | | |
 |---|---|
-| Functions decompiled | 1,623 |
-| Byte-identical to `Block.elf` | **1,623 of 1,623** |
+| Functions decompiled | 1,638 |
+| Byte-identical to `Block.elf` | **1,638 of 1,638** |
 | Compiler | GHS `ccppc` 5.3.27 (licensed locally; licence material is not included) |
 | Harness | `tools/match.py` (table, applies object relocations), `tools/crack.py` (one candidate, with relocations) and `tools/batch.py` (an address band) |
 | Sources | `src/fn_*.c`, table in `src/functions.tsv` |
@@ -803,6 +803,27 @@ The 505 non-matches are archived under `src/near/`, taking the archive to
 2,023 candidates. Two archived rows have no generated source; the shard tables
 retain their result status.
 
+## Pass-26 recovery -- 15 one-word near misses promoted
+
+The 505 pass-26 non-matches were triaged by target/object size and word
+distance. Fifteen equal-size candidates differed by one word and proved to be
+source-shape misses rather than different functions. Recompiling the repaired
+sources at `-O2` made all fifteen byte-identical:
+
+- `func_02962F84` and `func_029BFEC8` had dropped unused argument slots; the
+  target reads its argument from the original ABI register.
+- Thirteen assignment sites in twelve functions stored a literal absolute
+  address. Replacing each literal with the address of a labelled object
+  (`&lbl_...`) makes GHS emit the target's `lis`/`addic` pair. Ten labels were
+  added to `config/symbols.txt`.
+- `func_0296E780` added two to an `s16 *`; measuring the same offset through a
+  `u8 *` gives the target's byte offset.
+
+The repaired rows are in `src/functions.tsv`; their shard candidates were
+removed from `src/near/`. The table now has 1,638 functions / 78,948 bytes
+(6.01% of the 27,267 starts), and the archive has 2,008 candidates. The full
+table passes `tools/match.py`: 1,638/1,638.
+
 ## Commands used
 
 ```
@@ -833,10 +854,10 @@ powerpc-eabi-objdump -d build/func_02025E2C.o
   but a relocation-bearing function still needs every referenced symbol in
   `config/symbols.txt`; otherwise the matcher reports `BLOCKED` rather than
   guessing.
-- 1,623 functions is 5.95% of the 27,267 starts. It proves the loop and gives
+- 1,638 functions is 6.01% of the 27,267 starts. It proves the loop and gives
   repeatable shapes, not the project; the year-end goal needs bulk export.
 - The `-O` level is narrowed to three indistinguishable levels, not pinned to
   one; other GHS flags of the original build are still unknown.
-- The 2,023 archived candidates show that byte equality can depend on
+- The 2,008 archived candidates show that byte equality can depend on
   scratch-register allocation that no source spelling tried here controls; the
   archive keeps every failed shape reviewable.
