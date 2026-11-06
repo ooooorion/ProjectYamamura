@@ -14,8 +14,8 @@ and nothing here can be assembled into a playable game. See
 |:---|:---|
 | **TARGET** | `Block.elf` (20,927,360 B, PowerPC big-endian) |
 | **FUNCTIONS IDENTIFIED** | 27,267 |
-| **FUNCTIONS MATCHED** | 1,638 |
-| **FUNCTIONS NEAR** | 2,008 |
+| **FUNCTIONS MATCHED** | 1,641 |
+| **FUNCTIONS NEAR** | 2,005 |
 | **TOTAL DONE** | **3,646 / 27,267** (~13.37%) |
 
 ## SECONDARY STATUS
@@ -27,7 +27,7 @@ and nothing here can be assembled into a playable game. See
 | **IMPORT CALLS RESOLVED** | 8,704 call sites across 594 SDK entry points |
 | **NAMED IMPORT EVIDENCE** | 7 call sites in 5 matched functions |
 | **STRING EVIDENCE** | 1 code-related literal in 1 matched function |
-| **NAMED SYMBOLS** | 63 in `config/symbols.txt` |
+| **NAMED SYMBOLS** | 64 in `config/symbols.txt` |
 | **PROPOSED ROLE ALIASES** | 364 in `config/function_names.tsv` |
 | **TOOLCHAIN** | GHS `ccppc` 5.3.27; per-row optimisation flags in `src/functions.tsv` |
 
@@ -51,8 +51,8 @@ game-facing text belongs in history.
 ## Progress
 
 The twenty-sixth pass and its recovery audit have matched
-**1,638 functions / 78,948 bytes** (6.01% of the 27,267 starts) and archived
-**2,008 near misses**. The work began with early
+**1,641 functions / 78,996 bytes** (6.02% of the 27,267 starts) and archived
+**2,005 near misses**. The work began with early
 leaf functions and the bootstrap chain, then added call-aware matching, the
 selector-family repair, and leaf-first sweeps through `0x029D8000`. The first
 subsystem -- entry point, chain, and constructor table -- is mapped, with both
