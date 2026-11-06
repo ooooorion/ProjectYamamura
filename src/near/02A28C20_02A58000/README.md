@@ -10,7 +10,7 @@ Every row below is a non-match and is **not** claimed in
 
 | Function | Range | Bytes | Status | Words | First diff | File | Detail |
 |---|---|---:|---|---:|---|---|---|
-| `func_02A28C20` | `02A28C20..02A28C80` | 100 | COMPILE | — | — | `func_02A28C20.c` | "build/batch/p27_04\func_02A28C20.c", line 93: error #167: argument of type |
+| `func_02A28C20` | `02A28C20..02A28C80` | 100 | DIFF | 9/25 | +0x4 | `func_02A28C20.c` | — |
 | `func_02A28C84` | `02A28C84..02A28D00` | 128 | DIFF | 26/32 | +0x30 | `func_02A28C84.c` | — |
 | `func_02A28D04` | `02A28D04..02A28D94` | 148 | DIFF | 29/37 | +0x40 | `func_02A28D04.c` | — |
 | `func_02A28D98` | `02A28D98..02A28E04` | 112 | DIFF | 25/28 | +0x20 | `func_02A28D98.c` | — |
@@ -18,13 +18,13 @@ Every row below is a non-match and is **not** claimed in
 | `func_02A28EB4` | `02A28EB4..02A28F14` | 100 | DIFF | 19/25 | +0x40 | `func_02A28EB4.c` | — |
 | `func_02A28F38` | `02A28F38..02A28FA0` | 108 | DIFF | 17/27 | +0xC | `func_02A28F38.c` | — |
 | `func_02A28FA4` | `02A28FA4..02A29038` | 152 | DIFF | 22/38 | +0x8 | `func_02A28FA4.c` | — |
-| `func_02A2903C` | `02A2903C..02A290AC` | 116 | COMPILE | — | — | `func_02A2903C.c` | "build/batch/p27_04\func_02A2903C.c", line 91: error #165: too few arguments |
+| `func_02A2903C` | `02A2903C..02A290AC` | 116 | DIFF | 16/29 | +0x8 | `func_02A2903C.c` | — |
 | `func_02A2A148` | `02A2A148..02A2A1D0` | 140 | DIFF | 14/35 | +0x8 | `func_02A2A148.c` | — |
 | `func_02A2A1D4` | `02A2A1D4..02A2A25C` | 140 | DIFF | 11/35 | +0x18 | `func_02A2A1D4.c` | — |
 | `func_02A2A3EC` | `02A2A3EC..02A2A450` | 104 | DIFF | 20/26 | +0x20 | `func_02A2A3EC.c` | — |
-| `func_02A2A4A8` | `02A2A4A8..02A2A52C` | 136 | COMPILE | — | — | `func_02A2A4A8.c` | "build/batch/p27_04\func_02A2A4A8.c", line 101: error #165: too few arguments |
-| `func_02A2BDE0` | `02A2BDE0..02A2BEA4` | 200 | COMPILE | — | — | `func_02A2BDE0.c` | "build/batch/p27_04\func_02A2BDE0.c", line 96: error #75: operand of "*" must |
-| `func_02A2C17C` | `02A2C17C..02A2C1FC` | 132 | COMPILE | — | — | `func_02A2C17C.c` | "build/batch/p27_04\func_02A2C17C.c", line 92: error #75: operand of "*" must |
+| `func_02A2A4A8` | `02A2A4A8..02A2A52C` | 136 | DIFF | 9/34 | +0x8 | `func_02A2A4A8.c` | — |
+| `func_02A2BDE0` | `02A2BDE0..02A2BEA4` | 200 | DIFF | 18/48 | +0x1C | `func_02A2BDE0.c` | — |
+| `func_02A2C17C` | `02A2C17C..02A2C1FC` | 132 | DIFF | 18/33 | +0x18 | `func_02A2C17C.c` | — |
 | `func_02A2C2F4` | `02A2C2F4..02A2C344` | 84 | DIFF | 13/21 | +0x8 | `func_02A2C2F4.c` | — |
 | `func_02A2CB14` | `02A2CB14..02A2CBC0` | 176 | DIFF | 31/44 | +0x4 | `func_02A2CB14.c` | — |
 | `func_02A2DBB8` | `02A2DBB8..02A2DC28` | 116 | COMPILE | — | — | — | m2c failed |

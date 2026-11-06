@@ -82,7 +82,7 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-u64 func_029BF9A0(s32);                             /* extern */
+u64 func_029BF9A0();                             /* extern */
 
 u8 func_02A04500(void *arg0) {
     u32 sp14;

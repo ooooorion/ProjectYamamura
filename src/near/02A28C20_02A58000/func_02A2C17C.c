@@ -89,7 +89,7 @@ void func_02A2C17C(s32 arg0, void *arg1) {
 
     if ((s32) M2C_FIELD(arg1, s32 *, 0x1C) != 0) {
         do {
-            func_029FCBA0(arg0, *(M2C_FIELD(arg1, s32 *, 8) + (M2C_FIELD(arg1, s32 *, 0x18) * 4)));
+            func_029FCBA0(arg0, *(s32 *)((u8 *)M2C_FIELD(arg1, s32 *, 8) + (M2C_FIELD(arg1, s32 *, 0x18) * 4)));
             temp_r9 = M2C_FIELD(arg1, s32 *, 0x1C) - 1;
             M2C_FIELD(arg1, s32 *, 0x1C) = temp_r9;
             M2C_FIELD(arg1, s32 *, 0x18) = (s32) ((M2C_FIELD(arg1, s32 *, 0x18) + 1) % M2C_FIELD(arg1, u32 *, 0x20));

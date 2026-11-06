@@ -11,10 +11,10 @@ Every row below is a non-match and is **not** claimed in
 | Function | Range | Bytes | Status | Words | First diff | File | Detail |
 |---|---|---:|---|---:|---|---|---|
 | `func_029EA458` | `029EA458..029EA4C8` | 116 | DIFF | 28/29 | +0x34 | `func_029EA458.c` | — |
-| `func_029EA4CC` | `029EA4CC..029EA5AC` | 228 | COMPILE | — | — | `func_029EA4CC.c` | "build/batch/p27_02\func_029EA4CC.c", line 120: error #75: operand of "*" must |
+| `func_029EA4CC` | `029EA4CC..029EA5AC` | 228 | DIFF | 0/57 | +0x0 | `func_029EA4CC.c` | — |
 | `func_029EA5B0` | `029EA5B0..029EA690` | 228 | DIFF | 16/56 | +0x8 | `func_029EA5B0.c` | — |
 | `func_029EA694` | `029EA694..029EA6F4` | 100 | DIFF | 16/25 | +0x8 | `func_029EA694.c` | — |
-| `func_029EA794` | `029EA794..029EA7C8` | 56 | COMPILE | — | — | `func_029EA794.c` | "build/batch/p27_02\func_029EA794.c", line 88: error #167: argument of type |
+| `func_029EA794` | `029EA794..029EA7C8` | 56 | DIFF | 13/14 | +0x14 | `func_029EA794.c` | — |
 | `func_029EA8F8` | `029EA8F8..029EA948` | 84 | DIFF | 14/21 | +0x8 | `func_029EA8F8.c` | — |
 | `func_029EA964` | `029EA964..029EA9BC` | 92 | DIFF | 11/23 | +0x4 | `func_029EA964.c` | — |
 | `func_029EA9C8` | `029EA9C8..029EAA20` | 92 | DIFF | 11/23 | +0x4 | `func_029EA9C8.c` | — |

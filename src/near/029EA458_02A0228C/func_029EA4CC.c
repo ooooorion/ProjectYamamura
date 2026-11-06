@@ -117,7 +117,7 @@ void *func_029EA4CC(void *arg0, s32 arg1, u32 arg2) {
         var_r12_2 = 0U;
         if (arg2 > 0U) {
             do {
-                *(M2C_FIELD(var_r31, s32 *, 0x14) + var_r12_2) = *(arg1 + var_r12_2);
+                *(u8 *)((u8 *)M2C_FIELD(var_r31, s32 *, 0x14) + var_r12_2) = *(u8 *)((u8 *)arg1 + var_r12_2);
                 var_r12_2 += 1;
             } while (var_r12_2 < arg2);
         }

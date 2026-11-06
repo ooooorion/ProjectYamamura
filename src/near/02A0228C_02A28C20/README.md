@@ -14,8 +14,8 @@ Every row below is a non-match and is **not** claimed in
 | `func_02A02B4C` | `02A02B4C..02A02B9C` | 84 | DIFF | 16/21 | +0x8 | `func_02A02B4C.c` | — |
 | `func_02A04398` | `02A04398..02A04414` | 128 | DIFF | 3/28 | +0x4 | `func_02A04398.c` | — |
 | `func_02A04418` | `02A04418..02A04438` | 36 | DIFF | 0/2 | +0x0 | `func_02A04418.c` | — |
-| `func_02A0443C` | `02A0443C..02A044FC` | 196 | COMPILE | — | — | `func_02A0443C.c` | "build/batch/p27_03\func_02A0443C.c", line 102: warning #1547-D: call is made |
-| `func_02A04500` | `02A04500..02A045B8` | 188 | COMPILE | — | — | `func_02A04500.c` | "build/batch/p27_03\func_02A04500.c", line 107: error #165: too few arguments |
+| `func_02A0443C` | `02A0443C..02A044FC` | 196 | DIFF | 1/42 | +0x4 | `func_02A0443C.c` | — |
+| `func_02A04500` | `02A04500..02A045B8` | 188 | DIFF | 2/43 | +0x4 | `func_02A04500.c` | — |
 | `func_02A045BC` | `02A045BC..02A04604` | 76 | DIFF | 0/15 | +0x0 | `func_02A045BC.c` | — |
 | `func_02A04608` | `02A04608..02A046A4` | 160 | DIFF | 6/40 | +0x10 | `func_02A04608.c` | — |
 | `func_02A046A8` | `02A046A8..02A046D0` | 44 | DIFF | 7/11 | +0x4 | `func_02A046A8.c` | — |
@@ -25,7 +25,7 @@ Every row below is a non-match and is **not** claimed in
 | `func_02A04824` | `02A04824..02A04878` | 88 | DIFF | 14/22 | +0x8 | `func_02A04824.c` | — |
 | `func_02A04984` | `02A04984..02A049D4` | 84 | DIFF | 7/21 | +0x4 | `func_02A04984.c` | — |
 | `func_02A049D8` | `02A049D8..02A04A08` | 52 | DIFF | 7/13 | +0x4 | `func_02A049D8.c` | — |
-| `func_02A04A0C` | `02A04A0C..02A04A8C` | 132 | COMPILE | — | — | `func_02A04A0C.c` | "build/batch/p27_03\func_02A04A0C.c", line 95: error #75: operand of "*" must |
+| `func_02A04A0C` | `02A04A0C..02A04A8C` | 132 | DIFF | 1/33 | +0x4 | `func_02A04A0C.c` | — |
 | `func_02A04A90` | `02A04A90..02A04B24` | 152 | COMPILE | — | — | — | m2c failed |
 | `func_02A04B48` | `02A04B48..02A04B84` | 64 | COMPILE | — | — | — | m2c failed |
 | `func_02A04C80` | `02A04C80..02A04D30` | 180 | COMPILE | — | — | — | m2c failed |

@@ -842,8 +842,16 @@ with `tools/batch.py --allow-calls --max-insn 60 --limit 0`.
 The 26 exacts add 764 bytes. All were registered and the full table passes
 `tools/match.py`: 1,667 functions, 79,760 bytes, 6.11% of the 27,267 starts.
 The 777 non-matches are archived under `src/near/`, taking the archive to
-2,782 candidates; 53 have generated sources and 724 are m2c or compile
-failures. The shard tables retain the missing-source counts.
+2,782 candidates; 53 have generated sources and 724 are m2c failures.
+
+### Pass-27 compile-failure repair
+
+Fourteen generated sources initially failed GHS compilation. The fixes were
+limited to prototype arity, pointer-width casts, one malformed m2c diagnostic
+and the unset-register placeholders in `func_02A04A0C`; all 14 now compile.
+Rechecking them leaves 0 exact matches and 14 `DIFF` rows, so the archive and
+table counts are unchanged. The four shard READMEs now report their measured
+word differences.
 
 ## Commands used
 

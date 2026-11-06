@@ -92,13 +92,13 @@ s32 func_02A04A0C(s32 arg0, s32 arg1) {
 
     temp_r3 = func_02A046D4(2, arg1, arg0);
     if (temp_r3 == 0) {
-        *M2C_ERROR(/* Read from unset register $r8 */) = temp_r3;
+        *(s16 *)(void *)arg1 = temp_r3;
         return 0;
     }
-    temp_r12 = M2C_FIELD(M2C_ERROR(/* Read from unset register $r9 */), void **, 4);
-    temp_r12_2 = M2C_FIELD(M2C_ERROR(/* Read from unset register $r9 */), s32 *, 8);
+    temp_r12 = M2C_FIELD(arg0, void **, 4);
+    temp_r12_2 = M2C_FIELD(arg0, s32 *, 8);
     temp_r10 = M2C_FIELD(temp_r12, s32 *, 0x10) + M2C_FIELD(temp_r12, s32 *, 0x1C) + temp_r12_2;
-    M2C_FIELD(M2C_ERROR(/* Read from unset register $r9 */), s32 *, 8) = (s32) (temp_r12_2 + 2);
-    *M2C_ERROR(/* Read from unset register $r8 */) = M2C_FIELD(temp_r10, u8 *, 0) | (M2C_FIELD(temp_r10, u8 *, 1) << 8);
+    M2C_FIELD(arg0, s32 *, 8) = (s32) (temp_r12_2 + 2);
+    *(s16 *)(void *)arg1 = M2C_FIELD(temp_r10, u8 *, 0) | (M2C_FIELD(temp_r10, u8 *, 1) << 8);
     return 1;
 }

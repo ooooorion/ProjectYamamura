@@ -10,14 +10,14 @@ Every row below is a non-match and is **not** claimed in
 
 | Function | Range | Bytes | Status | Words | First diff | File | Detail |
 |---|---|---:|---|---:|---|---|---|
-| `func_029D8014` | `029D8014..029D8098` | 136 | COMPILE | — | — | `func_029D8014.c` | "build/batch/p27_01\func_029D8014.c", line 93: error #165: too few arguments |
-| `func_029D80B4` | `029D80B4..029D80E8` | 56 | COMPILE | — | — | `func_029D80B4.c` | "build/batch/p27_01\func_029D80B4.c", line 96: error #137: expression must be |
+| `func_029D8014` | `029D8014..029D8098` | 136 | DIFF | 4/34 | +0x4 | `func_029D8014.c` | — |
+| `func_029D80B4` | `029D80B4..029D80E8` | 56 | DIFF | 0/14 | +0x0 | `func_029D80B4.c` | — |
 | `func_029D8128` | `029D8128..029D8198` | 116 | DIFF | 1/25 | +0x4 | `func_029D8128.c` | — |
 | `func_029D81A8` | `029D81A8..029D81F8` | 84 | DIFF | 19/21 | +0x28 | `func_029D81A8.c` | — |
 | `func_029D84F8` | `029D84F8..029D855C` | 104 | BLOCKED | — | — | `func_029D84F8.c` | .L17@+0x2A |
-| `func_029D8A20` | `029D8A20..029D8AE0` | 196 | COMPILE | — | — | `func_029D8A20.c` | "build/batch/p27_01\func_029D8A20.c", line 85: error #20: identifier "Expected" |
+| `func_029D8A20` | `029D8A20..029D8AE0` | 196 | DIFF | 2/41 | +0x4 | `func_029D8A20.c` | — |
 | `func_029D8AE4` | `029D8AE4..029D8B88` | 168 | DIFF | 22/42 | +0x4 | `func_029D8AE4.c` | — |
-| `func_029D909C` | `029D909C..029D9188` | 240 | COMPILE | — | — | `func_029D909C.c` | "build/batch/p27_01\func_029D909C.c", line 97: warning #1547-D: call is made |
+| `func_029D909C` | `029D909C..029D9188` | 240 | DIFF | 0/58 | +0x0 | `func_029D909C.c` | — |
 | `func_029D928C` | `029D928C..029D92A4` | 28 | DIFF | 4/7 | +0x0 | `func_029D928C.c` | — |
 | `func_029D92A8` | `029D92A8..029D935C` | 184 | DIFF | 22/46 | +0x8 | `func_029D92A8.c` | — |
 | `func_029D9360` | `029D9360..029D9414` | 184 | DIFF | 9/46 | +0x10 | `func_029D9360.c` | — |

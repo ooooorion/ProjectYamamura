@@ -98,7 +98,7 @@ void func_029D909C(void **arg0, s32 arg1) {
     }
     temp_r12 = *arg0;
     temp_r10 = M2C_FIELD(temp_r12, s32 *, 0x14);
-    *(M2C_FIELD(temp_r12, s32 *, 8) + (temp_r10 * 4)) = arg1;
+    *(s32 *)((u8 *)M2C_FIELD(temp_r12, s32 *, 8) + (temp_r10 * 4)) = arg1;
     M2C_FIELD(temp_r12, s32 *, 0x1C) = (s32) (M2C_FIELD(temp_r12, s32 *, 0x1C) + 1);
     M2C_FIELD(temp_r12, s32 *, 0x14) = (s32) ((temp_r10 + 1) % M2C_FIELD(temp_r12, u32 *, 0x20));
     if ((1 != 0) && (((s32) M2C_FIELD(temp_r31, s32 *, 0x4C) == 2) || (((s32) M2C_FIELD(temp_r31, s32 *, 0x4C) == 1) && (temp_r9 = M2C_FIELD(temp_r31, s32 *, 0x48), ((temp_r9 == 0) == 0)) && ((u32) (*(s32 *)0x101A4124 & temp_r9) == (u32) temp_r9)))) {

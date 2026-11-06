@@ -93,7 +93,7 @@ void func_029D80B4(void *arg0, s32 arg1) {
         temp_r0 = var_r10 * 4;
         temp_r11 = M2C_FIELD((arg0 + temp_r0), s32 *, -4) * 0x10DCD;
         var_r10 += 1;
-        *(arg0 + temp_r0) = temp_r11;
+        *(s32 *)((u8 *)arg0 + temp_r0) = temp_r11;
         M2C_FIELD(arg0, u32 *, 0x9C0) = var_r10;
     } while (var_r10 < 0x270U);
 }

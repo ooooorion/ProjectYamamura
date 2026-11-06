@@ -82,18 +82,17 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-Expected instruction argument to be a register, but found 0x0
-Expected instruction argument to be a register, but found 0x0
+/* m2c could not parse the dcbst register; the loop below keeps its M2C_ERROR guard. */
 M2C_UNK func_029BDA14(void *);                      /* extern */
 M2C_UNK func_029BF9A0();                            /* extern */
 M2C_UNK func_029C6778(s32);                         /* extern */
 M2C_UNK func_029D0AC8(M2C_UNK *);                   /* extern */
-M2C_UNK func_029D252C(M2C_UNK *, s32);              /* extern */
+M2C_UNK func_029D252C(M2C_UNK *, void *);              /* extern */
 
 void func_029D8A20(void *arg0) {
     M2C_UNK spC;
     s32 sp8;
-    s32 temp_r29;
+    void *temp_r29;
     void **temp_r10;
     void **temp_r11;
     void *temp_r31;
@@ -108,7 +107,7 @@ void func_029D8A20(void *arg0) {
         // Error: Expected instruction argument to be a register, but found 0x0
         // At instruction: dcbst 0x0, $r9
     } while (M2C_ERROR());
-    func_029D252C(&spC, temp_r29 + 4);
+    func_029D252C(&spC, (u8 *)temp_r29 + 4);
     temp_r10 = M2C_FIELD(arg0, void ***, 0x30);
     temp_r31_2 = *temp_r10;
     if (temp_r31_2 != temp_r10) {

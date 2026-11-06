@@ -83,7 +83,7 @@ typedef s64 M2C_UNK64;
 
 
 s32 func_029BF9A0();                                /* extern */
-M2C_UNK func_029CE40C(void *, s32 *, s32, s32);     /* extern */
+M2C_UNK func_029CE40C(void *, s32 *, ...);     /* extern */
 
 void func_02A0443C(void *arg0, s32 arg1) {
     s32 sp1C;
