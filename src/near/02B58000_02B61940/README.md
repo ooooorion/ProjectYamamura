@@ -10,7 +10,7 @@ Every row below is a non-match and is **not** claimed in
 
 | Function | Range | Bytes | Status | Words | First diff | File | Detail |
 |---|---|---:|---|---:|---|---|---|
-| `func_02B58B44` | `02B58B44..02B58C08` | 200 | BLOCKED | — | — | `func_02B58B44.c` | .L18@+0x42 |
+| `func_02B58B44` | `02B58B44..02B58C08` | 200 | DIFF | 2/47 | +0x0 | `func_02B58B44.c` | diff outside relocation sites |
 | `func_02B58C0C` | `02B58C0C..02B58C34` | 44 | DIFF | 1/10 | +0x4 | `func_02B58C0C.c` | — |
 | `func_02B58C38` | `02B58C38..02B58C98` | 100 | DIFF | 18/25 | +0x14 | `func_02B58C38.c` | — |
 | `func_02B58C9C` | `02B58C9C..02B58D10` | 120 | DIFF | 19/30 | +0x10 | `func_02B58C9C.c` | — |
@@ -52,7 +52,7 @@ Every row below is a non-match and is **not** claimed in
 | `func_02B5AF7C` | `02B5AF7C..02B5AFD4` | 92 | DIFF | 0/11 | +0x0 | `func_02B5AF7C.c` | — |
 | `func_02B5B10C` | `02B5B10C..02B5B12C` | 36 | DIFF | 2/9 | +0x0 | `func_02B5B10C.c` | — |
 | `func_02B5B164` | `02B5B164..02B5B18C` | 44 | DIFF | 0/2 | +0x0 | `func_02B5B164.c` | — |
-| `func_02B5B354` | `02B5B354..02B5B368` | 24 | BLOCKED | — | — | `func_02B5B354.c` | .L17@+0xA |
+| `func_02B5B354` | `02B5B354..02B5B368` | 24 | DIFF | 0/6 | +0x0 | `func_02B5B354.c` | diff outside relocation sites |
 | `func_02B5B36C` | `02B5B36C..02B5B380` | 24 | DIFF | 3/6 | +0x0 | `func_02B5B36C.c` | — |
 | `func_02B5B384` | `02B5B384..02B5B3AC` | 44 | DIFF | 1/10 | +0x4 | `func_02B5B384.c` | — |
 | `func_02B5B3B8` | `02B5B3B8..02B5B3D0` | 28 | DIFF | 5/7 | +0xC | `func_02B5B3B8.c` | — |
@@ -67,7 +67,7 @@ Every row below is a non-match and is **not** claimed in
 | `func_02B5BD08` | `02B5BD08..02B5BD60` | 92 | DIFF | 0/11 | +0x0 | `func_02B5BD08.c` | — |
 | `func_02B5BD9C` | `02B5BD9C..02B5BE28` | 144 | DIFF | 12/36 | +0xC | `func_02B5BD9C.c` | — |
 | `func_02B5BE44` | `02B5BE44..02B5BE90` | 80 | DIFF | 4/20 | +0x10 | `func_02B5BE44.c` | — |
-| `func_02B5BE94` | `02B5BE94..02B5BEF8` | 104 | BLOCKED | — | — | `func_02B5BE94.c` | .L18@+0x72 |
+| `func_02B5BE94` | `02B5BE94..02B5BEF8` | 104 | DIFF | 0/26 | +0x0 | `func_02B5BE94.c` | diff outside relocation sites |
 | `func_02B5BEFC` | `02B5BEFC..02B5BF18` | 32 | DIFF | 2/7 | +0x8 | `func_02B5BEFC.c` | — |
 | `func_02B5BF1C` | `02B5BF1C..02B5BF3C` | 36 | DIFF | 2/9 | +0x0 | `func_02B5BF1C.c` | — |
 | `func_02B5C008` | `02B5C008..02B5C078` | 116 | DIFF | 14/29 | +0x4 | `func_02B5C008.c` | — |
@@ -86,7 +86,7 @@ Every row below is a non-match and is **not** claimed in
 | `func_02B5D8E4` | `02B5D8E4..02B5D900` | 32 | DIFF | 2/7 | +0x8 | `func_02B5D8E4.c` | — |
 | `func_02B5D904` | `02B5D904..02B5D96C` | 108 | DIFF | 0/26 | +0x0 | `func_02B5D904.c` | — |
 | `func_02B5D970` | `02B5D970..02B5D9D8` | 108 | DIFF | 0/26 | +0x0 | `func_02B5D970.c` | — |
-| `func_02B5D9DC` | `02B5D9DC..02B5DA44` | 108 | BLOCKED | — | — | `func_02B5D9DC.c` | .L17@+0x66 |
+| `func_02B5D9DC` | `02B5D9DC..02B5DA44` | 108 | DIFF | 4/27 | +0x0 | `func_02B5D9DC.c` | diff outside relocation sites |
 | `func_02B5DA48` | `02B5DA48..02B5DAB8` | 116 | DIFF | 1/28 | +0x0 | `func_02B5DA48.c` | — |
 | `func_02B5DABC` | `02B5DABC..02B5DB24` | 108 | DIFF | 0/2 | +0x0 | `func_02B5DABC.c` | — |
 | `func_02B5DB28` | `02B5DB28..02B5DB90` | 108 | DIFF | 0/2 | +0x0 | `func_02B5DB28.c` | — |
@@ -104,8 +104,8 @@ Every row below is a non-match and is **not** claimed in
 | `func_02B5E420` | `02B5E420..02B5E494` | 120 | DIFF | 22/30 | +0x20 | `func_02B5E420.c` | — |
 | `func_02B5E498` | `02B5E498..02B5E4E8` | 84 | DIFF | 16/21 | +0x14 | `func_02B5E498.c` | — |
 | `func_02B5E6DC` | `02B5E6DC..02B5E740` | 104 | DIFF | 4/26 | +0x0 | `func_02B5E6DC.c` | — |
-| `func_02B5FDEC` | `02B5FDEC..02B5FDFC` | 20 | BLOCKED | — | — | `func_02B5FDEC.c` | .L5@+0x2 |
-| `func_02B5FE00` | `02B5FE00..02B5FEAC` | 176 | BLOCKED | — | — | `func_02B5FE00.c` | .L18@+0x1A |
+| `func_02B5FDEC` | `02B5FDEC..02B5FDFC` | 20 | DIFF | 0/5 | +0x0 | `func_02B5FDEC.c` | diff outside relocation sites |
+| `func_02B5FE00` | `02B5FE00..02B5FEAC` | 176 | DIFF | 2/38 | +0x1 | `func_02B5FE00.c` | diff outside relocation sites |
 | `func_02B5FEC0` | `02B5FEC0..02B5FEDC` | 32 | DIFF | 2/2 | — | `func_02B5FEC0.c` | — |
 | `func_02B5FEE0` | `02B5FEE0..02B5FF64` | 136 | DIFF | 26/34 | +0x28 | `func_02B5FEE0.c` | — |
 | `func_02B5FF68` | `02B5FF68..02B5FFEC` | 136 | DIFF | 26/34 | +0x28 | `func_02B5FF68.c` | — |

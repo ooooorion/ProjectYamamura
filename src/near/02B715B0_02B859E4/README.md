@@ -10,7 +10,7 @@ Every row below is a non-match and is **not** claimed in
 
 | Function | Range | Bytes | Status | Words | First diff | File | Detail |
 |---|---|---:|---|---:|---|---|---|
-| `func_02B715B0` | `02B715B0..02B71698` | 236 | BLOCKED | — | — | `func_02B715B0.c` | .L27@+0x56 |
+| `func_02B715B0` | `02B715B0..02B71698` | 236 | DIFF | 0/59 | +0x0 | `func_02B715B0.c` | diff outside relocation sites |
 | `func_02B719B8` | `02B719B8..02B719E0` | 44 | DIFF | 8/11 | +0xC | `func_02B719B8.c` | — |
 | `func_02B719E4` | `02B719E4..02B71A58` | 120 | DIFF | 2/30 | +0x4 | `func_02B719E4.c` | — |
 | `func_02B71EF0` | `02B71EF0..02B71F58` | 108 | DIFF | 9/27 | +0x1C | `func_02B71EF0.c` | — |
@@ -33,7 +33,7 @@ Every row below is a non-match and is **not** claimed in
 | `func_02B784D8` | `02B784D8..02B78564` | 144 | DIFF | 1/33 | +0x0 | `func_02B784D8.c` | — |
 | `func_02B78568` | `02B78568..02B78590` | 44 | DIFF | 8/11 | +0xC | `func_02B78568.c` | — |
 | `func_02B78A78` | `02B78A78..02B78A9C` | 40 | DIFF | 3/10 | +0x0 | `func_02B78A78.c` | — |
-| `func_02B78AA0` | `02B78AA0..02B78B30` | 148 | BLOCKED | — | — | `func_02B78AA0.c` | __gh_udiv64@+0x70 |
+| `func_02B78AA0` | `02B78AA0..02B78B30` | 148 | DIFF | 1/37 | +0x1 | `func_02B78AA0.c` | diff outside relocation sites |
 | `func_02B79714` | `02B79714..02B797E8` | 216 | DIFF | 15/54 | +0x8 | `func_02B79714.c` | — |
 | `func_02B797EC` | `02B797EC..02B79890` | 168 | DIFF | 12/42 | +0x8 | `func_02B797EC.c` | — |
 | `func_02B79894` | `02B79894..02B79968` | 216 | DIFF | 15/54 | +0x8 | `func_02B79894.c` | — |
@@ -98,8 +98,8 @@ Every row below is a non-match and is **not** claimed in
 | `func_02B85124` | `02B85124..02B8515C` | 60 | DIFF | 1/13 | +0x4 | `func_02B85124.c` | — |
 | `func_02B85160` | `02B85160..02B85198` | 60 | DIFF | 1/13 | +0x4 | `func_02B85160.c` | — |
 | `func_02B8519C` | `02B8519C..02B851B8` | 32 | DIFF | 5/8 | +0x10 | `func_02B8519C.c` | — |
-| `func_02B851E8` | `02B851E8..02B85214` | 48 | BLOCKED | — | — | `func_02B851E8.c` | .L5@+0x2 |
-| `func_02B85218` | `02B85218..02B85244` | 48 | BLOCKED | — | — | `func_02B85218.c` | .L5@+0x2 |
+| `func_02B851E8` | `02B851E8..02B85214` | 48 | DIFF | 0/6 | +0x0 | `func_02B851E8.c` | diff outside relocation sites |
+| `func_02B85218` | `02B85218..02B85244` | 48 | DIFF | 0/6 | +0x0 | `func_02B85218.c` | diff outside relocation sites |
 | `func_02B85294` | `02B85294..02B852DC` | 76 | DIFF | 17/19 | +0x18 | `func_02B85294.c` | — |
 | `func_02B852EC` | `02B852EC..02B85318` | 48 | DIFF | 8/12 | +0x0 | `func_02B852EC.c` | — |
 | `func_02B85370` | `02B85370..02B85398` | 44 | DIFF | 2/10 | +0x8 | `func_02B85370.c` | — |

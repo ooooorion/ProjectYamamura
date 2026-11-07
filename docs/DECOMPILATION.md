@@ -940,9 +940,12 @@ The sweep added 329 exacts / 12,208 bytes. The initial 979 non-matches comprised
 `DIFF`, 289 `COMPILE` and 19 relocation-`BLOCKED` rows.
 
 The 289 pass-30 `COMPILE` rows were then rebuilt from repaired sources and
-rechecked. 288 now compile, including eight byte-identical candidates (676
-bytes) that were promoted; one source was never generated. The final non-match
-set is 971: 943 `DIFF`, one `COMPILE` and 27 relocation-`BLOCKED`. The table now has
+rechecked. All 289 compile, including eight byte-identical candidates (676 bytes)
+that were promoted. The missing source was reconstructed by hand from its
+retained assembly slice and archived as a `DIFF`. Each of the 27
+relocation-`BLOCKED` rows differs outside its relocation sites, so none could
+become a match; the final non-match set is 971 `DIFF`, with no `COMPILE` or
+relocation-`BLOCKED` rows. The table now has
 2,331 functions / 106,872 bytes (8.55% of the 27,267 starts); the archive holds
 4,691 candidates; total done is unchanged at 7,022 / 27,267 (~25.75%).
 

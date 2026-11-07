@@ -5,8 +5,8 @@ Every row below is a non-match and is **not** claimed in
 `src/functions.tsv`.
 
 - Candidates archived: **146**
-- Source files copied: **145**
-- Missing generated sources: **1**
+- Source files copied: **146**
+- Missing generated sources: **0**
 
 | Function | Range | Bytes | Status | Words | First diff | File | Detail |
 |---|---|---:|---|---:|---|---|---|
@@ -113,7 +113,6 @@ Every row below is a non-match and is **not** claimed in
 | `func_02BD026C` | `02BD026C..02BD0284` | 28 | DIFF | 3/7 | +0x4 | `func_02BD026C.c` | — |
 | `func_02BD0288` | `02BD0288..02BD02AC` | 40 | DIFF | 0/10 | +0x0 | `func_02BD0288.c` | — |
 | `func_02BD02B0` | `02BD02B0..02BD02D8` | 44 | DIFF | 1/11 | +0x0 | `func_02BD02B0.c` | — |
-| `func_02BD02DC` | `02BD02DC..02BD0304` | 44 | COMPILE | — | — | — | missing generated source |
 | `func_02BD04A8` | `02BD04A8..02BD04BC` | 24 | DIFF | 4/6 | +0x4 | `func_02BD04A8.c` | — |
 | `func_02BD04C0` | `02BD04C0..02BD04FC` | 64 | DIFF | 2/16 | +0x0 | `func_02BD04C0.c` | — |
 | `func_02BD0500` | `02BD0500..02BD0518` | 28 | DIFF | 0/7 | +0x0 | `func_02BD0500.c` | — |
@@ -124,8 +123,9 @@ Every row below is a non-match and is **not** claimed in
 | `func_02BD1274` | `02BD1274..02BD12D4` | 100 | DIFF | 1/23 | +0x4 | `func_02BD1274.c` | — |
 | `func_02BD1944` | `02BD1944..02BD1984` | 68 | DIFF | 14/17 | +0x28 | `func_02BD1944.c` | — |
 | `func_02BD2CB4` | `02BD2CB4..02BD2CF8` | 72 | DIFF | 2/12 | +0x8 | `func_02BD2CB4.c` | — |
-| `func_02BD43D8` | `02BD43D8..02BD4470` | 156 | BLOCKED | — | — | `func_02BD43D8.c` | .L7@+0x16 |
-| `func_02BD4474` | `02BD4474..02BD44FC` | 140 | BLOCKED | — | — | `func_02BD4474.c` | .L5@+0x2 |
+| `func_02BD02DC` | `02BD02DC..02BD0304` | 44 | DIFF | 1/11 | +0x0 | `func_02BD02DC.c` | diff outside relocation sites |
+| `func_02BD43D8` | `02BD43D8..02BD4470` | 156 | DIFF | 2/39 | +0x0 | `func_02BD43D8.c` | diff outside relocation sites |
+| `func_02BD4474` | `02BD4474..02BD44FC` | 140 | DIFF | 2/35 | +0x0 | `func_02BD4474.c` | diff outside relocation sites |
 | `func_02BD5564` | `02BD5564..02BD55C0` | 96 | DIFF | 1/24 | +0x0 | `func_02BD5564.c` | — |
 | `func_02BD5814` | `02BD5814..02BD5890` | 128 | DIFF | 19/31 | +0x8 | `func_02BD5814.c` | — |
 | `func_02BD5894` | `02BD5894..02BD5900` | 112 | DIFF | 0/28 | +0x0 | `func_02BD5894.c` | — |
@@ -140,7 +140,7 @@ Every row below is a non-match and is **not** claimed in
 | `func_02BD606C` | `02BD606C..02BD6090` | 40 | DIFF | 0/1 | +0x0 | `func_02BD606C.c` | — |
 | `func_02BD6094` | `02BD6094..02BD60B8` | 40 | DIFF | 0/1 | +0x0 | `func_02BD6094.c` | — |
 | `func_02BD60BC` | `02BD60BC..02BD60D4` | 28 | DIFF | 0/1 | +0x0 | `func_02BD60BC.c` | — |
-| `func_02BD60D8` | `02BD60D8..02BD6118` | 68 | BLOCKED | — | — | `func_02BD60D8.c` | .L18@+0x2 |
+| `func_02BD60D8` | `02BD60D8..02BD6118` | 68 | DIFF | 0/11 | +0x0 | `func_02BD60D8.c` | diff outside relocation sites |
 | `func_02BD6484` | `02BD6484..02BD64EC` | 108 | DIFF | 1/4 | +0x0 | `func_02BD6484.c` | — |
 | `func_02BD64F0` | `02BD64F0..02BD6548` | 92 | DIFF | 0/23 | +0x0 | `func_02BD64F0.c` | — |
 | `func_02BD654C` | `02BD654C..02BD65B4` | 108 | DIFF | 4/27 | +0x10 | `func_02BD654C.c` | — |
@@ -157,6 +157,5 @@ Every row below is a non-match and is **not** claimed in
 | `func_02BD6CC0` | `02BD6CC0..02BD6D6C` | 176 | DIFF | 1/41 | +0x4 | `func_02BD6CC0.c` | — |
 | `func_02BD7994` | `02BD7994..02BD7A08` | 120 | DIFF | 25/30 | +0x2C | `func_02BD7994.c` | — |
 
-Missing sources: `func_02BD02DC`
 
 Regenerate the batch before changing any row; this directory is evidence only.

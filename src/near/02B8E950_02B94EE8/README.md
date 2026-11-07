@@ -23,7 +23,7 @@ Every row below is a non-match and is **not** claimed in
 | `func_02B8F594` | `02B8F594..02B8F5D0` | 64 | DIFF | 13/16 | +0x24 | `func_02B8F594.c` | — |
 | `func_02B8F654` | `02B8F654..02B8F678` | 40 | DIFF | 0/3 | +0x0 | `func_02B8F654.c` | — |
 | `func_02B8F750` | `02B8F750..02B8F7B0` | 100 | DIFF | 13/25 | +0x24 | `func_02B8F750.c` | — |
-| `func_02B8F7D0` | `02B8F7D0..02B8F8A8` | 220 | BLOCKED | — | — | `func_02B8F7D0.c` | .L17@+0x6A |
+| `func_02B8F7D0` | `02B8F7D0..02B8F8A8` | 220 | DIFF | 2/45 | +0x2 | `func_02B8F7D0.c` | diff outside relocation sites |
 | `func_02B8F8AC` | `02B8F8AC..02B8F8F4` | 76 | DIFF | 2/18 | +0x8 | `func_02B8F8AC.c` | — |
 | `func_02B8FB44` | `02B8FB44..02B8FBB4` | 116 | DIFF | 25/27 | +0x48 | `func_02B8FB44.c` | — |
 | `func_02B8FC6C` | `02B8FC6C..02B8FCB0` | 72 | DIFF | 1/14 | +0x4 | `func_02B8FC6C.c` | — |

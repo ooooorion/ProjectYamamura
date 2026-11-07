@@ -40,8 +40,8 @@ Every row below is a non-match and is **not** claimed in
 | `func_02B9F4A8` | `02B9F4A8..02B9F4B4` | 16 | DIFF | 1/4 | +0x0 | `func_02B9F4A8.c` | — |
 | `func_02B9F4B8` | `02B9F4B8..02B9F538` | 132 | DIFF | 21/33 | +0x10 | `func_02B9F4B8.c` | — |
 | `func_02B9F53C` | `02B9F53C..02B9F57C` | 68 | DIFF | 15/17 | +0x2C | `func_02B9F53C.c` | — |
-| `func_02B9F5F4` | `02B9F5F4..02B9F6C8` | 216 | BLOCKED | — | — | `func_02B9F5F4.c` | .L17@+0x1E |
-| `func_02B9F6CC` | `02B9F6CC..02B9F73C` | 116 | BLOCKED | — | — | `func_02B9F6CC.c` | .L17@+0x16 |
+| `func_02B9F5F4` | `02B9F5F4..02B9F6C8` | 216 | DIFF | 1/37 | +0x1 | `func_02B9F5F4.c` | diff outside relocation sites |
+| `func_02B9F6CC` | `02B9F6CC..02B9F73C` | 116 | DIFF | 10/29 | +0x1 | `func_02B9F6CC.c` | diff outside relocation sites |
 | `func_02B9F748` | `02B9F748..02B9F7B0` | 108 | DIFF | 1/27 | +0x4 | `func_02B9F748.c` | — |
 | `func_02B9F7B4` | `02B9F7B4..02B9F7F8` | 72 | DIFF | 14/18 | +0x8 | `func_02B9F7B4.c` | — |
 | `func_02B9F7FC` | `02B9F7FC..02B9F868` | 112 | DIFF | 11/28 | +0xC | `func_02B9F7FC.c` | — |
@@ -51,7 +51,7 @@ Every row below is a non-match and is **not** claimed in
 | `func_02B9FF10` | `02B9FF10..02B9FF90` | 132 | DIFF | 24/31 | +0xC | `func_02B9FF10.c` | — |
 | `func_02B9FF94` | `02B9FF94..02B9FFD0` | 64 | DIFF | 13/16 | +0x24 | `func_02B9FF94.c` | — |
 | `func_02BA01B8` | `02BA01B8..02BA0258` | 164 | DIFF | 29/41 | +0x4 | `func_02BA01B8.c` | — |
-| `func_02BA02F8` | `02BA02F8..02BA0374` | 128 | BLOCKED | — | — | `func_02BA02F8.c` | .L17@+0x12 |
+| `func_02BA02F8` | `02BA02F8..02BA0374` | 128 | DIFF | 23/32 | +0x4 | `func_02BA02F8.c` | diff outside relocation sites |
 | `func_02BA0410` | `02BA0410..02BA0440` | 52 | DIFF | 9/13 | +0x1C | `func_02BA0410.c` | — |
 | `func_02BA0444` | `02BA0444..02BA0454` | 20 | DIFF | 0/4 | +0x0 | `func_02BA0444.c` | — |
 | `func_02BA0470` | `02BA0470..02BA0550` | 228 | DIFF | 3/3 | — | `func_02BA0470.c` | — |

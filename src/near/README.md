@@ -112,7 +112,7 @@ the twenty-fourth pass added 179 more; the twenty-fifth pass added 813 and the
 twenty-sixth added 505. The pass-26 recovery then promoted eighteen candidates;
 the twenty-seventh pass added 803 candidates (26 exact); replaying its 724
 m2c generation failures recovered 135 more exacts, taking the archive to
-2,645 archived candidates. The twenty-eighth pass added 587 candidates (98 exact), and the twenty-ninth added 493 (87 exact), taking the archive to 3,720. The pass-28/29 compile repair made 184 more candidates compile as `DIFF`, left five relocation-`BLOCKED` and 64 `COMPILE`, and promoted five exacts, reducing these eight archives to 1,075 candidates. The thirtieth pass contributed 329 exacts and archived 979 non-matches (671 DIFF, 289 COMPILE, 19 BLOCKED). The pass-30 compile repair compiled 288 of the 289, promoted 8 exacts, and left 971 non-matches (943 DIFF, 1 COMPILE, 27 BLOCKED), taking the archive to 4,691.
+2,645 archived candidates. The twenty-eighth pass added 587 candidates (98 exact), and the twenty-ninth added 493 (87 exact), taking the archive to 3,720. The pass-28/29 compile repair made 184 more candidates compile as `DIFF`, left five relocation-`BLOCKED` and 64 `COMPILE`, and promoted five exacts, reducing these eight archives to 1,075 candidates. The thirtieth pass contributed 329 exacts and archived 979 non-matches (671 DIFF, 289 COMPILE, 19 BLOCKED). The pass-30 compile repair compiled all 289, promoted 8 exacts, and left 971 DIFF non-matches after reconstructing the missing source and checking the 27 relocation-blocked rows; none remain COMPILE or BLOCKED, taking the archive to 4,691.
 
 | File | Range | Status | Words | First diff |
 |---|---|---|---|---|
