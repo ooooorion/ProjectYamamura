@@ -2,6 +2,7 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -33,7 +34,7 @@ typedef s64 M2C_UNK64;
 #define M2C_UNALIGNED32(expr) (expr)
 
 /* Unhandled instructions */
-#define M2C_ERROR(desc) (0)
+#define M2C_ERROR(desc) ((u8 *)0)
 #define M2C_TRAP_IF(cond) (0)
 #define M2C_BREAK() (0)
 #define M2C_SYNC() (0)
@@ -90,7 +91,7 @@ f32 func_02B4D0FC(s32 *arg0, f32 farg0) {
     var_f0 = *(f32 *)0x10161B10;
     if (farg0 > var_f0) {
         M2C_ERROR(/* unknown instruction: stfiwx $f11, 0x0, $r12 */);
-        var_f10 = *((sp8 * 4) + *(0x101A48AC + (*arg0 * 4)));
+        var_f10 = *(u8 *)((sp8 * 4) + *(0x101A48AC + (*arg0 * 4)));
         if (var_f10 > var_f0) {
 
         } else {
@@ -98,7 +99,7 @@ f32 func_02B4D0FC(s32 *arg0, f32 farg0) {
         }
     } else {
         M2C_ERROR(/* unknown instruction: stfiwx $f11, 0x0, $r12 */);
-        var_f10 = *((sp8 * 4) + *(0x101A48AC + (*arg0 * 4)));
+        var_f10 = *(u8 *)((sp8 * 4) + *(0x101A48AC + (*arg0 * 4)));
         if (!(var_f10 > var_f0)) {
 block_4:
             var_f0 = (var_f10 >= 0.0f) ? var_f10 : *(f32 *)0x10161AA8;

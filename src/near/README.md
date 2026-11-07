@@ -76,15 +76,15 @@ archives covering the next 1 MB:
 
 | Band | Candidates |
 |---|---:|
-| [`02A58000_02A8AF50`](02A58000_02A8AF50/) | 158 |
+| [`02A58000_02A8AF50`](02A58000_02A8AF50/) | 157 |
 | [`02A8AF50_02AA2A04`](02A8AF50_02AA2A04/) | 142 |
-| [`02AA2A04_02AC1CF8`](02AA2A04_02AC1CF8/) | 146 |
-| [`02AC1CF8_02AD8000`](02AC1CF8_02AD8000/) | 141 |
+| [`02AA2A04_02AC1CF8`](02AA2A04_02AC1CF8/) | 145 |
+| [`02AC1CF8_02AD8000`](02AC1CF8_02AD8000/) | 140 |
 | [`02AD8000_02B14528`](02AD8000_02B14528/) | 115 |
 | [`02B14528_02B3CAEC`](02B14528_02B3CAEC/) | 128 |
 | [`02B3CAEC_02B49A00`](02B3CAEC_02B49A00/) | 124 |
-| [`02B49A00_02B58000`](02B49A00_02B58000/) | 126 |
-| **Total** | **1,080** |
+| [`02B49A00_02B58000`](02B49A00_02B58000/) | 124 |
+| **Total** | **1,075** |
 
 The 120 candidate sources that previously failed to compile in these four
 archives were repaired for GHS and rechecked. All 640 remaining pass-27
@@ -97,7 +97,7 @@ the twenty-fourth pass added 179 more; the twenty-fifth pass added 813 and the
 twenty-sixth added 505. The pass-26 recovery then promoted eighteen candidates;
 the twenty-seventh pass added 803 candidates (26 exact); replaying its 724
 m2c generation failures recovered 135 more exacts, taking the archive to
-2,645 archived candidates. The twenty-eighth pass added 587 candidates (98 exact), and the twenty-ninth added 493 (87 exact), taking the archive to 3,725.
+2,645 archived candidates. The twenty-eighth pass added 587 candidates (98 exact), and the twenty-ninth added 493 (87 exact), taking the archive to 3,720. The pass-28/29 compile repair made 184 more candidates compile as `DIFF`, left five relocation-`BLOCKED` and 64 `COMPILE`, and promoted five exacts, reducing these eight archives to 1,075 candidates.
 
 | File | Range | Status | Words | First diff |
 |---|---|---|---|---|

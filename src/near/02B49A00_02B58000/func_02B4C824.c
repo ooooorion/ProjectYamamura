@@ -2,6 +2,7 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -33,7 +34,7 @@ typedef s64 M2C_UNK64;
 #define M2C_UNALIGNED32(expr) (expr)
 
 /* Unhandled instructions */
-#define M2C_ERROR(desc) (0)
+#define M2C_ERROR(desc) ((u8 *)0)
 #define M2C_TRAP_IF(cond) (0)
 #define M2C_BREAK() (0)
 #define M2C_SYNC() (0)
@@ -82,19 +83,18 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-s32 func_02B3CE5C();                                /* extern */
-void *func_02B3CFF8(M2C_UNK);                       /* extern */
-M2C_UNK func_02B3D100(s32, void *);                 /* extern */
-
-s32 func_02B4C824(s32 arg0, void *arg1, s32 arg2) {
-    s32 (*temp_r10)(void *, s32, void *, M2C_UNK);
+s32 func_02B3CE5C(); /* extern */
+u8 *func_02B3CFF8(); /* extern */
+M2C_UNK func_02B3D100(); /* extern */
+s32 func_02B4C824(s32 arg0, u8 *arg1, s32 arg2) {
+    s32 (*temp_r10)(u8 *, s32, u8 *, M2C_UNK);
     s32 temp_r29;
-    void *temp_r3;
-    void *temp_r9;
+    u8 *temp_r3;
+    u8 *temp_r9;
 
-    temp_r9 = M2C_FIELD(arg1, void **, 0x10);
-    temp_r10 = M2C_FIELD(temp_r9, s32 (**)(void *, s32, void *, M2C_UNK), 0x34);
-    if ((temp_r10(arg1, arg2, temp_r9, temp_r10) == 0) || (M2C_FIELD(M2C_FIELD(arg1, void **, 0x10), s32 (**)(void *), 0x14)(arg1) == 0)) {
+    temp_r9 = M2C_FIELD(arg1, u8 **, 0x10);
+    temp_r10 = M2C_FIELD(temp_r9, s32 (**)(u8 *, s32, u8 *, M2C_UNK), 0x34);
+    if ((temp_r10(arg1, arg2, temp_r9, temp_r10) == 0) || (M2C_FIELD(M2C_FIELD(arg1, u8 **, 0x10), s32 (**)(u8 *), 0x14)(arg1) == 0)) {
         return 0;
     }
     temp_r29 = func_02B3CE5C();
@@ -102,7 +102,7 @@ s32 func_02B4C824(s32 arg0, void *arg1, s32 arg2) {
     M2C_FIELD(temp_r3, s32 *, 0x10) = arg0;
     M2C_FIELD(temp_r3, s32 *, 4) = 0x4C;
     M2C_FIELD(temp_r3, s32 *, 0x18) = arg2;
-    M2C_FIELD(temp_r3, void **, 0x14) = arg1;
+    M2C_FIELD(temp_r3, u8 **, 0x14) = arg1;
     func_02B3D100(temp_r29, temp_r3);
     return 1;
 }

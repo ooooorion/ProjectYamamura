@@ -2,6 +2,7 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -33,7 +34,7 @@ typedef s64 M2C_UNK64;
 #define M2C_UNALIGNED32(expr) (expr)
 
 /* Unhandled instructions */
-#define M2C_ERROR(desc) (0)
+#define M2C_ERROR(desc) ((u8 *)0)
 #define M2C_TRAP_IF(cond) (0)
 #define M2C_BREAK() (0)
 #define M2C_SYNC() (0)
@@ -82,31 +83,30 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-s32 func_02B49914(s32, void *);                     /* extern */
-M2C_UNK func_02B49974(void *);                      /* extern */
-M2C_UNK func_02C6FAC0(s32, s16 *);                  /* extern */
-
-void func_02B49A00(void *arg0, void *arg1) {
+s32 func_02B49914(); /* extern */
+M2C_UNK func_02B49974(); /* extern */
+M2C_UNK func_02C6FAC0(); /* extern */
+void func_02B49A00(u8 *arg0, u8 *arg1) {
     s32 sp18;
     s32 sp14;
     s32 sp10;
     s32 spC;
     s16 spA;
     s16 sp8;
-    void *temp_r4;
-    void *temp_r5;
-    void *temp_r6;
+    u8 *temp_r4;
+    u8 *temp_r5;
+    u8 *temp_r6;
 
-    temp_r4 = M2C_FIELD(arg0, void **, 0x144);
+    temp_r4 = M2C_FIELD(arg0, u8 **, 0x144);
     sp18 = M2C_FIELD(arg1, s32 *, 0);
     if (temp_r4 <= 2U) {
         temp_r6 = temp_r4 + 0x10160000;
         sp8 = (s16) M2C_FIELD(temp_r6, u8 *, 0x1AE8);
-        temp_r5 = M2C_FIELD(M2C_ERROR(/* Read from unset register $r8 */), void **, 4);
+        temp_r5 = M2C_FIELD(M2C_ERROR(/* Read from unset register $r8 */), u8 **, 4);
         sp14 = func_02B49914(M2C_FIELD(arg1, s32 *, 8), temp_r6);
         sp10 = func_02B49914(temp_r5 - 1, temp_r5);
         M2C_FIELD(arg0, s32 *, 0x2D8) = (s32) M2C_ERROR(/* Read from unset register $r9 */);
-        spC = func_02B49914(0, M2C_FIELD(arg0, void **, 0x144));
+        spC = func_02B49914(0, M2C_FIELD(arg0, u8 **, 0x144));
         if ((s32) M2C_FIELD(M2C_ERROR(/* Read from unset register $r8 */), s32 *, 0x1C) != 0) {
             spA = 1;
             func_02B49974(arg0);

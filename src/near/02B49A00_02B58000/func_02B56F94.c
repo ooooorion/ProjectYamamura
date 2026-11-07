@@ -2,6 +2,7 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -33,7 +34,7 @@ typedef s64 M2C_UNK64;
 #define M2C_UNALIGNED32(expr) (expr)
 
 /* Unhandled instructions */
-#define M2C_ERROR(desc) (0)
+#define M2C_ERROR(desc) ((u8 *)0)
 #define M2C_TRAP_IF(cond) (0)
 #define M2C_BREAK() (0)
 #define M2C_SYNC() (0)
@@ -82,16 +83,15 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-M2C_UNK func_02B3FFE0();                            /* extern */
-M2C_UNK func_02B546D0(void *);                      /* extern */
-M2C_UNK func_02B56DD0(void *, s32);                 /* extern */
-M2C_UNK func_02B56E5C();                            /* extern */
-
-void func_02B56F94(void *arg0, s32 arg1) {
+M2C_UNK func_02B3FFE0(); /* extern */
+M2C_UNK func_02B546D0(); /* extern */
+M2C_UNK func_02B56DD0(); /* extern */
+M2C_UNK func_02B56E5C(); /* extern */
+void func_02B56F94(u8 *arg0, s32 arg1) {
     s32 temp_r8;
     s32 var_ctr;
-    void *var_r11;
-    void *var_r12;
+    u8 *var_r11;
+    u8 *var_r12;
 
     if ((s32) M2C_FIELD(arg0, u8 *, 0x18C) == 0) {
         func_02B3FFE0();

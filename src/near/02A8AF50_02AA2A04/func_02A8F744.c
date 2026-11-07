@@ -2,6 +2,7 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -33,7 +34,7 @@ typedef s64 M2C_UNK64;
 #define M2C_UNALIGNED32(expr) (expr)
 
 /* Unhandled instructions */
-#define M2C_ERROR(desc) (0)
+#define M2C_ERROR(desc) ((u8 *)0)
 #define M2C_TRAP_IF(cond) (0)
 #define M2C_BREAK() (0)
 #define M2C_SYNC() (0)
@@ -82,29 +83,29 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-void func_02A8F744(void *arg0, void *arg1) {
+void func_02A8F744(u8 *arg0, u8 *arg1) {
     M2C_UNK (*temp_r9)(M2C_UNK);
-    void *temp_r3;
-    void *temp_r3_2;
-    void *temp_r3_3;
-    void *temp_r3_4;
-    void *temp_r3_5;
+    u8 *temp_r3;
+    u8 *temp_r3_2;
+    u8 *temp_r3_3;
+    u8 *temp_r3_4;
+    u8 *temp_r3_5;
 
-    temp_r3 = M2C_FIELD(arg0, void **, 8);
+    temp_r3 = M2C_FIELD(arg0, u8 **, 8);
     if (temp_r3 != NULL) {
-        temp_r9 = M2C_FIELD(M2C_FIELD(temp_r3, void **, 0xDC), M2C_UNK (**)(M2C_UNK), 0x1C);
+        temp_r9 = M2C_FIELD(M2C_FIELD(temp_r3, u8 **, 0xDC), M2C_UNK (**)(M2C_UNK), 0x1C);
         temp_r9(temp_r9);
-        temp_r3_2 = M2C_FIELD(arg0, void **, 8);
-        M2C_FIELD(M2C_FIELD(temp_r3_2, void **, 0xDC), M2C_UNK (**)(void *), 0x2C)(temp_r3_2);
-        temp_r3_3 = M2C_FIELD(arg0, void **, 8);
-        M2C_FIELD(M2C_FIELD(temp_r3_3, void **, 0xDC), M2C_UNK (**)(void *), 0x3C)(temp_r3_3);
+        temp_r3_2 = M2C_FIELD(arg0, u8 **, 8);
+        M2C_FIELD(M2C_FIELD(temp_r3_2, u8 **, 0xDC), M2C_UNK (**)(u8 *), 0x2C)(temp_r3_2);
+        temp_r3_3 = M2C_FIELD(arg0, u8 **, 8);
+        M2C_FIELD(M2C_FIELD(temp_r3_3, u8 **, 0xDC), M2C_UNK (**)(u8 *), 0x3C)(temp_r3_3);
     }
-    M2C_FIELD(arg0, void **, 8) = arg1;
+    M2C_FIELD(arg0, u8 **, 8) = arg1;
     if (arg1 != NULL) {
-        M2C_FIELD(M2C_FIELD(arg1, void **, 0xDC), M2C_UNK (**)(void *), 0x14)(arg0);
-        temp_r3_4 = M2C_FIELD(arg0, void **, 8);
-        M2C_FIELD(M2C_FIELD(temp_r3_4, void **, 0xDC), M2C_UNK (**)(void *, void *), 0x24)(temp_r3_4, arg0 + 0xC);
-        temp_r3_5 = M2C_FIELD(arg0, void **, 8);
-        M2C_FIELD(M2C_FIELD(temp_r3_5, void **, 0xDC), M2C_UNK (**)(void *, void *), 0x34)(temp_r3_5, arg0 + 0x48);
+        M2C_FIELD(M2C_FIELD(arg1, u8 **, 0xDC), M2C_UNK (**)(u8 *), 0x14)(arg0);
+        temp_r3_4 = M2C_FIELD(arg0, u8 **, 8);
+        M2C_FIELD(M2C_FIELD(temp_r3_4, u8 **, 0xDC), M2C_UNK (**)(u8 *, u8 *), 0x24)(temp_r3_4, arg0 + 0xC);
+        temp_r3_5 = M2C_FIELD(arg0, u8 **, 8);
+        M2C_FIELD(M2C_FIELD(temp_r3_5, u8 **, 0xDC), M2C_UNK (**)(u8 *, u8 *), 0x34)(temp_r3_5, arg0 + 0x48);
     }
 }

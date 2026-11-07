@@ -2,6 +2,7 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -33,7 +34,7 @@ typedef s64 M2C_UNK64;
 #define M2C_UNALIGNED32(expr) (expr)
 
 /* Unhandled instructions */
-#define M2C_ERROR(desc) (0)
+#define M2C_ERROR(desc) ((u8 *)0)
 #define M2C_TRAP_IF(cond) (0)
 #define M2C_BREAK() (0)
 #define M2C_SYNC() (0)
@@ -82,18 +83,15 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-Expected instruction argument to be a register, but found 0x0
-Expected instruction argument to be a register, but found 0x0
-M2C_UNK func_02A929BC(void *, void **);             /* extern */
-M2C_UNK func_02A948EC();                            /* extern */
-M2C_UNK func_02AA11E4(void *);                      /* extern */
-
-void func_02AA1264(void *arg0, u32 arg1) {
-    void *sp8;
+M2C_UNK func_02A929BC(); /* extern */
+M2C_UNK func_02A948EC(); /* extern */
+M2C_UNK func_02AA11E4(); /* extern */
+void func_02AA1264(u8 *arg0, u32 arg1) {
+    u8 *sp8;
     u32 temp_r3;
-    void *temp_r3_2;
-    void *temp_r3_3;
-    void *temp_r3_4;
+    u8 *temp_r3_2;
+    u8 *temp_r3_3;
+    u8 *temp_r3_4;
 
     temp_r3 = M2C_FIELD(arg0, u32 *, 0x14);
     if (temp_r3 == arg1) {
@@ -111,11 +109,11 @@ void func_02AA1264(void *arg0, u32 arg1) {
         } while (M2C_ERROR());
     }
     func_02AA11E4(arg0);
-    temp_r3_2 = M2C_FIELD(arg0, void **, 0);
-    if ((temp_r3_2 != NULL) && (M2C_FIELD(M2C_FIELD(temp_r3_2, void **, 0x14), s32 (**)(), 0x24)() != 0)) {
-        temp_r3_3 = M2C_FIELD(arg0, void **, 0);
-        temp_r3_4 = M2C_FIELD(M2C_FIELD(temp_r3_3, void **, 0x14), void *(**)(void *), 0x2C)(temp_r3_3);
-        M2C_FIELD(arg0, void **, 0) = temp_r3_4;
+    temp_r3_2 = M2C_FIELD(arg0, u8 **, 0);
+    if ((temp_r3_2 != NULL) && (M2C_FIELD(M2C_FIELD(temp_r3_2, u8 **, 0x14), s32 (**)(), 0x24)() != 0)) {
+        temp_r3_3 = M2C_FIELD(arg0, u8 **, 0);
+        temp_r3_4 = M2C_FIELD(M2C_FIELD(temp_r3_3, u8 **, 0x14), u8 *(**)(u8 *), 0x2C)(temp_r3_3);
+        M2C_FIELD(arg0, u8 **, 0) = temp_r3_4;
         if (temp_r3_4 == NULL) {
             sp8 = temp_r3_4;
             func_02A929BC(arg0 + 4, &sp8);

@@ -2,6 +2,7 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -33,7 +34,7 @@ typedef s64 M2C_UNK64;
 #define M2C_UNALIGNED32(expr) (expr)
 
 /* Unhandled instructions */
-#define M2C_ERROR(desc) (0)
+#define M2C_ERROR(desc) ((u8 *)0)
 #define M2C_TRAP_IF(cond) (0)
 #define M2C_BREAK() (0)
 #define M2C_SYNC() (0)
@@ -82,20 +83,19 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-M2C_UNK func_02B44FD4(M2C_UNK);                     /* extern */
-f32 func_02B4CE2C(M2C_UNK);                         /* extern */
-M2C_UNK func_02BCF688(M2C_UNK);                     /* extern */
-
-void func_02B4CEFC(void *arg0) {
+M2C_UNK func_02B44FD4(); /* extern */
+f32 func_02B4CE2C(); /* extern */
+M2C_UNK func_02BCF688(); /* extern */
+void func_02B4CEFC(u8 *arg0) {
     f32 temp_f31;
     f32 temp_f31_2;
     s32 var_r8;
-    void *var_r12;
+    u8 *var_r12;
 
     M2C_ERROR(/* unknown instruction: vmhaddshs v31, v31, v31, v18 */);
     temp_f31 = M2C_FIELD(arg0, f32 *, 0x388);
     if ((s32) *(s32 *)0x101A9CD8 == 0) {
-        *(0x101B0000 - 0x6328) = 1;
+        *(s32 *)(0x101B0000 - 0x6328) = 1;
         func_02B44FD4(0x101A9000);
         func_02BCF688(0x101A47E8);
     }

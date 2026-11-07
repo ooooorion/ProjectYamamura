@@ -2,6 +2,7 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -33,7 +34,7 @@ typedef s64 M2C_UNK64;
 #define M2C_UNALIGNED32(expr) (expr)
 
 /* Unhandled instructions */
-#define M2C_ERROR(desc) (0)
+#define M2C_ERROR(desc) ((u8 *)0)
 #define M2C_TRAP_IF(cond) (0)
 #define M2C_BREAK() (0)
 #define M2C_SYNC() (0)
@@ -82,13 +83,13 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-void func_02A703E0(void *arg0, u8 arg1) {
+void func_02A703E0(u8 *arg0, u8 arg1) {
     s32 temp_r12;
     s32 temp_r9;
 
     temp_r12 = M2C_FIELD(arg0, s32 *, 0x14);
     M2C_FIELD(arg0, s32 *, 0x14) = (s32) (temp_r12 + 1);
-    *(M2C_FIELD(arg0, s32 *, 8) + temp_r12) = (s8) (arg1 >> 8U);
+    *(u8 *)((s8 *)(M2C_FIELD(arg0, s32 *, 8) + temp_r12)) = (s8) (arg1 >> 8U);
     temp_r9 = M2C_FIELD(arg0, s32 *, 0x14);
     M2C_FIELD(arg0, s32 *, 0x14) = (s32) (temp_r9 + 1);
     *(M2C_FIELD(arg0, s32 *, 8) + temp_r9) = arg1;

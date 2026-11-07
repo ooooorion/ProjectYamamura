@@ -8,8 +8,8 @@ commands are at the bottom.
 
 | | |
 |---|---|
-| Functions decompiled | 1,989 |
-| Byte-identical to `Block.elf` | **1,989 of 1,989** |
+| Functions decompiled | 1,994 |
+| Byte-identical to `Block.elf` | **1,994 of 1,994** |
 | Compiler | GHS `ccppc` 5.3.27 (licensed locally; licence material is not included) |
 | Harness | `tools/match.py` (table, applies object relocations), `tools/crack.py` (one candidate, with relocations) and `tools/batch.py` (an address band) |
 | Sources | `src/fn_*.c`, table in `src/functions.tsv` |
@@ -908,7 +908,16 @@ The next 512 KB used the same four-shard, call-aware sweep.
 The sweep added 87 exacts / 3,900 bytes. The 493 non-matches comprise 340
 `DIFF`, 151 `COMPILE` and two relocation-`BLOCKED` rows. The table now has
 1,989 functions / 93,564 bytes (7.29% of the 27,267 starts), and the archive
-has 3,725 candidates; total done is 5,714 / 27,267 (~20.96%).
+had 3,725 candidates; total done was 5,714 / 27,267 (~20.96%).
+
+## Pass-28/29 compile repair
+
+The 258 pass-28/29 rows that had failed compilation or relocation were rebuilt
+from repaired sources and rechecked. 184 now compile as `DIFF`, five remain
+relocation-`BLOCKED`, and 64 still fail GHS. Five repaired candidates became
+byte-identical (424 bytes), taking the table to 1,994 functions / 93,988 bytes
+(7.31%); the eight archives now hold 1,075 candidates, or 3,720 across the
+whole near archive.
 
 ## Commands used
 
@@ -940,10 +949,10 @@ powerpc-eabi-objdump -d build/func_02025E2C.o
   but a relocation-bearing function still needs every referenced symbol in
   `config/symbols.txt`; otherwise the matcher reports `BLOCKED` rather than
   guessing.
-- 1,989 functions is 7.29% of the 27,267 starts. It proves the loop and gives
+- 1,994 functions is 7.31% of the 27,267 starts. It proves the loop and gives
   repeatable shapes, not the project; the year-end goal needs bulk export.
 - The `-O` level is narrowed to three indistinguishable levels, not pinned to
   one; other GHS flags of the original build are still unknown.
-- The 3,725 archived candidates show that byte equality can depend on
+- The 3,720 archived candidates show that byte equality can depend on
   scratch-register allocation that no source spelling tried here controls; the
   archive keeps every failed shape reviewable.

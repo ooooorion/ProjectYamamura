@@ -2,6 +2,7 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -33,7 +34,7 @@ typedef s64 M2C_UNK64;
 #define M2C_UNALIGNED32(expr) (expr)
 
 /* Unhandled instructions */
-#define M2C_ERROR(desc) (0)
+#define M2C_ERROR(desc) ((u8 *)0)
 #define M2C_TRAP_IF(cond) (0)
 #define M2C_BREAK() (0)
 #define M2C_SYNC() (0)
@@ -82,16 +83,15 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-s32 func_02B3C19C(s32);                             /* extern */
-u32 func_02B3C1F0(s32);                             /* extern */
-void *func_02B3C21C(M2C_UNK);                       /* extern */
-s32 func_02B3C258(M2C_UNK);                         /* extern */
-
-s32 func_02B3C294(void *arg0) {
+s32 func_02B3C19C(); /* extern */
+u32 func_02B3C1F0(); /* extern */
+u8 *func_02B3C21C(); /* extern */
+s32 func_02B3C258(); /* extern */
+s32 func_02B3C294(u8 *arg0) {
     s32 temp_r3;
     s32 var_r12;
     u32 temp_r3_2;
-    void *temp_r3_3;
+    u8 *temp_r3_3;
 
     temp_r3 = func_02B3C19C(M2C_FIELD(arg0, s32 *, 0x3C));
     if (temp_r3 != 0) {
@@ -106,7 +106,6 @@ s32 func_02B3C294(void *arg0) {
             }
         } else {
             temp_r3_3 = func_02B3C21C(M2C_ERROR(/* Read from unset register $r11 */));
-            *M2C_ERROR(/* Read from unset register $r5 */) = M2C_FIELD(temp_r3_3, s32 *, 8);
             var_r12 = M2C_FIELD(temp_r3_3, s32 *, 4);
             if (var_r12 != -1) {
                 var_r12 += 8;

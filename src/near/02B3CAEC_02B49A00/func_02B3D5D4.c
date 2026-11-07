@@ -2,6 +2,7 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -33,7 +34,7 @@ typedef s64 M2C_UNK64;
 #define M2C_UNALIGNED32(expr) (expr)
 
 /* Unhandled instructions */
-#define M2C_ERROR(desc) (0)
+#define M2C_ERROR(desc) ((u8 *)0)
 #define M2C_TRAP_IF(cond) (0)
 #define M2C_BREAK() (0)
 #define M2C_SYNC() (0)
@@ -82,15 +83,14 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-void *func_0276FB54(M2C_UNK);                       /* extern */
-s32 func_02B3D488(s32);                             /* extern */
-M2C_UNK func_02B3D4E4(s32, s32);                    /* extern */
-u32 *func_02B3D540(s32);                            /* extern */
-s32 func_02B3D59C(s32);                             /* extern */
-
-s32 func_02B3D5D4(void *arg0, s32 arg1) {
+u8 *func_0276FB54(); /* extern */
+s32 func_02B3D488(); /* extern */
+M2C_UNK func_02B3D4E4(); /* extern */
+u32 *func_02B3D540(); /* extern */
+s32 func_02B3D59C(); /* extern */
+s32 func_02B3D5D4(u8 *arg0, s32 arg1) {
     u32 *temp_r3;
-    void *var_r11;
+    u8 *var_r11;
 
     var_r11 = arg0;
     if ((var_r11 != NULL) || (var_r11 = func_0276FB54(0xC), ((var_r11 == NULL) == 0))) {
@@ -100,7 +100,7 @@ s32 func_02B3D5D4(void *arg0, s32 arg1) {
         if (func_02B3D59C(arg1) != 0) {
             func_02B3D4E4(arg1, func_02B3D488(arg1));
             temp_r3 = func_02B3D540(arg1);
-            if (((s32) M2C_ERROR(/* Read from unset register $r5 */) != 0) && ((s32) M2C_ERROR(/* Read from unset register $r7 */) != 0) && ((u32) *M2C_ERROR(/* Read from unset register $r5 */) == 0x494E464FU) && ((u32) *M2C_ERROR(/* Read from unset register $r7 */) == 0x46494C45U)) {
+            if (((s32) M2C_ERROR(/* Read from unset register $r5 */) != 0) && ((s32) M2C_ERROR(/* Read from unset register $r7 */) != 0) && ((u32) M2C_ERROR(/* Read from unset register $r5 */) == 0x494E464FU) && ((u32) M2C_ERROR(/* Read from unset register $r7 */) == 0x46494C45U)) {
                 if (temp_r3 != NULL) {
                     if ((u32) *temp_r3 == 0x494E4658U) {
                         M2C_FIELD(M2C_ERROR(/* Read from unset register $r11 */), u32 **, 8) = (u32 *) (temp_r3 + 8);
@@ -108,7 +108,6 @@ s32 func_02B3D5D4(void *arg0, s32 arg1) {
                     }
                 } else {
 block_10:
-                    *M2C_ERROR(/* Read from unset register $r11 */) = M2C_ERROR(/* Read from unset register $r5 */) + 8;
                     M2C_FIELD(M2C_ERROR(/* Read from unset register $r11 */), s32 *, 4) = (s32) (M2C_ERROR(/* Read from unset register $r7 */) + 8);
                 }
             }

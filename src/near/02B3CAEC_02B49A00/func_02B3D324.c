@@ -2,6 +2,7 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -33,7 +34,7 @@ typedef s64 M2C_UNK64;
 #define M2C_UNALIGNED32(expr) (expr)
 
 /* Unhandled instructions */
-#define M2C_ERROR(desc) (0)
+#define M2C_ERROR(desc) ((u8 *)0)
 #define M2C_TRAP_IF(cond) (0)
 #define M2C_BREAK() (0)
 #define M2C_SYNC() (0)
@@ -82,15 +83,12 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-Expected instruction argument to be a register, but found 0x0
-Expected instruction argument to be a register, but found 0x0
-M2C_UNK func_02B3CF94(void *);                      /* extern */
-M2C_UNK func_02B6D6F8(void *, void *, M2C_UNK);     /* extern */
-s32 func_02B6D728(s32, void **, M2C_UNK);           /* extern */
-M2C_UNK func_02C73A48();                            /* extern */
-
-s32 func_02B3D324(void *arg0) {
-    void *sp8;
+M2C_UNK func_02B3CF94(); /* extern */
+M2C_UNK func_02B6D6F8(); /* extern */
+s32 func_02B6D728(); /* extern */
+M2C_UNK func_02C73A48(); /* extern */
+s32 func_02B3D324(u8 *arg0) {
+    u8 *sp8;
 
     if (func_02B6D728(arg0 + 0xC, &sp8, 0) == 0) {
         return 0;

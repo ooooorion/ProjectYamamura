@@ -2,6 +2,7 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -33,7 +34,7 @@ typedef s64 M2C_UNK64;
 #define M2C_UNALIGNED32(expr) (expr)
 
 /* Unhandled instructions */
-#define M2C_ERROR(desc) (0)
+#define M2C_ERROR(desc) ((u8 *)0)
 #define M2C_TRAP_IF(cond) (0)
 #define M2C_BREAK() (0)
 #define M2C_SYNC() (0)
@@ -127,18 +128,18 @@ loop_4:
     if (arg2 >= var_r9) {
         temp_r8_3 = var_r4 * 4;
         var_r4 = arg2 - 1;
-        *(temp_r10 + temp_r8_3) = M2C_FIELD((temp_r10 + (arg2 * 4)), s32 *, -4);
+        *(u8 *)(temp_r10 + temp_r8_3) = M2C_FIELD((temp_r10 + (arg2 * 4)), s32 *, -4);
     }
 loop_8:
     temp_r5 = (s32) (var_r4 - 1) / 2;
     if (temp_r11 < var_r4) {
         temp_r7_2 = temp_r5 * 4;
-        if ((s32) *(temp_r10 + temp_r7_2) < arg3) {
+        if ((s32) *(u8 *)(temp_r10 + temp_r7_2) < arg3) {
             temp_r7_3 = var_r4 * 4;
             var_r4 = temp_r5;
-            *(temp_r10 + temp_r7_3) = *(temp_r10 + temp_r7_2);
+            *(u8 *)(temp_r10 + temp_r7_3) = *(u8 *)(temp_r10 + temp_r7_2);
             goto loop_8;
         }
     }
-    *(temp_r10 + (var_r4 * 4)) = arg3;
+    *(u8 *)(temp_r10 + (var_r4 * 4)) = arg3;
 }

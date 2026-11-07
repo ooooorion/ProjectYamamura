@@ -2,6 +2,7 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -33,7 +34,7 @@ typedef s64 M2C_UNK64;
 #define M2C_UNALIGNED32(expr) (expr)
 
 /* Unhandled instructions */
-#define M2C_ERROR(desc) (0)
+#define M2C_ERROR(desc) ((u8 *)0)
 #define M2C_TRAP_IF(cond) (0)
 #define M2C_BREAK() (0)
 #define M2C_SYNC() (0)
@@ -82,10 +83,9 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-s32 func_02B4F6E4(M2C_UNK);                         /* extern */
-M2C_UNK func_02C733A0(u32, M2C_UNK, s32);           /* extern */
-
-s32 func_02B4F938(s32 arg0, void *arg1, u32 arg2) {
+s32 func_02B4F6E4(); /* extern */
+M2C_UNK func_02C733A0(); /* extern */
+s32 func_02B4F938(s32 arg0, u8 *arg1, u32 arg2) {
     s32 temp_ret;
     s32 var_r12;
     u32 temp_r12_2;
@@ -94,16 +94,16 @@ s32 func_02B4F938(s32 arg0, void *arg1, u32 arg2) {
     u32 var_r0;
     u32 var_r30;
     u8 temp_r12;
-    void *temp_r5;
-    void *var_r10;
-    void *var_r4;
-    void *var_r4_2;
+    u8 *temp_r5;
+    u8 *var_r10;
+    u8 *var_r4;
+    u8 *var_r4_2;
 
     var_r4 = arg1;
     var_r30 = arg2;
     if (arg2 != 0) {
 loop_1:
-        temp_r5 = M2C_FIELD(M2C_ERROR(/* Read from unset register $r7 */), void **, 0xC);
+        temp_r5 = M2C_FIELD(M2C_ERROR(/* Read from unset register $r7 */), u8 **, 0xC);
         var_r12 = M2C_FIELD(M2C_ERROR(/* Read from unset register $r7 */), s32 *, 0x64);
         var_r0 = var_r30;
         temp_r6 = M2C_FIELD(temp_r5, s32 *, 4) - var_r12;
@@ -127,7 +127,7 @@ loop_1:
         temp_r12_2 = var_r12 + var_r0;
         M2C_FIELD(M2C_ERROR(/* Read from unset register $r7 */), u32 *, 0x64) = temp_r12_2;
         var_r30 -= var_r0;
-        if ((temp_r12_2 < (u32) M2C_FIELD(M2C_FIELD(M2C_ERROR(/* Read from unset register $r7 */), void **, 0xC), u32 *, 4)) || (temp_ret = func_02B4F6E4(M2C_ERROR(/* Read from unset register $r7 */)), var_r4 = (void *) (u32) (u64) temp_ret, ((temp_ret == 0) == 0))) {
+        if ((temp_r12_2 < (u32) M2C_FIELD(M2C_FIELD(M2C_ERROR(/* Read from unset register $r7 */), u8 **, 0xC), u32 *, 4)) || (temp_ret = func_02B4F6E4(M2C_ERROR(/* Read from unset register $r7 */)), var_r4 = (u8 *) (u32) (u64) temp_ret, ((temp_ret == 0) == 0))) {
             if ((s32) var_r30 == 0) {
                 return arg2 - var_r30;
             }

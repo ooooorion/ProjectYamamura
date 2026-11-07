@@ -14,21 +14,21 @@ Every row below is a non-match and is **not** claimed in
 | `func_02A8AFF4` | `02A8AFF4..02A8B068` | 120 | DIFF | 13/30 | +0x10 | `func_02A8AFF4.c` | — |
 | `func_02A8C57C` | `02A8C57C..02A8C5FC` | 132 | DIFF | 18/33 | +0x8 | `func_02A8C57C.c` | — |
 | `func_02A8CAB8` | `02A8CAB8..02A8CAE8` | 52 | DIFF | 6/13 | +0x4 | `func_02A8CAB8.c` | — |
-| `func_02A8CAEC` | `02A8CAEC..02A8CB6C` | 132 | COMPILE | — | — | `func_02A8CAEC.c` | "build/batch/p28_02\func_02A8CAEC.c", line 95: error #75: operand of "*" must |
-| `func_02A8CB70` | `02A8CB70..02A8CC0C` | 160 | COMPILE | — | — | `func_02A8CB70.c` | "build/batch/p28_02\func_02A8CB70.c", line 94: error #75: operand of "*" must |
-| `func_02A8CC10` | `02A8CC10..02A8CCAC` | 160 | COMPILE | — | — | `func_02A8CC10.c` | "build/batch/p28_02\func_02A8CC10.c", line 94: error #75: operand of "*" must |
+| `func_02A8CAEC` | `02A8CAEC..02A8CB6C` | 132 | DIFF | 1/21 | +0x4 | `func_02A8CAEC.c` | — |
+| `func_02A8CB70` | `02A8CB70..02A8CC0C` | 160 | DIFF | 5/22 | +0x4 | `func_02A8CB70.c` | — |
+| `func_02A8CC10` | `02A8CC10..02A8CCAC` | 160 | DIFF | 5/22 | +0x4 | `func_02A8CC10.c` | — |
 | `func_02A8E85C` | `02A8E85C..02A8E8D8` | 128 | DIFF | 27/32 | +0x34 | `func_02A8E85C.c` | — |
 | `func_02A8E8DC` | `02A8E8DC..02A8E96C` | 148 | DIFF | 27/37 | +0x20 | `func_02A8E8DC.c` | — |
 | `func_02A8E9B4` | `02A8E9B4..02A8EA14` | 100 | DIFF | 17/25 | +0x28 | `func_02A8E9B4.c` | — |
 | `func_02A8EA18` | `02A8EA18..02A8EAB8` | 164 | DIFF | 22/41 | +0x8 | `func_02A8EA18.c` | — |
 | `func_02A8EABC` | `02A8EABC..02A8EB74` | 188 | DIFF | 25/47 | +0x8 | `func_02A8EABC.c` | — |
 | `func_02A8F2C4` | `02A8F2C4..02A8F354` | 148 | DIFF | 29/37 | +0x30 | `func_02A8F2C4.c` | — |
-| `func_02A8F744` | `02A8F744..02A8F808` | 200 | COMPILE | — | — | `func_02A8F744.c` | "build/batch/p28_02\func_02A8F744.c", line 96: error #167: argument of type |
-| `func_02A8FFF4` | `02A8FFF4..02A90060` | 112 | COMPILE | — | — | `func_02A8FFF4.c` | "build/batch/p28_02\func_02A8FFF4.c", line 104: warning #513-D: a value of |
-| `func_02A902D8` | `02A902D8..02A9031C` | 72 | COMPILE | — | — | `func_02A902D8.c` | "build/batch/p28_02\func_02A902D8.c", line 92: warning #1547-D: call is made |
+| `func_02A8F744` | `02A8F744..02A8F808` | 200 | COMPILE | — | — | `func_02A8F744.c` | "build/batch/fix2829\func_02A8F744.c", line 97: error #167: \| argument of type "M2C_UNK (*)(M2C_UNK)" is incompatible with |
+| `func_02A8FFF4` | `02A8FFF4..02A90060` | 112 | DIFF | 1/28 | +0x4 | `func_02A8FFF4.c` | — |
+| `func_02A902D8` | `02A902D8..02A9031C` | 72 | COMPILE | — | — | `func_02A902D8.c` | "build/batch/fix2829\func_02A902D8.c", line 95: error #75: \| operand of "*" must be a pointer |
 | `func_02A908EC` | `02A908EC..02A9095C` | 116 | DIFF | 7/29 | +0x0 | `func_02A908EC.c` | — |
 | `func_02A90960` | `02A90960..02A909D0` | 116 | DIFF | 7/29 | +0x0 | `func_02A90960.c` | — |
-| `func_02A9102C` | `02A9102C..02A910F8` | 208 | COMPILE | — | — | `func_02A9102C.c` | "build/batch/p28_02\func_02A9102C.c", line 99: error #167: argument of type |
+| `func_02A9102C` | `02A9102C..02A910F8` | 208 | COMPILE | — | — | `func_02A9102C.c` | "build/batch/fix2829\func_02A9102C.c", line 100: warning #42-D: \| operand types are incompatible ("u8 *" and "u32") |
 | `func_02A910FC` | `02A910FC..02A911AC` | 180 | DIFF | 16/45 | +0x24 | `func_02A910FC.c` | — |
 | `func_02A9123C` | `02A9123C..02A912A4` | 108 | DIFF | 15/27 | +0x18 | `func_02A9123C.c` | — |
 | `func_02A912A8` | `02A912A8..02A91304` | 96 | DIFF | 22/24 | +0x18 | `func_02A912A8.c` | — |
@@ -40,11 +40,11 @@ Every row below is a non-match and is **not** claimed in
 | `func_02A920EC` | `02A920EC..02A92140` | 88 | DIFF | 21/22 | +0xC | `func_02A920EC.c` | — |
 | `func_02A92144` | `02A92144..02A92190` | 80 | DIFF | 1/20 | +0x0 | `func_02A92144.c` | — |
 | `func_02A92194` | `02A92194..02A921E8` | 88 | DIFF | 2/20 | +0x8 | `func_02A92194.c` | — |
-| `func_02A928E4` | `02A928E4..02A929B8` | 216 | COMPILE | — | — | `func_02A928E4.c` | "build/batch/p28_02\func_02A928E4.c", line 120: error #513: a value of type |
+| `func_02A928E4` | `02A928E4..02A929B8` | 216 | COMPILE | — | — | `func_02A928E4.c` | "build/batch/fix2829\func_02A928E4.c", line 120: error #513: \| a value of type "s32 (*)()" cannot be assigned to an entity of type |
 | `func_02A929BC` | `02A929BC..02A92A0C` | 84 | DIFF | 17/21 | +0x8 | `func_02A929BC.c` | — |
 | `func_02A92A10` | `02A92A10..02A92A74` | 104 | DIFF | 7/25 | +0x1C | `func_02A92A10.c` | — |
 | `func_02A92F28` | `02A92F28..02A92F78` | 84 | DIFF | 2/19 | +0x8 | `func_02A92F28.c` | — |
-| `func_02A92F7C` | `02A92F7C..02A92FD0` | 88 | COMPILE | — | — | `func_02A92F7C.c` | "build/batch/p28_02\func_02A92F7C.c", line 93: error #165: too few arguments |
+| `func_02A92F7C` | `02A92F7C..02A92FD0` | 88 | DIFF | 15/22 | +0xC | `func_02A92F7C.c` | — |
 | `func_02A92FD4` | `02A92FD4..02A93018` | 72 | DIFF | 12/18 | +0x8 | `func_02A92FD4.c` | — |
 | `func_02A93024` | `02A93024..02A93094` | 116 | DIFF | 0/29 | +0x0 | `func_02A93024.c` | — |
 | `func_02A93098` | `02A93098..02A930DC` | 72 | DIFF | 15/18 | +0x4 | `func_02A93098.c` | — |
@@ -54,16 +54,16 @@ Every row below is a non-match and is **not** claimed in
 | `func_02A93D7C` | `02A93D7C..02A93D90` | 24 | DIFF | 0/2 | +0x0 | `func_02A93D7C.c` | — |
 | `func_02A93D94` | `02A93D94..02A93E34` | 164 | DIFF | 23/41 | +0x18 | `func_02A93D94.c` | — |
 | `func_02A93E60` | `02A93E60..02A93EAC` | 80 | DIFF | 2/20 | +0x8 | `func_02A93E60.c` | — |
-| `func_02A93FCC` | `02A93FCC..02A94060` | 152 | COMPILE | — | — | `func_02A93FCC.c` | "build/batch/p28_02\func_02A93FCC.c", line 93: warning #1547-D: call is made |
+| `func_02A93FCC` | `02A93FCC..02A94060` | 152 | DIFF | 4/38 | +0x10 | `func_02A93FCC.c` | — |
 | `func_02A94064` | `02A94064..02A9413C` | 220 | DIFF | 39/55 | +0x8 | `func_02A94064.c` | — |
 | `func_02A94140` | `02A94140..02A941F8` | 188 | DIFF | 4/47 | +0x8 | `func_02A94140.c` | — |
 | `func_02A94374` | `02A94374..02A94400` | 144 | DIFF | 9/36 | +0xC | `func_02A94374.c` | — |
 | `func_02A94438` | `02A94438..02A94478` | 68 | DIFF | 11/17 | +0x4 | `func_02A94438.c` | — |
 | `func_02A9447C` | `02A9447C..02A944CC` | 84 | DIFF | 17/21 | +0x10 | `func_02A9447C.c` | — |
 | `func_02A944D0` | `02A944D0..02A94520` | 84 | DIFF | 17/21 | +0x1C | `func_02A944D0.c` | — |
-| `func_02A94934` | `02A94934..02A949D8` | 168 | COMPILE | — | — | `func_02A94934.c` | "build/batch/p28_02\func_02A94934.c", line 85: error #20: identifier "Expected" |
+| `func_02A94934` | `02A94934..02A949D8` | 168 | DIFF | 7/35 | +0x18 | `func_02A94934.c` | — |
 | `func_02A949DC` | `02A949DC..02A94AA8` | 208 | DIFF | 30/52 | +0xC | `func_02A949DC.c` | — |
-| `func_02A9535C` | `02A9535C..02A953FC` | 164 | COMPILE | — | — | `func_02A9535C.c` | "build/batch/p28_02\func_02A9535C.c", line 94: warning #1547-D: call is made |
+| `func_02A9535C` | `02A9535C..02A953FC` | 164 | DIFF | 21/41 | +0x10 | `func_02A9535C.c` | — |
 | `func_02A95598` | `02A95598..02A95608` | 116 | DIFF | 19/29 | +0x8 | `func_02A95598.c` | — |
 | `func_02A95B1C` | `02A95B1C..02A95B60` | 72 | DIFF | 12/18 | +0x14 | `func_02A95B1C.c` | — |
 | `func_02A95B64` | `02A95B64..02A95B94` | 52 | DIFF | 3/13 | +0x0 | `func_02A95B64.c` | — |
@@ -79,54 +79,54 @@ Every row below is a non-match and is **not** claimed in
 | `func_02A974E0` | `02A974E0..02A97538` | 92 | DIFF | 15/23 | +0x8 | `func_02A974E0.c` | — |
 | `func_02A9753C` | `02A9753C..02A975AC` | 116 | DIFF | 19/29 | +0x8 | `func_02A9753C.c` | — |
 | `func_02A97838` | `02A97838..02A978E0` | 172 | DIFF | 5/43 | +0x10 | `func_02A97838.c` | — |
-| `func_02A979F8` | `02A979F8..02A97AD0` | 220 | COMPILE | — | — | `func_02A979F8.c` | "build/batch/p28_02\func_02A979F8.c", line 95: warning #1547-D: call is made |
+| `func_02A979F8` | `02A979F8..02A97AD0` | 220 | COMPILE | — | — | `func_02A979F8.c` | "build/batch/fix2829\func_02A979F8.c", line 98: warning #513-D: \| a value of type "int" cannot be assigned to an entity of type "u8 **" |
 | `func_02A97ADC` | `02A97ADC..02A97B38` | 96 | DIFF | 4/23 | +0xC | `func_02A97ADC.c` | — |
 | `func_02A97B3C` | `02A97B3C..02A97BC8` | 144 | DIFF | 7/36 | +0x10 | `func_02A97B3C.c` | — |
 | `func_02A97BCC` | `02A97BCC..02A97C44` | 124 | DIFF | 20/31 | +0x10 | `func_02A97BCC.c` | — |
 | `func_02A97C9C` | `02A97C9C..02A97D00` | 104 | DIFF | 14/26 | +0x4 | `func_02A97C9C.c` | — |
 | `func_02A983D0` | `02A983D0..02A98480` | 180 | DIFF | 7/33 | +0x10 | `func_02A983D0.c` | — |
-| `func_02A984D4` | `02A984D4..02A98518` | 72 | COMPILE | — | — | `func_02A984D4.c` | "build/batch/p28_02\func_02A984D4.c", line 92: warning #1547-D: call is made |
+| `func_02A984D4` | `02A984D4..02A98518` | 72 | COMPILE | — | — | `func_02A984D4.c` | "build/batch/fix2829\func_02A984D4.c", line 95: error #75: \| operand of "*" must be a pointer |
 | `func_02A9851C` | `02A9851C..02A98574` | 92 | DIFF | 20/23 | +0x4 | `func_02A9851C.c` | — |
 | `func_02A98578` | `02A98578..02A98638` | 196 | DIFF | 15/49 | +0x14 | `func_02A98578.c` | — |
 | `func_02A98754` | `02A98754..02A987D4` | 132 | DIFF | 3/33 | +0x8 | `func_02A98754.c` | — |
 | `func_02A987D8` | `02A987D8..02A98894` | 192 | DIFF | 36/48 | +0x44 | `func_02A987D8.c` | — |
 | `func_02A98898` | `02A98898..02A988D0` | 60 | DIFF | 11/15 | +0x18 | `func_02A98898.c` | — |
 | `func_02A988D4` | `02A988D4..02A9890C` | 60 | DIFF | 4/15 | +0x4 | `func_02A988D4.c` | — |
-| `func_02A98910` | `02A98910..02A989A4` | 152 | COMPILE | — | — | `func_02A98910.c` | "build/batch/p28_02\func_02A98910.c", line 93: warning #1547-D: call is made |
-| `func_02A99754` | `02A99754..02A99798` | 72 | COMPILE | — | — | `func_02A99754.c` | "build/batch/p28_02\func_02A99754.c", line 92: warning #1547-D: call is made |
+| `func_02A98910` | `02A98910..02A989A4` | 152 | DIFF | 4/38 | +0x10 | `func_02A98910.c` | — |
+| `func_02A99754` | `02A99754..02A99798` | 72 | COMPILE | — | — | `func_02A99754.c` | "build/batch/fix2829\func_02A99754.c", line 95: error #75: \| operand of "*" must be a pointer |
 | `func_02A9979C` | `02A9979C..02A9980C` | 116 | DIFF | 7/29 | +0x0 | `func_02A9979C.c` | — |
 | `func_02A99810` | `02A99810..02A99880` | 116 | DIFF | 7/29 | +0x0 | `func_02A99810.c` | — |
 | `func_02A9A60C` | `02A9A60C..02A9A634` | 44 | DIFF | 9/11 | +0xC | `func_02A9A60C.c` | — |
 | `func_02A9A638` | `02A9A638..02A9A6CC` | 152 | DIFF | 19/38 | +0x8 | `func_02A9A638.c` | — |
 | `func_02A9A6D0` | `02A9A6D0..02A9A744` | 120 | DIFF | 26/30 | +0x8 | `func_02A9A6D0.c` | — |
-| `func_02A9A748` | `02A9A748..02A9A7DC` | 152 | COMPILE | — | — | `func_02A9A748.c` | "build/batch/p28_02\func_02A9A748.c", line 93: warning #1547-D: call is made |
+| `func_02A9A748` | `02A9A748..02A9A7DC` | 152 | DIFF | 4/38 | +0x10 | `func_02A9A748.c` | — |
 | `func_02A9A7E0` | `02A9A7E0..02A9A87C` | 160 | DIFF | 2/34 | +0x4 | `func_02A9A7E0.c` | — |
 | `func_02A9ACE0` | `02A9ACE0..02A9AD50` | 116 | DIFF | 5/29 | +0x10 | `func_02A9ACE0.c` | — |
 | `func_02A9BB28` | `02A9BB28..02A9BB90` | 108 | DIFF | 16/27 | +0x18 | `func_02A9BB28.c` | — |
 | `func_02A9BE28` | `02A9BE28..02A9BEE8` | 196 | DIFF | 32/49 | +0x30 | `func_02A9BE28.c` | — |
 | `func_02A9C090` | `02A9C090..02A9C0C0` | 52 | DIFF | 6/13 | +0x4 | `func_02A9C090.c` | — |
-| `func_02A9C0C4` | `02A9C0C4..02A9C138` | 120 | COMPILE | — | — | `func_02A9C0C4.c` | "build/batch/p28_02\func_02A9C0C4.c", line 93: error #75: operand of "*" must |
+| `func_02A9C0C4` | `02A9C0C4..02A9C138` | 120 | DIFF | 5/22 | +0x4 | `func_02A9C0C4.c` | — |
 | `func_02A9C184` | `02A9C184..02A9C1D8` | 88 | DIFF | 1/17 | +0x4 | `func_02A9C184.c` | — |
 | `func_02A9C1E8` | `02A9C1E8..02A9C284` | 160 | DIFF | 28/40 | +0x2C | `func_02A9C1E8.c` | — |
 | `func_02A9C288` | `02A9C288..02A9C2D0` | 76 | DIFF | 14/19 | +0x24 | `func_02A9C288.c` | — |
 | `func_02A9C2D4` | `02A9C2D4..02A9C3A4` | 212 | DIFF | 2/48 | +0x4 | `func_02A9C2D4.c` | — |
-| `func_02A9C3A8` | `02A9C3A8..02A9C444` | 160 | COMPILE | — | — | `func_02A9C3A8.c` | "build/batch/p28_02\func_02A9C3A8.c", line 94: error #75: operand of "*" must |
+| `func_02A9C3A8` | `02A9C3A8..02A9C444` | 160 | DIFF | 5/22 | +0x4 | `func_02A9C3A8.c` | — |
 | `func_02A9C448` | `02A9C448..02A9C518` | 212 | DIFF | 12/52 | +0x8 | `func_02A9C448.c` | — |
-| `func_02A9C670` | `02A9C670..02A9C734` | 200 | COMPILE | — | — | `func_02A9C670.c` | "build/batch/p28_02\func_02A9C670.c", line 95: warning #1547-D: call is made |
-| `func_02A9CC2C` | `02A9CC2C..02A9CCC0` | 152 | COMPILE | — | — | `func_02A9CC2C.c` | "build/batch/p28_02\func_02A9CC2C.c", line 93: warning #1547-D: call is made |
+| `func_02A9C670` | `02A9C670..02A9C734` | 200 | DIFF | 7/50 | +0x10 | `func_02A9C670.c` | — |
+| `func_02A9CC2C` | `02A9CC2C..02A9CCC0` | 152 | DIFF | 4/38 | +0x10 | `func_02A9CC2C.c` | — |
 | `func_02A9CCCC` | `02A9CCCC..02A9CD14` | 76 | DIFF | 14/19 | +0x8 | `func_02A9CCCC.c` | — |
-| `func_02A9CD18` | `02A9CD18..02A9CD98` | 132 | COMPILE | — | — | `func_02A9CD18.c` | "build/batch/p28_02\func_02A9CD18.c", line 95: error #75: operand of "*" must |
+| `func_02A9CD18` | `02A9CD18..02A9CD98` | 132 | DIFF | 1/21 | +0x4 | `func_02A9CD18.c` | — |
 | `func_02A9CD9C` | `02A9CD9C..02A9CE1C` | 132 | DIFF | 18/33 | +0x8 | `func_02A9CD9C.c` | — |
 | `func_02A9D3A4` | `02A9D3A4..02A9D414` | 116 | DIFF | 7/29 | +0x0 | `func_02A9D3A4.c` | — |
 | `func_02A9D418` | `02A9D418..02A9D488` | 116 | DIFF | 7/29 | +0x0 | `func_02A9D418.c` | — |
 | `func_02A9E078` | `02A9E078..02A9E148` | 212 | DIFF | 2/45 | +0x0 | `func_02A9E078.c` | — |
-| `func_02A9E1BC` | `02A9E1BC..02A9E274` | 188 | COMPILE | — | — | `func_02A9E1BC.c` | "build/batch/p28_02\func_02A9E1BC.c", line 107: warning #513-D: a value of |
+| `func_02A9E1BC` | `02A9E1BC..02A9E274` | 188 | DIFF | 0/47 | +0x0 | `func_02A9E1BC.c` | — |
 | `func_02A9E8E0` | `02A9E8E0..02A9E95C` | 128 | DIFF | 21/32 | +0x14 | `func_02A9E8E0.c` | — |
 | `func_02A9EF24` | `02A9EF24..02A9EFCC` | 172 | DIFF | 5/43 | +0x10 | `func_02A9EF24.c` | — |
-| `func_02A9EFD0` | `02A9EFD0..02A9F064` | 152 | COMPILE | — | — | `func_02A9EFD0.c` | "build/batch/p28_02\func_02A9EFD0.c", line 93: warning #1547-D: call is made |
+| `func_02A9EFD0` | `02A9EFD0..02A9F064` | 152 | COMPILE | — | — | `func_02A9EFD0.c` | "build/batch/fix2829\func_02A9EFD0.c", line 103: error #75: \| operand of "*" must be a pointer |
 | `func_02A9F068` | `02A9F068..02A9F074` | 16 | DIFF | 2/4 | +0x0 | `func_02A9F068.c` | — |
 | `func_02A9F078` | `02A9F078..02A9F0BC` | 72 | DIFF | 12/18 | +0x14 | `func_02A9F078.c` | — |
-| `func_02A9F580` | `02A9F580..02A9F61C` | 160 | COMPILE | — | — | `func_02A9F580.c` | "build/batch/p28_02\func_02A9F580.c", line 94: error #75: operand of "*" must |
+| `func_02A9F580` | `02A9F580..02A9F61C` | 160 | DIFF | 5/22 | +0x4 | `func_02A9F580.c` | — |
 | `func_02A9F7B8` | `02A9F7B8..02A9F850` | 156 | DIFF | 7/31 | +0x8 | `func_02A9F7B8.c` | — |
 | `func_02A9F854` | `02A9F854..02A9F908` | 184 | DIFF | 30/46 | +0x20 | `func_02A9F854.c` | — |
 | `func_02A9F90C` | `02A9F90C..02A9F990` | 136 | DIFF | 20/34 | +0x10 | `func_02A9F90C.c` | — |
@@ -139,15 +139,15 @@ Every row below is a non-match and is **not** claimed in
 | `func_02AA09C4` | `02AA09C4..02AA0AA0` | 224 | DIFF | 9/56 | +0x0 | `func_02AA09C4.c` | — |
 | `func_02AA0AA4` | `02AA0AA4..02AA0AF0` | 80 | DIFF | 12/20 | +0x14 | `func_02AA0AA4.c` | — |
 | `func_02AA0FF4` | `02AA0FF4..02AA1084` | 148 | DIFF | 9/36 | +0xC | `func_02AA0FF4.c` | — |
-| `func_02AA1088` | `02AA1088..02AA10F0` | 108 | COMPILE | — | — | `func_02AA1088.c` | "build/batch/p28_02\func_02AA1088.c", line 95: error #165: too few arguments |
+| `func_02AA1088` | `02AA1088..02AA10F0` | 108 | DIFF | 20/27 | +0xC | `func_02AA1088.c` | — |
 | `func_02AA110C` | `02AA110C..02AA119C` | 148 | DIFF | 18/37 | +0x8 | `func_02AA110C.c` | — |
 | `func_02AA11A0` | `02AA11A0..02AA11E0` | 68 | DIFF | 15/17 | +0x20 | `func_02AA11A0.c` | — |
 | `func_02AA11E4` | `02AA11E4..02AA1260` | 128 | DIFF | 13/32 | +0x14 | `func_02AA11E4.c` | — |
-| `func_02AA1264` | `02AA1264..02AA134C` | 236 | COMPILE | — | — | `func_02AA1264.c` | "build/batch/p28_02\func_02AA1264.c", line 85: error #20: identifier "Expected" |
-| `func_02AA1350` | `02AA1350..02AA13D0` | 132 | COMPILE | — | — | `func_02AA1350.c` | "build/batch/p28_02\func_02AA1350.c", line 103: error #75: operand of "*" must |
+| `func_02AA1264` | `02AA1264..02AA134C` | 236 | DIFF | 18/52 | +0x18 | `func_02AA1264.c` | — |
+| `func_02AA1350` | `02AA1350..02AA13D0` | 132 | COMPILE | — | — | `func_02AA1350.c` | "build/batch/fix2829\func_02AA1350.c", line 103: warning #42-D: \| operand types are incompatible ("u8 *" and "u32") |
 | `func_02AA18CC` | `02AA18CC..02AA1948` | 128 | DIFF | 28/32 | +0x20 | `func_02AA18CC.c` | — |
-| `func_02AA1EE0` | `02AA1EE0..02AA1FCC` | 240 | COMPILE | — | — | `func_02AA1EE0.c` | "build/batch/p28_02\func_02AA1EE0.c", line 104: warning #1547-D: call is made |
-| `func_02AA2000` | `02AA2000..02AA2044` | 72 | COMPILE | — | — | `func_02AA2000.c` | "build/batch/p28_02\func_02AA2000.c", line 92: warning #1547-D: call is made |
+| `func_02AA1EE0` | `02AA1EE0..02AA1FCC` | 240 | DIFF | 33/60 | +0xC | `func_02AA1EE0.c` | — |
+| `func_02AA2000` | `02AA2000..02AA2044` | 72 | COMPILE | — | — | `func_02AA2000.c` | "build/batch/fix2829\func_02AA2000.c", line 95: error #75: \| operand of "*" must be a pointer |
 | `func_02AA2048` | `02AA2048..02AA2088` | 68 | DIFF | 13/17 | +0x8 | `func_02AA2048.c` | — |
 | `func_02AA208C` | `02AA208C..02AA2158` | 208 | DIFF | 12/50 | +0x0 | `func_02AA208C.c` | — |
 | `func_02AA215C` | `02AA215C..02AA21C0` | 104 | DIFF | 17/26 | +0x8 | `func_02AA215C.c` | — |

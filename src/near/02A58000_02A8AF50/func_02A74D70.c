@@ -2,6 +2,7 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -33,7 +34,7 @@ typedef s64 M2C_UNK64;
 #define M2C_UNALIGNED32(expr) (expr)
 
 /* Unhandled instructions */
-#define M2C_ERROR(desc) (0)
+#define M2C_ERROR(desc) ((u8 *)0)
 #define M2C_TRAP_IF(cond) (0)
 #define M2C_BREAK() (0)
 #define M2C_SYNC() (0)
@@ -82,7 +83,7 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-void func_02A74D70(void *arg0, s32 arg1, s32 arg2) {
+void func_02A74D70(u8 *arg0, s32 arg1, s32 arg2) {
     s32 temp_r10;
     s32 temp_r11;
     s32 temp_r12;
@@ -97,13 +98,13 @@ void func_02A74D70(void *arg0, s32 arg1, s32 arg2) {
     u16 temp_r12_5;
     u16 temp_r9;
     u16 temp_r9_2;
-    void *temp_r12_4;
-    void *temp_r12_6;
+    u8 *temp_r12_4;
+    u8 *temp_r12_6;
 
     var_r5 = arg2;
     temp_r11 = arg0 + 0xB5C;
     var_r7 = var_r5 * 2;
-    temp_r6 = *((var_r5 * 4) + temp_r11);
+    temp_r6 = *(u8 *)((var_r5 * 4) + temp_r11);
 loop_9:
     temp_r12 = M2C_FIELD(arg0, s32 *, 0x1450);
     if (var_r7 >= temp_r12) {
@@ -112,24 +113,24 @@ loop_9:
         }
     } else {
         temp_r12_2 = var_r7 * 4;
-        temp_r8 = *(temp_r12_2 + temp_r11);
+        temp_r8 = *(u8 *)(temp_r12_2 + temp_r11);
         temp_r10 = M2C_FIELD((temp_r12_2 + temp_r11), s32 *, 4);
-        temp_r9 = *((temp_r8 * 4) + arg1);
-        temp_r12_3 = *((temp_r10 * 4) + arg1);
-        if ((temp_r9 > temp_r12_3) || ((temp_r9 >= temp_r12_3) && (temp_r12_4 = arg0 + 0x1458, (((u8) *(temp_r12_4 + temp_r10) > (u8) *(temp_r12_4 + temp_r8)) == 0)))) {
+        temp_r9 = *(u8 *)((temp_r8 * 4) + arg1);
+        temp_r12_3 = *(u8 *)((temp_r10 * 4) + arg1);
+        if ((temp_r9 > temp_r12_3) || ((temp_r9 >= temp_r12_3) && (temp_r12_4 = arg0 + 0x1458, (((u8) *(u8 *)(temp_r12_4 + temp_r10) > (u8) *(u8 *)(temp_r12_4 + temp_r8)) == 0)))) {
             var_r7 += 1;
         }
 block_5:
-        temp_r8_2 = *(temp_r11 + (var_r7 * 4));
-        temp_r12_5 = *((temp_r6 * 4) + arg1);
-        temp_r9_2 = *((temp_r8_2 * 4) + arg1);
-        if ((temp_r9_2 <= temp_r12_5) && ((temp_r9_2 < temp_r12_5) || (temp_r12_6 = arg0 + 0x1458, (((u8) *(temp_r12_6 + temp_r6) > (u8) *(temp_r12_6 + temp_r8_2)) != 0)))) {
+        temp_r8_2 = *(u8 *)(temp_r11 + (var_r7 * 4));
+        temp_r12_5 = *(u8 *)((temp_r6 * 4) + arg1);
+        temp_r9_2 = *(u8 *)((temp_r8_2 * 4) + arg1);
+        if ((temp_r9_2 <= temp_r12_5) && ((temp_r9_2 < temp_r12_5) || (temp_r12_6 = arg0 + 0x1458, (((u8) *(u8 *)(temp_r12_6 + temp_r6) > (u8) *(u8 *)(temp_r12_6 + temp_r8_2)) != 0)))) {
             temp_r12_7 = var_r5 * 4;
             var_r5 = var_r7;
             var_r7 *= 2;
-            *(temp_r12_7 + temp_r11) = temp_r8_2;
+            *(u8 *)(temp_r12_7 + temp_r11) = temp_r8_2;
             goto loop_9;
         }
     }
-    *((var_r5 * 4) + temp_r11) = temp_r6;
+    *(u8 *)((var_r5 * 4) + temp_r11) = temp_r6;
 }
