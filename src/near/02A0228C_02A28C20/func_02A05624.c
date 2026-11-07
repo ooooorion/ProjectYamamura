@@ -82,7 +82,6 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-s32 func_02A05584();                                /* extern */
 
 s32 func_02A05624(s32 arg0) {
     s32 temp_r3;
@@ -91,5 +90,5 @@ s32 func_02A05624(s32 arg0) {
     if ((temp_r3 != 1) && (temp_r3 != 6)) {
         return 0;
     }
-    return *M2C_ERROR(/* Read from unset register $r12 */);
+    return *(M2C_UNK *)M2C_ERROR(/* Read from unset register $r12 */);
 }

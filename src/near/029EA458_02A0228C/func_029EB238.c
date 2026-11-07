@@ -82,13 +82,11 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-void *func_029BDBBC(M2C_UNK);                       /* extern */
-s32 func_029BEF24();                                /* extern */
 
-void *func_029EB238(void *arg0, s32 arg1) {
+u8 *func_029EB238(u8 *arg0, s32 arg1) {
     s32 temp_r3;
-    void *temp_r12;
-    void *var_r31;
+    u8 *temp_r12;
+    u8 *var_r31;
 
     var_r31 = arg0;
     if ((var_r31 != NULL) || (var_r31 = func_029BDBBC(8), ((var_r31 == NULL) == 0))) {
@@ -99,7 +97,7 @@ void *func_029EB238(void *arg0, s32 arg1) {
         if (temp_r3 == 0) {
             M2C_FIELD(temp_r12, s32 *, 0x10) = (s32) M2C_FIELD(var_r31, s32 *, 0);
         } else {
-            *(M2C_FIELD(temp_r12, s32 *, 8) + (temp_r3 << 8)) = M2C_FIELD(var_r31, s32 *, 0);
+            *(M2C_UNK *)(M2C_FIELD(temp_r12, s32 *, 8) + (temp_r3 << 8)) = M2C_FIELD(var_r31, s32 *, 0);
         }
     }
     return var_r31;

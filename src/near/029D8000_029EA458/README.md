@@ -7,6 +7,7 @@ Every row below is a non-match and is **not** claimed in
 - Candidates archived: **147**
 - Source files copied: **147**
 - Missing generated sources: **0**
+- Compile failures remaining: **0**
 
 | Function | Range | Bytes | Status | Words | First diff | File | Detail |
 |---|---|---:|---|---:|---|---|---|
@@ -26,10 +27,10 @@ Every row below is a non-match and is **not** claimed in
 | `func_029D9704` | `029D9704..029D9770` | 112 | DIFF | 5/25 | +0xC | `func_029D9704.c` | — |
 | `func_029D9A80` | `029D9A80..029D9B5C` | 224 | DIFF | 23/56 | +0x10 | `func_029D9A80.c` | — |
 | `func_029D9C70` | `029D9C70..029D9CD8` | 108 | DIFF | 1/26 | +0x4 | `func_029D9C70.c` | — |
-| `func_029DA268` | `029DA268..029DA334` | 208 | COMPILE | — | — | `func_029DA268.c` | line 93: warning #42-D:  |
+| `func_029DA268` | `029DA268..029DA334` | 208 | DIFF | 1/43 | +0x4 | `func_029DA268.c` | size 208 vs 172 |
 | `func_029DA338` | `029DA338..029DA3D0` | 156 | DIFF | 5/37 | +0x0 | `func_029DA338.c` | — |
 | `func_029DACB0` | `029DACB0..029DAD30` | 132 | DIFF | 18/33 | +0x8 | `func_029DACB0.c` | — |
-| `func_029DAD34` | `029DAD34..029DADAC` | 124 | COMPILE | — | — | `func_029DAD34.c` | line 94: error #165:  |
+| `func_029DAD34` | `029DAD34..029DADAC` | 124 | DIFF | 1/31 | +0x4 | `func_029DAD34.c` | size 124 vs 136 |
 | `func_029DB46C` | `029DB46C..029DB54C` | 228 | DIFF | 1/54 | +0x0 | `func_029DB46C.c` | — |
 | `func_029DB550` | `029DB550..029DB634` | 232 | DIFF | 2/55 | +0x0 | `func_029DB550.c` | — |
 | `func_029DBB14` | `029DBB14..029DBB94` | 132 | DIFF | 4/32 | +0xC | `func_029DBB14.c` | — |
@@ -37,23 +38,23 @@ Every row below is a non-match and is **not** claimed in
 | `func_029DC46C` | `029DC46C..029DC4E8` | 128 | DIFF | 21/32 | +0x14 | `func_029DC46C.c` | — |
 | `func_029DC4EC` | `029DC4EC..029DC530` | 72 | DIFF | 12/18 | +0x14 | `func_029DC4EC.c` | — |
 | `func_029DC534` | `029DC534..029DC5B0` | 128 | DIFF | 21/32 | +0x14 | `func_029DC534.c` | — |
-| `func_029DC5B4` | `029DC5B4..029DC658` | 168 | COMPILE | — | — | `func_029DC5B4.c` | line 99: error #32:  |
+| `func_029DC5B4` | `029DC5B4..029DC658` | 168 | DIFF | 5/42 | +0x10 | `func_029DC5B4.c` | size 168 vs 192 |
 | `func_029DC65C` | `029DC65C..029DC6C4` | 108 | DIFF | 26/27 | +0x40 | `func_029DC65C.c` | — |
 | `func_029DC6C8` | `029DC6C8..029DC748` | 132 | DIFF | 18/33 | +0x8 | `func_029DC6C8.c` | — |
 | `func_029DC74C` | `029DC74C..029DC7CC` | 132 | DIFF | 4/32 | +0xC | `func_029DC74C.c` | — |
 | `func_029DC7D0` | `029DC7D0..029DC840` | 116 | DIFF | 7/29 | +0x0 | `func_029DC7D0.c` | — |
 | `func_029DC844` | `029DC844..029DC8B4` | 116 | DIFF | 7/29 | +0x0 | `func_029DC844.c` | — |
 | `func_029DD530` | `029DD530..029DD61C` | 240 | DIFF | 0/58 | +0x0 | `func_029DD530.c` | — |
-| `func_029DE4CC` | `029DE4CC..029DE510` | 72 | COMPILE | — | — | `func_029DE4CC.c` | line 90: warning #1547-D:  |
+| `func_029DE4CC` | `029DE4CC..029DE510` | 72 | DIFF | 16/18 | +0x20 | `func_029DE4CC.c` | — |
 | `func_029DE514` | `029DE514..029DE5C4` | 180 | DIFF | 28/45 | +0x20 | `func_029DE514.c` | — |
-| `func_029DE8AC` | `029DE8AC..029DE954` | 172 | COMPILE | — | — | `func_029DE8AC.c` | line 87: error #75:  |
+| `func_029DE8AC` | `029DE8AC..029DE954` | 172 | DIFF | 0/10 | +0x0 | `func_029DE8AC.c` | size 172 vs 40 |
 | `func_029DE9AC` | `029DE9AC..029DEA00` | 88 | DIFF | 12/22 | +0x8 | `func_029DE9AC.c` | — |
 | `func_029DEAAC` | `029DEAAC..029DEB08` | 96 | DIFF | 22/24 | +0x34 | `func_029DEAAC.c` | — |
 | `func_029DEB0C` | `029DEB0C..029DEB7C` | 116 | DIFF | 13/29 | +0x14 | `func_029DEB0C.c` | — |
 | `func_029DEBC8` | `029DEBC8..029DEC2C` | 104 | DIFF | 17/26 | +0x8 | `func_029DEBC8.c` | — |
 | `func_029DF480` | `029DF480..029DF4BC` | 64 | DIFF | 14/16 | +0x14 | `func_029DF480.c` | — |
 | `func_029DF4C0` | `029DF4C0..029DF5A0` | 228 | DIFF | 19/21 | +0x18 | `func_029DF4C0.c` | — |
-| `func_029DF608` | `029DF608..029DF6C4` | 192 | COMPILE | — | — | `func_029DF608.c` | line 100: error #165:  |
+| `func_029DF608` | `029DF608..029DF6C4` | 192 | DIFF | 27/48 | +0x4 | `func_029DF608.c` | — |
 | `func_029DF6C8` | `029DF6C8..029DF728` | 100 | DIFF | 24/25 | +0x10 | `func_029DF6C8.c` | — |
 | `func_029DF930` | `029DF930..029DF9E4` | 184 | DIFF | 3/28 | +0x4 | `func_029DF930.c` | — |
 | `func_029DF9E8` | `029DF9E8..029DFA68` | 132 | DIFF | 9/33 | +0x4 | `func_029DF9E8.c` | — |
@@ -73,11 +74,11 @@ Every row below is a non-match and is **not** claimed in
 | `func_029E0090` | `029E0090..029E00A4` | 24 | DIFF | 1/3 | +0x4 | `func_029E0090.c` | — |
 | `func_029E00A8` | `029E00A8..029E00BC` | 24 | DIFF | 1/3 | +0x4 | `func_029E00A8.c` | — |
 | `func_029E00C0` | `029E00C0..029E017C` | 192 | DIFF | 2/42 | +0x8 | `func_029E00C0.c` | — |
-| `func_029E0180` | `029E0180..029E01EC` | 112 | COMPILE | — | — | `func_029E0180.c` | line 93: error #165:  |
-| `func_029E01F0` | `029E01F0..029E02B8` | 204 | COMPILE | — | — | `func_029E01F0.c` | line 92: warning #1547-D:  |
+| `func_029E0180` | `029E0180..029E01EC` | 112 | DIFF | 1/23 | +0x4 | `func_029E0180.c` | size 112 vs 92 |
+| `func_029E01F0` | `029E01F0..029E02B8` | 204 | DIFF | 4/23 | +0x4 | `func_029E01F0.c` | size 204 vs 92 |
 | `func_029E02BC` | `029E02BC..029E02E8` | 48 | DIFF | 0/1 | +0x0 | `func_029E02BC.c` | — |
 | `func_029E05E0` | `029E05E0..029E0600` | 36 | DIFF | 2/7 | +0x8 | `func_029E05E0.c` | — |
-| `func_029E0604` | `029E0604..029E0658` | 88 | COMPILE | — | — | `func_029E0604.c` | line 90: warning #42-D:  |
+| `func_029E0604` | `029E0604..029E0658` | 88 | DIFF | 0/21 | +0x0 | `func_029E0604.c` | size 88 vs 84 |
 | `func_029E07AC` | `029E07AC..029E0824` | 124 | DIFF | 15/31 | +0x14 | `func_029E07AC.c` | — |
 | `func_029E099C` | `029E099C..029E0A74` | 220 | DIFF | 19/42 | +0x2C | `func_029E099C.c` | — |
 | `func_029E0A78` | `029E0A78..029E0B04` | 144 | DIFF | 22/36 | +0x1C | `func_029E0A78.c` | — |
@@ -85,10 +86,10 @@ Every row below is a non-match and is **not** claimed in
 | `func_029E0B7C` | `029E0B7C..029E0BEC` | 116 | DIFF | 7/29 | +0x0 | `func_029E0B7C.c` | — |
 | `func_029E0D54` | `029E0D54..029E0DC4` | 116 | DIFF | 0/29 | +0x0 | `func_029E0D54.c` | — |
 | `func_029E0EAC` | `029E0EAC..029E0F4C` | 164 | DIFF | 27/41 | +0x4 | `func_029E0EAC.c` | — |
-| `func_029E1738` | `029E1738..029E17F0` | 188 | COMPILE | — | — | `func_029E1738.c` | line 99: error #167:  |
-| `func_029E1874` | `029E1874..029E18A0` | 48 | COMPILE | — | — | `func_029E1874.c` | line 86: warning #42-D:  |
-| `func_029E18A4` | `029E18A4..029E1900` | 96 | COMPILE | — | — | `func_029E18A4.c` | line 94: error #75:  |
-| `func_029E1904` | `029E1904..029E1974` | 116 | COMPILE | — | — | `func_029E1904.c` | line 96: error #75:  |
+| `func_029E1738` | `029E1738..029E17F0` | 188 | DIFF | 1/40 | +0x4 | `func_029E1738.c` | size 188 vs 160 |
+| `func_029E1874` | `029E1874..029E18A0` | 48 | DIFF | 1/9 | +0x0 | `func_029E1874.c` | size 48 vs 36 |
+| `func_029E18A4` | `029E18A4..029E1900` | 96 | DIFF | 1/13 | +0x4 | `func_029E18A4.c` | size 96 vs 52 |
+| `func_029E1904` | `029E1904..029E1974` | 116 | DIFF | 3/28 | +0x8 | `func_029E1904.c` | size 116 vs 112 |
 | `func_029E1990` | `029E1990..029E1A3C` | 176 | DIFF | 4/44 | +0x8 | `func_029E1990.c` | — |
 | `func_029E1B40` | `029E1B40..029E1C2C` | 240 | DIFF | 10/59 | +0x8 | `func_029E1B40.c` | — |
 | `func_029E1C30` | `029E1C30..029E1CA0` | 116 | DIFF | 0/29 | +0x0 | `func_029E1C30.c` | — |
@@ -96,7 +97,7 @@ Every row below is a non-match and is **not** claimed in
 | `func_029E21EC` | `029E21EC..029E2284` | 156 | DIFF | 3/36 | +0x4 | `func_029E21EC.c` | — |
 | `func_029E2288` | `029E2288..029E2370` | 236 | DIFF | 3/51 | +0x4 | `func_029E2288.c` | — |
 | `func_029E2374` | `029E2374..029E23D0` | 96 | DIFF | 22/24 | +0x24 | `func_029E2374.c` | — |
-| `func_029E2594` | `029E2594..029E2664` | 212 | COMPILE | — | — | `func_029E2594.c` | line 99: warning #1547-D:  |
+| `func_029E2594` | `029E2594..029E2664` | 212 | DIFF | 3/53 | +0x4 | `func_029E2594.c` | size 212 vs 224 |
 | `func_029E2774` | `029E2774..029E281C` | 172 | DIFF | 7/43 | +0x1C | `func_029E2774.c` | — |
 | `func_029E2DFC` | `029E2DFC..029E2E6C` | 116 | DIFF | 7/29 | +0x0 | `func_029E2DFC.c` | — |
 | `func_029E2E70` | `029E2E70..029E2EE0` | 116 | DIFF | 7/29 | +0x0 | `func_029E2E70.c` | — |
@@ -119,13 +120,13 @@ Every row below is a non-match and is **not** claimed in
 | `func_029E5C50` | `029E5C50..029E5D04` | 184 | DIFF | 29/46 | +0x8 | `func_029E5C50.c` | — |
 | `func_029E5D08` | `029E5D08..029E5DBC` | 184 | DIFF | 16/24 | +0x1C | `func_029E5D08.c` | — |
 | `func_029E5E10` | `029E5E10..029E5E78` | 108 | DIFF | 13/27 | +0x24 | `func_029E5E10.c` | — |
-| `func_029E6114` | `029E6114..029E6130` | 32 | COMPILE | — | — | `func_029E6114.c` | line 93: error #75:  |
+| `func_029E6114` | `029E6114..029E6130` | 32 | DIFF | 1/8 | +0x4 | `func_029E6114.c` | size 32 vs 36 |
 | `func_029E6134` | `029E6134..029E6184` | 84 | DIFF | 16/21 | +0x24 | `func_029E6134.c` | — |
 | `func_029E6188` | `029E6188..029E6228` | 164 | DIFF | 16/16 | — | `func_029E6188.c` | — |
 | `func_029E647C` | `029E647C..029E64B8` | 64 | DIFF | 11/16 | +0x8 | `func_029E647C.c` | — |
-| `func_029E6E88` | `029E6E88..029E6EDC` | 88 | COMPILE | — | — | `func_029E6E88.c` | line 90: warning #42-D:  |
+| `func_029E6E88` | `029E6E88..029E6EDC` | 88 | DIFF | 0/21 | +0x0 | `func_029E6E88.c` | size 88 vs 84 |
 | `func_029E6EE0` | `029E6EE0..029E6F30` | 84 | DIFF | 15/21 | +0x24 | `func_029E6EE0.c` | — |
-| `func_029E6F34` | `029E6F34..029E6F88` | 88 | COMPILE | — | — | `func_029E6F34.c` | line 90: error #75:  |
+| `func_029E6F34` | `029E6F34..029E6F88` | 88 | DIFF | 15/22 | +0xC | `func_029E6F34.c` | — |
 | `func_029E6F8C` | `029E6F8C..029E7034` | 172 | DIFF | 1/35 | +0x4 | `func_029E6F8C.c` | — |
 | `func_029E715C` | `029E715C..029E721C` | 196 | DIFF | 4/49 | +0x0 | `func_029E715C.c` | — |
 | `func_029E7220` | `029E7220..029E72F4` | 216 | DIFF | 1/47 | +0x4 | `func_029E7220.c` | — |
@@ -138,10 +139,10 @@ Every row below is a non-match and is **not** claimed in
 | `func_029E8304` | `029E8304..029E83A8` | 168 | DIFF | 40/42 | +0x50 | `func_029E8304.c` | — |
 | `func_029E8694` | `029E8694..029E86BC` | 44 | DIFF | 2/10 | +0x4 | `func_029E8694.c` | — |
 | `func_029E86C0` | `029E86C0..029E8708` | 76 | DIFF | 1/18 | +0x4 | `func_029E86C0.c` | — |
-| `func_029E8FB4` | `029E8FB4..029E8FF8` | 72 | COMPILE | — | — | `func_029E8FB4.c` | line 89: error #165:  |
+| `func_029E8FB4` | `029E8FB4..029E8FF8` | 72 | DIFF | 11/18 | +0x10 | `func_029E8FB4.c` | — |
 | `func_029E9684` | `029E9684..029E9714` | 148 | DIFF | 24/37 | +0x30 | `func_029E9684.c` | — |
 | `func_029E9778` | `029E9778..029E97C0` | 76 | DIFF | 12/19 | +0x10 | `func_029E9778.c` | — |
-| `func_029E97C4` | `029E97C4..029E980C` | 76 | COMPILE | — | — | `func_029E97C4.c` | line 91: error #75:  |
+| `func_029E97C4` | `029E97C4..029E980C` | 76 | DIFF | 0/4 | +0x0 | `func_029E97C4.c` | size 76 vs 16 |
 | `func_029E9810` | `029E9810..029E9828` | 28 | DIFF | 0/7 | +0x0 | `func_029E9810.c` | — |
 | `func_029E982C` | `029E982C..029E98B4` | 140 | DIFF | 11/34 | +0x28 | `func_029E982C.c` | — |
 | `func_029E9E0C` | `029E9E0C..029E9ED4` | 204 | DIFF | 8/51 | +0x10 | `func_029E9E0C.c` | — |
@@ -149,7 +150,7 @@ Every row below is a non-match and is **not** claimed in
 | `func_029E9F48` | `029E9F48..029E9FC0` | 124 | DIFF | 23/31 | +0x8 | `func_029E9F48.c` | — |
 | `func_029E9FC4` | `029E9FC4..029EA0A0` | 224 | DIFF | 49/56 | +0x80 | `func_029E9FC4.c` | — |
 | `func_029EA0A4` | `029EA0A4..029EA0C4` | 36 | DIFF | 4/9 | +0x4 | `func_029EA0A4.c` | — |
-| `func_029EA0C8` | `029EA0C8..029EA184` | 192 | COMPILE | — | — | `func_029EA0C8.c` | line 105: warning #513-D:  |
+| `func_029EA0C8` | `029EA0C8..029EA184` | 192 | DIFF | 1/47 | +0x4 | `func_029EA0C8.c` | size 192 vs 188 |
 | `func_029EA188` | `029EA188..029EA1D4` | 80 | DIFF | 16/20 | +0x24 | `func_029EA188.c` | — |
 | `func_029EA1D8` | `029EA1D8..029EA218` | 68 | DIFF | 4/16 | +0x8 | `func_029EA1D8.c` | — |
 | `func_029EA21C` | `029EA21C..029EA228` | 16 | DIFF | 2/4 | +0x4 | `func_029EA21C.c` | — |

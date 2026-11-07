@@ -82,9 +82,8 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-u32 func_029EC8F0(s32);                             /* extern */
 
-s32 func_02A1C6B4(void *arg0, u32 arg1) {
+s32 func_02A1C6B4(u8 *arg0, u32 arg1) {
     M2C_UNK **temp_r12;
     M2C_UNK *var_r30;
 
@@ -93,7 +92,7 @@ s32 func_02A1C6B4(void *arg0, u32 arg1) {
     if (var_r30 != temp_r12) {
 loop_1:
         if (func_029EC8F0(var_r30 + 0xC) == arg1) {
-            return var_r30 + 8;
+            return (s32)(var_r30 + 8);
         }
         var_r30 = *var_r30;
         if (var_r30 == (M2C_UNK **) M2C_FIELD(arg0, M2C_UNK ***, 4)) {

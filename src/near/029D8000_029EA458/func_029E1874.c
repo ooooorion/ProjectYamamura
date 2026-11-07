@@ -82,9 +82,9 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-u8 func_029E1874(void *arg0) {
+u8 func_029E1874(u8 *arg0) {
     if ((arg0 >= 0x41U) && (arg0 <= 0x46U)) {
-        return *(0x1014150F + (s32) arg0);
+        return *(M2C_UNK *)(0x1014150F + (s32) arg0);
     }
     return (u8) (arg0 - 0x30);
 }

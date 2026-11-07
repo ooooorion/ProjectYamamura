@@ -5,10 +5,12 @@ These candidates were decompiled but are **not byte-identical** to
 match. They are kept as reference: a later source-shape change may turn one
 into a match. `tools/match.py` ignores this directory.
 
-`func_XXXXXXXX.c` files are raw m2c output, including its macro preamble; the
-older `fn_*.c` files are hand-written candidates. Some do not compile; that is
-part of the record. Regenerate a candidate or fix its source shape rather than
-treating an archived file as verified code.
+Most `func_XXXXXXXX.c` files are raw m2c output, including its macro preamble;
+the older `fn_*.c` files are hand-written candidates. The 120 pass-27
+candidates that formerly failed GHS now compile after a compile-only repair,
+but all 120 remain non-matches. Some other archives still do not compile; that
+is part of the record. Regenerate a candidate or fix its source shape rather
+than treating an archived file as verified code.
 
 The 144 open `0x0250` candidates are archived in
 [`0250/`](0250/README.md); that directory has its own manifest.
@@ -64,10 +66,15 @@ The twenty-seventh pass added four contiguous shard archives covering the next
 | Band | Candidates |
 |---|---:|
 | [`029D8000_029EA458`](029D8000_029EA458/) | 147 |
-| [`029EA458_02A0228C`](029EA458_02A0228C/) | 159 |
+| [`029EA458_02A0228C`](029EA458_02A0228C/) | 158 |
 | [`02A0228C_02A28C20`](02A0228C_02A28C20/) | 171 |
-| [`02A28C20_02A58000`](02A28C20_02A58000/) | 165 |
-| **Total** | **642** |
+| [`02A28C20_02A58000`](02A28C20_02A58000/) | 164 |
+| **Total** | **640** |
+
+The 120 candidate sources that previously failed to compile in these four
+archives were repaired for GHS and rechecked. All 640 remaining pass-27
+candidates now compile; 117 remain `DIFF`, one is relocation-`BLOCKED`, and two
+(`func_029F38E0`, `func_02A2EEE4`) were promoted to `src/functions.tsv`.
 
 Those passes added 173 and 138 candidates respectively. Fourteen close
 call-bearing candidates were repaired and promoted to `src/functions.tsv`, and
@@ -75,7 +82,7 @@ the twenty-fourth pass added 179 more; the twenty-fifth pass added 813 and the
 twenty-sixth added 505. The pass-26 recovery then promoted eighteen candidates;
 the twenty-seventh pass added 803 candidates (26 exact); replaying its 724
 m2c generation failures recovered 135 more exacts, taking the archive to
-2,647 archived candidates.
+2,645 archived candidates.
 
 | File | Range | Status | Words | First diff |
 |---|---|---|---|---|

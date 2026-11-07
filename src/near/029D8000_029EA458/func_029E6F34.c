@@ -82,12 +82,10 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-M2C_UNK func_029E6EE0(M2C_UNK);                     /* extern */
-M2C_UNK func_02BCF688(M2C_UNK);                     /* extern */
 
 s32 func_029E6F34(void) {
     if ((s32) *(s32 *)0x1031B9AC == 0) {
-        *(0x10320000 - 0x4654) = 1;
+        *(M2C_UNK *)(0x10320000 - 0x4654) = 1;
         func_029E6EE0(0x1031B4D8);
         func_02BCF688(0x101A3FC4);
     }

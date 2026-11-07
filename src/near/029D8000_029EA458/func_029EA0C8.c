@@ -82,7 +82,7 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-u8 func_029EA0C8(void *arg0, u32 arg1, u8 arg2) {
+u8 func_029EA0C8(u8 *arg0, u32 arg1, u8 arg2) {
     u32 sp8;
     u32 temp_r11;
     u32 temp_r11_2;
@@ -94,8 +94,8 @@ u8 func_029EA0C8(void *arg0, u32 arg1, u8 arg2) {
     u8 temp_r8;
     u8 temp_r8_2;
     u8 var_r5;
-    void *var_r9;
-    void *var_r9_2;
+    u8 *var_r9;
+    u8 *var_r9_2;
 
     var_r5 = arg2;
     var_r7 = 0U;

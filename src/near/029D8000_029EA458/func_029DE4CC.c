@@ -82,13 +82,12 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-M2C_UNK func_029BDF00();                            /* extern */
 
-void func_029DE4CC(void *arg0) {
+void func_029DE4CC(u8 *arg0) {
     s32 temp_r12;
 
     func_029BDF00();
-    temp_r12 = arg0 + 0xC;
+    temp_r12 = (s32)(arg0 + 0xC);
     M2C_FIELD(arg0, s32 *, 0) = temp_r12;
     M2C_FIELD(arg0, s32 *, 8) = temp_r12;
     M2C_FIELD(arg0, s16 *, 0xC) = 0;

@@ -83,27 +83,27 @@ typedef s64 M2C_UNK64;
 
 
 void func_029EAFF8(s32 arg1) {
-    s32 (*temp_r7)(void *, void *, M2C_UNK);
+    s32 (*temp_r7)(u8 *, u8 *, M2C_UNK);
     s32 temp_cr0_eq;
-    void *temp_r31;
-    void *temp_r3;
-    void *temp_r6;
-    void *var_r8;
+    u8 *temp_r31;
+    u8 *temp_r3;
+    u8 *temp_r6;
+    u8 *var_r8;
 
-    temp_r31 = *(void **)0x101A41A4;
+    temp_r31 = *(u8 **)0x101A41A4;
     if (temp_r31 == NULL) {
-        M2C_FIELD((void **)0x101A0000, s32 *, 0x41A4) = arg1;
+        M2C_FIELD((u8 **)0x101A0000, s32 *, 0x41A4) = arg1;
         *(s32 *)0x101A41A8 = 1;
         return;
     }
-    temp_r6 = M2C_FIELD(temp_r31, void **, 4);
-    temp_r7 = M2C_FIELD(temp_r6, s32 (**)(void *, void *, M2C_UNK), 0x2C);
-    var_r8 = M2C_FIELD(temp_r31, void **, 4);
-    if (temp_r7(temp_r31, temp_r6, temp_r7) != 0) {
+    temp_r6 = M2C_FIELD(temp_r31, u8 **, 4);
+    temp_r7 = M2C_FIELD(temp_r6, s32 (**)(u8 *, u8 *, M2C_UNK), 0x2C);
+    var_r8 = M2C_FIELD(temp_r31, u8 **, 4);
+    if (temp_r7(temp_r31, temp_r6, (M2C_UNK)temp_r7) != 0) {
         do {
-            temp_r3 = M2C_FIELD(var_r8, void *(**)(), 0x2C)();
-            temp_cr0_eq = M2C_FIELD(M2C_FIELD(temp_r3, void **, 4), s32 (**)(), 0x2C)() == 0;
-            var_r8 = M2C_FIELD(temp_r3, void **, 4);
+            temp_r3 = M2C_FIELD(var_r8, u8 *(**)(), 0x2C)();
+            temp_cr0_eq = M2C_FIELD(M2C_FIELD(temp_r3, u8 **, 4), s32 (**)(), 0x2C)() == 0;
+            var_r8 = M2C_FIELD(temp_r3, u8 **, 4);
         } while (temp_cr0_eq == 0);
     }
     M2C_FIELD(var_r8, M2C_UNK (**)(s32), 0x34)(arg1);

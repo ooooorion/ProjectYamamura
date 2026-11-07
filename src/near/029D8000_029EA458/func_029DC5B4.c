@@ -82,21 +82,19 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-void *func_0276FB54(M2C_UNK);                       /* extern */
-s32 func_029DC534(void *, u8 *);                    /* extern */
 
-void *func_029DC5B4(void *arg0, void *arg1) {
+u8 *func_029DC5B4(u8 *arg0, u8 *arg1) {
     u32 temp_r8;
     u8 *var_r11;
     u8 *var_r12;
     u8 *var_r4;
-    void *var_r31;
+    u8 *var_r31;
 
     var_r31 = arg0;
     if ((var_r31 != NULL) || (var_r31 = func_0276FB54(0x10), ((var_r31 == NULL) == 0))) {
         var_r4 = M2C_FIELD(arg1, u8 **, 4);
         if (var_r4 != NULL) {
-            var_r4 = M2C_FIELD(arg1, u32 *, 8) - var_r4;
+            var_r4 = (u8 *)(M2C_FIELD(arg1, u32 *, 8) - (u32)var_r4);
         }
         if (func_029DC534(var_r31, var_r4) != 0) {
             temp_r8 = M2C_FIELD(arg1, u32 *, 8);

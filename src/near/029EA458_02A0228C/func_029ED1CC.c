@@ -82,8 +82,6 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-s32 func_029DB43C(s32);                             /* extern */
-s32 func_02BD02B0(s32, s32);                        /* extern */
 
 s32 func_029ED1CC(s32 arg1) {
     s32 temp_r30;

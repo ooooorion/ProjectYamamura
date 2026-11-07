@@ -82,13 +82,8 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-s32 func_029BEF24();                                /* extern */
-u64 func_029BF9A0();                                /* extern */
-M2C_UNK func_02A34520(void *, s32);                 /* extern */
-s32 func_02A35CB4(s32);                             /* extern */
-M2C_UNK func_02A361B4(s32, M2C_UNK, M2C_UNK);       /* extern */
 
-void func_02A361B8(void *arg0, s32 arg1) {
+void func_02A361B8(u8 *arg0, s32 arg1) {
     u32 spC;
     s32 sp8;
     s32 temp_r3;
@@ -96,10 +91,9 @@ void func_02A361B8(void *arg0, s32 arg1) {
     s32 temp_r3_3;
     u32 temp_r4;
     u64 temp_ret;
-    void *temp_r31;
+    u8 *temp_r31;
 
-    func_02A361B4(*(M2C_FIELD(arg0, s32 *, 0x78) + (arg1 * 4)), 0x8000, 0);
-    temp_r3 = func_02A35CB4(*(M2C_FIELD(arg0, s32 *, 0x78) + M2C_ERROR(/* Read from unset register $r12 */)));
+    func_02A361B4(*(M2C_UNK *)(M2C_FIELD(arg0, s32 *, 0x78) + (arg1 * 4)), 0x8000, 0);
     if (temp_r3 != 0) {
         temp_r31 = (*M2C_FIELD(arg0, s32 **, 4) * 0x210) + 0x1031BA30;
         temp_r3_2 = func_029BEF24();

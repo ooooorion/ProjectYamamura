@@ -82,18 +82,12 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-M2C_UNK func_029C0824(M2C_UNK *);                   /* extern */
-M2C_UNK func_029C1214(M2C_UNK *, M2C_UNK, s32, s32); /* extern */
-M2C_UNK func_029C1FC4(M2C_UNK *, M2C_UNK);          /* extern */
-void *func_029E0D54(s32, s32 *);                    /* extern */
-s32 func_029E0EAC(M2C_UNK, M2C_UNK *);              /* extern */
-s32 *func_029E1324(void *, s32 *);                  /* extern */
 
-s32 func_029E1738(void *arg0, s32 arg1) {
+s32 func_029E1738(u8 *arg0, s32 arg1) {
     M2C_UNK spC;
     s32 sp8;
     s32 temp_r30;
-    void *temp_r3;
+    u8 *temp_r3;
 
     sp8 = arg1;
     temp_r3 = func_029E0D54(arg0 + 0xC, &sp8);
@@ -102,8 +96,7 @@ s32 func_029E1738(void *arg0, s32 arg1) {
     }
     func_029C0824(&spC);
     func_029C1214(&spC, 0x10141540, M2C_FIELD(arg0, s32 *, 4), sp8);
-    temp_r30 = func_029E0EAC(0, &spC);
-    *func_029E1324(arg0 + 0xC, &sp8) = temp_r30;
+    *(M2C_UNK *)func_029E1324(arg0 + 0xC, &sp8) = temp_r30;
     func_029C1FC4(&spC, 2);
     return temp_r30;
 }

@@ -82,7 +82,8 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-void func_02A12DA8(void *arg0, u8 *arg1) {
+void func_02A12DA8(u8 *arg0, u8 *arg1) {
+    s32 unkspA;
     u32 spC;                                        /* compiler-managed */
     s32 sp8;
     s16 var_r0;
@@ -127,7 +128,7 @@ loop_2:
             var_r0 = (s16) sp8;
             M2C_FIELD(arg0, u64 (**)(u8 *), 0x10) = var_r4;
             M2C_FIELD(arg0, s16 *, 0xC) = var_r0;
-            spC = var_r4;
+            spC = (s32)(u32)var_r4;
             M2C_FIELD(arg0, s16 *, 0xE) = var_r6;
             if (var_r6 != 0) {
                 goto loop_2;

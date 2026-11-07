@@ -82,11 +82,8 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-Expected instruction argument to be a register, but found 0x0
-Expected instruction argument to be a register, but found 0x0
-M2C_UNK func_02A103FC(void *, s32);                 /* extern */
 
-void *func_02A1040C(void *arg0, void *arg1, s32 arg7) {
+u8 *func_02A1040C(u8 *arg0, u8 *arg1, s32 arg7) {
     s32 var_r10;
 
     var_r10 = arg7;
@@ -95,7 +92,7 @@ void *func_02A1040C(void *arg0, void *arg1, s32 arg7) {
         // At instruction: dcbst 0x0, $r11
     } while (M2C_ERROR());
     func_02A103FC(arg0, var_r10);
-    M2C_FIELD(arg0, void **, 8) = arg1;
+    M2C_FIELD(arg0, u8 **, 8) = arg1;
     M2C_FIELD(arg0, s32 *, 0) = (s32) (M2C_FIELD(arg1, s32 *, 0x10) + M2C_FIELD(arg1, s32 *, 0x1C));
     M2C_FIELD(arg0, s32 *, 4) = (s32) M2C_FIELD(arg1, s32 *, 0x14);
     return arg0;

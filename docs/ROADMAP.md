@@ -7,14 +7,14 @@ One person, one list.
 | 1 | Toolchain validated: ELF extracted, sections sane, disassembly greppable | done |
 | 2 | Entry point identified: say what `main` is | done -- `_start` at `0x02B8AECC`, see `BOOTSTRAP.md` |
 | 3 | First subsystem mapped | done -- bootstrap chain and constructor table, see `BOOTSTRAP.md` |
-| 4 | First function fully matched | done -- 1,802, see `DECOMPILATION.md` |
+| 4 | First function fully matched | done -- 1,804, see `DECOMPILATION.md` |
 | 5 | `config/symbols.txt` above 100 entries | 64 |
 | 6 | One subsystem reconstructed end to end | not started |
 | 7 | Bulk-decompile every start (year-end goal) | not started |
 
 ## Current position
 
-1,802 functions matched (85,224 bytes, 6.61% of the 27,267 starts) and 2,647
+1,804 functions matched (85,544 bytes, 6.62% of the 27,267 starts) and 2,645
 near misses archived. The bootstrap chain is mapped; both runtime helpers
 match, while `__init` does not.
 
@@ -29,8 +29,8 @@ match, while `__init` does not.
 - Replace the `bl`-target extent heuristic with a Ghidra export.
 - Name the 21 internal callees of `main`, starting with `0x0276FBA4`.
 - The year-end bulk-decompile goal needs a headless export over all 27,267
-  starts, with the 1,802 matched functions kept as the verified core.
+  starts, with the 1,804 matched functions kept as the verified core.
 
 Step 4 was taken before step 3 on purpose: the toolchain had to be proven
-before subsystem work was worth doing. With 1,802 matches, the bootstrap
+before subsystem work was worth doing. With 1,804 matches, the bootstrap
 subsystem now has its first reconstruction.

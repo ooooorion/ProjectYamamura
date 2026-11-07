@@ -82,8 +82,6 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-M2C_UNK func_02A4C578(u8 *, s32);                   /* extern */
-M2C_UNK func_02A4C5F0(M2C_UNK, M2C_UNK);            /* extern */
 
 void func_02A4DB6C(s32 arg0, s32 *arg1) {
     u8 sp8;
@@ -93,7 +91,7 @@ void func_02A4DB6C(s32 arg0, s32 *arg1) {
     func_02A4C578(&sp8, arg0);
     temp_r7 = (M2C_ERROR(/* Read from unset register $r7 */) & ~0xFF) | (sp8 & 0xFF);
     temp_r0 = temp_r7 & 0x7F;
-    *M2C_ERROR(/* Read from unset register $r5 */) = temp_r0;
+    *(M2C_UNK *)M2C_ERROR(/* Read from unset register $r5 */) = temp_r0;
     *arg1 = (s32) temp_r7 >> 7;
     if (temp_r0 == 0x7F) {
         func_02A4C5F0(M2C_ERROR(/* Read from unset register $r6 */), M2C_ERROR(/* Read from unset register $r5 */));

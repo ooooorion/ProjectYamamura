@@ -82,10 +82,8 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-M2C_UNK func_029BDA14();                            /* extern */
-M2C_UNK func_029DF8D0(s32, M2C_UNK);                /* extern */
 
-void func_02A0D5E0(void *arg0) {
+void func_02A0D5E0(u8 *arg0) {
     s32 temp_r12;
     u32 var_r30;
 
@@ -98,7 +96,7 @@ void func_02A0D5E0(void *arg0) {
                     func_029DF8D0(temp_r12 + 4, 2);
                 }
                 var_r30 += 1;
-            } while (var_r30 < (u32) *(void *)0x101A41AC);
+            } while (var_r30 < (u32) *(u8 *)0x101A41AC);
         }
         func_029BDA14();
         M2C_FIELD(arg0, s32 *, 8) = 0;

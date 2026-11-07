@@ -82,11 +82,6 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-M2C_UNK func_029BDBAC(s32, s32);                    /* extern */
-M2C_UNK func_029DE5C8();                            /* extern */
-M2C_UNK func_029E05D0(M2C_UNK);                     /* extern */
-M2C_UNK func_029E05E0(M2C_UNK);                     /* extern */
-M2C_UNK func_029ED220(s32, M2C_UNK, M2C_UNK);       /* extern */
 
 void func_029EFCAC(s32 arg0, s32 arg2, s32 arg3) {
     u32 *temp_r12;
@@ -100,7 +95,7 @@ void func_029EFCAC(s32 arg0, s32 arg2, s32 arg3) {
     if (var_r10 != temp_r12) {
         do {
             func_029ED220(var_r10 + 8, M2C_ERROR(/* Read from unset register $r7 */), M2C_ERROR(/* Read from unset register $r8 */));
-            var_r10 = *M2C_ERROR(/* Read from unset register $r10 */);
+            var_r10 = *(M2C_UNK *)M2C_ERROR(/* Read from unset register $r10 */);
         } while (var_r10 != (u32) M2C_FIELD(M2C_ERROR(/* Read from unset register $r11 */), u32 *, 8));
     }
     func_029BDBAC();

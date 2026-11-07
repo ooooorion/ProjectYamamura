@@ -82,17 +82,15 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-M2C_UNK func_02A4C578(void *);                      /* extern */
-M2C_UNK func_02A4C714(M2C_UNK, s32 *);              /* extern */
 
-void func_02A4C9A8(void *arg0, s8 *arg1) {
+void func_02A4C9A8(u8 *arg0, s8 *arg1) {
     s32 sp8;
 
     *arg1 = 0;
     sp8 = 0;
     if ((s32) M2C_FIELD(arg0, u8 *, 0x41) == 0) {
         func_02A4C578(arg0);
-        if ((s32) *M2C_ERROR(/* Read from unset register $r7 */) == 0) {
+        if ((s32) *(M2C_UNK *)M2C_ERROR(/* Read from unset register $r7 */) == 0) {
             func_02A4C714(M2C_ERROR(/* Read from unset register $r7 */), &sp8);
         }
     }

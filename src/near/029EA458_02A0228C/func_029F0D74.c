@@ -127,18 +127,18 @@ loop_4:
     if (arg2 >= var_r11) {
         temp_r11 = var_r4 * 4;
         var_r4 = arg2 - 1;
-        *(temp_r10 + temp_r11) = M2C_FIELD((temp_r10 + (arg2 * 4)), s32 *, -4);
+        *(M2C_UNK *)(temp_r10 + temp_r11) = M2C_FIELD((temp_r10 + (arg2 * 4)), s32 *, -4);
     }
 loop_8:
     temp_r5 = (s32) (var_r4 - 1) / 2;
     if (temp_r12 < var_r4) {
         temp_r11_2 = temp_r5 * 4;
-        if ((u32) *(temp_r10 + temp_r11_2) < arg3) {
+        if ((u32) *(M2C_UNK *)(temp_r10 + temp_r11_2) < arg3) {
             temp_r0 = var_r4 * 4;
             var_r4 = temp_r5;
-            *(temp_r10 + temp_r0) = *(temp_r10 + temp_r11_2);
+            *(M2C_UNK *)(temp_r10 + temp_r0) = *(M2C_UNK *)(temp_r10 + temp_r11_2);
             goto loop_8;
         }
     }
-    *(temp_r10 + (var_r4 * 4)) = arg3;
+    *(M2C_UNK *)(temp_r10 + (var_r4 * 4)) = arg3;
 }

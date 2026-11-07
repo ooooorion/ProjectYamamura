@@ -90,10 +90,10 @@ void func_02A4BFB8(s32 arg0, s32 arg1, s32 arg2) {
     s32 var_ctr_2;
     u8 temp_r11;
     u8 temp_r12;
-    void *var_r10;
-    void *var_r10_2;
-    void *var_r4;
-    void *var_r4_2;
+    u8 *var_r10;
+    u8 *var_r10_2;
+    u8 *var_r4;
+    u8 *var_r4_2;
 
     if (arg2 != 0) {
         temp_r8 = arg0 - arg1;

@@ -82,7 +82,6 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-s32 func_029CA850(M2C_UNK, M2C_UNK);                /* extern */
 
 s32 func_029EE9C4(s32 arg0) {
     s32 var_r3;

@@ -82,12 +82,11 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-M2C_UNK func_02A04F54(u8 *, s32, s32);              /* extern */
 
 s32 func_02A04FCC(s32 arg0, s32 arg1) {
     u8 sp8;
 
     func_02A04F54(&sp8, arg1, arg0);
-    *M2C_ERROR(/* Read from unset register $r6 */) = (s8) sp8 != 0;
+    *(M2C_UNK *)M2C_ERROR(/* Read from unset register $r6 */) = (s8) sp8 != 0;
     return M2C_ERROR(/* Read from unset register $r7 */);
 }

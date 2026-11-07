@@ -82,11 +82,8 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-Expected instruction argument to be a register, but found 0x0
-Expected instruction argument to be a register, but found 0x0
-M2C_UNK func_02A4C4FC();                            /* extern */
 
-void func_02A4E788(void *arg0, s32 arg1) {
+void func_02A4E788(u8 *arg0, s32 arg1) {
     if ((s32) M2C_FIELD(arg0, s32 *, 0x70) != 0) {
         func_02A4C4FC();
         M2C_FIELD(arg0, s32 *, 0x70) = 0;

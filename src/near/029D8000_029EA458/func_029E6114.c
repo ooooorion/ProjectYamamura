@@ -90,6 +90,6 @@ void func_029E6114(s32 arg0) {
     do {
         temp_r11 = var_r12 * 4;
         var_r12 += 1;
-        *(temp_r11 + arg0) = 0;
+        *(M2C_UNK *)(temp_r11 + arg0) = 0;
     } while (var_r12 < 0xEU);
 }

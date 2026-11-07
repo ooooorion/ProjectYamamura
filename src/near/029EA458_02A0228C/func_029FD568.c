@@ -82,15 +82,15 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-s32 func_029FD568(void *arg0, s32 *arg1) {
+s32 func_029FD568(u8 *arg0, s32 *arg1) {
     s32 temp_r0;
     s32 temp_r10;
     s32 temp_r12;
     u32 temp_r11;
     u32 temp_r7;
     u32 var_r6;
-    void *var_r8;
-    void *var_r9;
+    u8 *var_r8;
+    u8 *var_r9;
 
     temp_r12 = *arg1;
     temp_r11 = M2C_FIELD(arg0, u32 *, 8);

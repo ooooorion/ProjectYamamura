@@ -82,17 +82,13 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-void *func_0276FB54(M2C_UNK);                       /* extern */
-void *func_029BDBBC(M2C_UNK);                       /* extern */
-s32 func_029DAE10(void *);                          /* extern */
-M2C_UNK func_029EF024(void *, s32);                 /* extern */
 
-void *func_029EF468(void *arg0, void *arg1) {
+u8 *func_029EF468(u8 *arg0, u8 *arg1) {
     M2C_UNK **temp_r11;
     M2C_UNK *var_r30;
     s32 temp_r3;
-    void *var_r29;
-    void *var_r31;
+    u8 *var_r29;
+    u8 *var_r31;
 
     var_r31 = arg0;
     if ((var_r31 != NULL) || (var_r31 = func_029BDBBC(0x14), ((var_r31 == NULL) == 0))) {

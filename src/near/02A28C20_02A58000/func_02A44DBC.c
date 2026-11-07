@@ -82,37 +82,31 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-Expected instruction argument to be a register, but found 0x0
-Expected instruction argument to be a register, but found 0x0
-s32 func_029BDBBC(M2C_UNK);                         /* extern */
-s32 func_029BEF24();                                /* extern */
-M2C_UNK func_029BEF60(M2C_UNK, M2C_UNK, M2C_UNK, M2C_UNK); /* extern */
-M2C_UNK func_02A44D44();                            /* extern */
 
 void func_02A44DBC(void) {
     s32 temp_r12;
     s32 temp_r3;
-    void *temp_r10;
-    void *var_r12;
+    u8 *temp_r10;
+    u8 *var_r12;
 
     temp_r3 = func_029BEF24();
     if (temp_r3 == 0) {
-        var_r12 = M2C_FIELD((void *)0x1031E868, void **, 0x38);
+        var_r12 = M2C_FIELD((u8 *)0x1031E868, u8 **, 0x38);
         if (var_r12 == NULL) {
             goto block_9;
         }
         goto block_8;
     }
-    temp_r10 = M2C_FIELD((void *)0x1031E868, void **, 0x44);
+    temp_r10 = M2C_FIELD((u8 *)0x1031E868, u8 **, 0x44);
     temp_r12 = M2C_FIELD(temp_r10, s32 *, 4);
     if ((temp_r12 == 0) || ((u32) temp_r3 >= (u32) ((s32) (M2C_FIELD(temp_r10, s32 *, 8) - temp_r12) >> 2))) {
         func_029BEF60(0x1014028C, 0x48, 0xE0000003, 0);
-        if ((s32) M2C_FIELD((void *)-1, s32 *, 8) == 0) {
+        if ((s32) M2C_FIELD((u8 *)-1, s32 *, 8) == 0) {
             goto block_9;
         }
         goto loop_11;
     }
-    var_r12 = M2C_FIELD(*(temp_r12 + (temp_r3 * 4)), void **, 0x34);
+    var_r12 = M2C_FIELD(*(M2C_UNK *)(temp_r12 + (temp_r3 * 4)), u8 **, 0x34);
     if (var_r12 != NULL) {
 block_8:
         if ((s32) M2C_FIELD(var_r12, s32 *, 8) == 0) {

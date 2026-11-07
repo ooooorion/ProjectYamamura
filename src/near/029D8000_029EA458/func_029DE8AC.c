@@ -84,7 +84,7 @@ typedef s64 M2C_UNK64;
 
 s32 func_029DE8AC(u32 arg0) {
     if ((arg0 >= 1U) && (arg0 <= 6U)) {
-        return *(0x10141220 + (arg0 * 4));
+        return *(M2C_UNK *)(0x10141220 + (arg0 * 4));
     }
     return 0x10141214;
 }

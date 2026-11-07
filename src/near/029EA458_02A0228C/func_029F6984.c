@@ -82,10 +82,8 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-u64 func_029EA730(s32, s32);                        /* extern */
-s32 func_029EA770(s32, M2C_UNK, M2C_UNK);           /* extern */
 
-void func_029F6984(void *arg0) {
+void func_029F6984(u8 *arg0) {
     s32 temp_r11;
     u32 temp_r4;
     u32 var_r31_2;
@@ -109,13 +107,13 @@ void func_029F6984(void *arg0) {
     temp_r3 = temp_ret;
     temp_r4 = (u32) temp_ret;
     do {
-        temp_r10 = *(M2C_ERROR(/* Read from unset register $r5 */) + var_r31_2);
-        temp_r11 = *(temp_r4 + M2C_ERROR(/* Read from unset register $r7 */)) + temp_r10 + M2C_ERROR(/* Read from unset register $r6 */);
+        temp_r10 = *(M2C_UNK *)(M2C_ERROR(/* Read from unset register $r5 */) + var_r31_2);
+        temp_r11 = *(M2C_UNK *)(temp_r4 + M2C_ERROR(/* Read from unset register $r7 */)) + temp_r10 + M2C_ERROR(/* Read from unset register $r6 */);
         temp_r6 = temp_r11 - (((temp_r11 >> 0x1F) + temp_r11) & 0xFFFFFF00);
         temp_r8 = M2C_ERROR(/* Read from unset register $r5 */) + var_r31_2;
-        temp_r11_2 = *(M2C_ERROR(/* Read from unset register $r5 */) + temp_r6);
+        temp_r11_2 = *(M2C_UNK *)(M2C_ERROR(/* Read from unset register $r5 */) + temp_r6);
         var_r31_2 += 1;
         *temp_r8 = temp_r11_2;
-        *(M2C_ERROR(/* Read from unset register $r5 */) + temp_r6) = temp_r10;
+        *(M2C_UNK *)(M2C_ERROR(/* Read from unset register $r5 */) + temp_r6) = temp_r10;
     } while (var_r31_2 < 0x100U);
 }

@@ -82,17 +82,16 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-void *func_029FF178();                              /* extern */
 
-void *func_02A17B40(s32 arg0) {
-    void *temp_r3;
-    void *temp_ret;
-    void *var_r0;
+u8 *func_02A17B40(s32 arg0) {
+    u8 *temp_r3;
+    u8 *temp_ret;
+    u8 *var_r0;
 
     temp_ret = func_029FF178();
     temp_r3 = temp_ret;
-    var_r0 = M2C_FIELD(M2C_ERROR(/* Read from unset register $r11 */), void **, 4);
-    if ((temp_r3 != var_r0) && ((u16) *(u32) (u64) temp_ret >= (u16) M2C_FIELD(temp_r3, u16 *, 0xC))) {
+    var_r0 = M2C_FIELD(M2C_ERROR(/* Read from unset register $r11 */), u8 **, 4);
+    if ((temp_r3 != var_r0) && ((u16) *(M2C_UNK *)(u32) (u64) temp_ret >= (u16) M2C_FIELD(temp_r3, u16 *, 0xC))) {
         var_r0 = temp_r3;
     }
     return var_r0;

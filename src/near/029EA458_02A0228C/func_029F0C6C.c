@@ -82,7 +82,7 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-void func_029F0C6C(void *arg0) {
+void func_029F0C6C(u8 *arg0) {
     s32 spC;
     s16 spA;
     s16 sp8;
@@ -97,10 +97,10 @@ void func_029F0C6C(void *arg0) {
     if (var_r28 != temp_r29) {
         do {
             if (-1 < 0) {
-                (M2C_UNK (*)())0x029F098C();
+                ((M2C_UNK (*)())0x029F098C)();
                 var_r28 = *var_r28;
             } else {
-                M2C_FIELD((*(0x029F098C + (s32) (var_r28 + 8)) + 0xFFFFFFF8), M2C_UNK (**)(), 4)();
+                M2C_FIELD((*(M2C_UNK *)(0x029F098C + (s32) (var_r28 + 8)) + 0xFFFFFFF8), M2C_UNK (**)(), 4)();
                 var_r28 = *var_r28;
             }
         } while (var_r28 != temp_r29);

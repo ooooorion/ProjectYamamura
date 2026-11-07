@@ -82,14 +82,9 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-Expected instruction argument to be a register, but found 0x0
-Expected instruction argument to be a register, but found 0x0
-void *func_029BDBBC(M2C_UNK);                       /* extern */
-M2C_UNK func_02A0F9D8();                            /* extern */
-M2C_UNK func_02A0FA8C();                            /* extern */
 
-void func_02A0FAA0(void *arg0, s32 arg1) {
-    void *var_r3;
+void func_02A0FAA0(u8 *arg0, s32 arg1) {
+    u8 *var_r3;
 
     var_r3 = arg0;
     if ((var_r3 != NULL) || (var_r3 = func_029BDBBC(0x18), ((var_r3 == NULL) == 0))) {

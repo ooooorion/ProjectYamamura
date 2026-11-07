@@ -82,26 +82,24 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-M2C_UNK func_029D4D18(void *, u8 *, M2C_UNK, M2C_UNK); /* extern */
-M2C_UNK func_02A046A8(void *, void *);              /* extern */
 
-void func_02A28B3C(void *arg0) {
+void func_02A28B3C(u8 *arg0) {
     s8 spB;
     u8 spA;
     u8 sp9;
     u8 sp8;
     u8 temp_r9;
-    void *temp_r31;
-    void *temp_r8;
+    u8 *temp_r31;
+    u8 *temp_r8;
 
-    temp_r8 = M2C_FIELD(arg0, void **, 4);
-    temp_r31 = M2C_FIELD(temp_r8, void **, 0x14);
+    temp_r8 = M2C_FIELD(arg0, u8 **, 4);
+    temp_r31 = M2C_FIELD(temp_r8, u8 **, 0x14);
     func_02A046A8(NULL, temp_r8);
-    temp_r9 = temp_r31 - 4;
+    temp_r9 = (u8)((u32)temp_r31 - 4);
     sp8 = temp_r9;
     sp9 = (u8) (temp_r9 >> 8U);
     spB = (s8) (temp_r9 >> 0x18U);
     spA = (u8) (temp_r9 >> 0x10U);
-    func_029D4D18(M2C_FIELD(arg0, void **, 4), &sp8, 4, -1);
+    func_029D4D18(M2C_FIELD(arg0, u8 **, 4), &sp8, 4, -1);
     func_02A046A8(arg0, temp_r31);
 }

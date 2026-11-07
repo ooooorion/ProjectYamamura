@@ -82,7 +82,6 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-u32 *func_029BD940(s32);                            /* extern */
 
 s32 func_02A4AFB0(u32 arg0) {
     u32 *temp_r3;
@@ -96,5 +95,5 @@ s32 func_02A4AFB0(u32 arg0) {
             var_r12 += 1;
         } while (var_r12 < arg0);
     }
-    return temp_r3 + 4;
+    return (s32)(temp_r3 + 4);
 }

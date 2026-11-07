@@ -82,7 +82,6 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-u32 func_029CAB4C(s32);                             /* extern */
 
 s32 func_02A4B67C(s32 arg0) {
     s32 temp_r8;
@@ -91,8 +90,8 @@ s32 func_02A4B67C(s32 arg0) {
     u32 temp_r12;
     u32 temp_r3;
     u32 var_r11;
-    void *var_r10;
-    void *var_r3;
+    u8 *var_r10;
+    u8 *var_r3;
 
     temp_r3 = func_029CAB4C(arg0);
     temp_r12 = M2C_FIELD(M2C_ERROR(/* Read from unset register $r5 */), u32 *, 0xC);

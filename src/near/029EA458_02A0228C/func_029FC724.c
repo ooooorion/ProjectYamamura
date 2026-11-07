@@ -82,18 +82,18 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-void func_029FC724(void *arg0, s32 arg1) {
+void func_029FC724(u8 *arg0, s32 arg1) {
     s32 *temp_r3;
     s32 temp_r7;
     s32 temp_r8;
 
     temp_r8 = M2C_FIELD(arg0, s32 *, 0x40);
-    temp_r3 = *(M2C_FIELD(arg0, s32 *, 0x30) + (temp_r8 * 4));
+    temp_r3 = *(s32 **)(M2C_FIELD(arg0, s32 *, 0x30) + (temp_r8 * 4));
     temp_r7 = M2C_FIELD(arg0, s32 *, 0x18);
     M2C_FIELD(arg0, s32 *, 0x44) = (s32) (M2C_FIELD(arg0, s32 *, 0x44) - 1);
     M2C_FIELD(arg0, s32 *, 0x40) = (s32) ((temp_r8 + 1) % M2C_FIELD(arg0, u32 *, 0x48));
     M2C_FIELD(arg0, s32 *, 0x20) = (s32) (M2C_FIELD(arg0, s32 *, 0x20) + 1);
-    *(M2C_FIELD(arg0, s32 *, 0xC) + (temp_r7 * 4)) = temp_r3;
+    *(s32 **)(M2C_FIELD(arg0, s32 *, 0xC) + (temp_r7 * 4)) = temp_r3;
     *temp_r3 = arg1;
     M2C_FIELD(arg0, s32 *, 0x18) = (s32) ((temp_r7 + 1) % M2C_FIELD(arg0, u32 *, 0x24));
 }

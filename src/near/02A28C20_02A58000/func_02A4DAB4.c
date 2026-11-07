@@ -82,7 +82,6 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-M2C_UNK func_029D4DC4(s32, s8 *, M2C_UNK, M2C_UNK, s32); /* extern */
 
 void func_02A4DAB4(s32 arg0, s32 arg1, u16 arg2) {
     u16 spA;

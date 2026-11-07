@@ -82,12 +82,8 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-Expected instruction argument to be a register, but found 0x0
-Expected instruction argument to be a register, but found 0x0
-u32 func_02A2E554(void *, u16 *);                   /* extern */
-void **func_02A2E9E4(void *, u16 *);                /* extern */
 
-void func_02A2EE20(void *arg0, void *arg1) {
+void func_02A2EE20(u8 *arg0, u8 *arg1) {
     s32 sp14;
     u16 sp10;
     s32 spC;
@@ -112,7 +108,7 @@ void func_02A2EE20(void *arg0, void *arg1) {
             } while (M2C_ERROR());
             sp14 = 0x1013D928;
             sp10 = M2C_FIELD(arg1, u16 *, 0x44);
-            *func_02A2E9E4(arg0 + 4, &sp10) = arg1;
+            *(u8 **)func_02A2E9E4(arg0 + 4, &sp10) = arg1;
         }
     }
 }

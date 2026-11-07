@@ -82,11 +82,8 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-M2C_UNK func_029BDA14(M2C_UNK *);                   /* extern */
-M2C_UNK func_029BDF08(void *);                      /* extern */
-M2C_UNK func_029DADB0(void *, M2C_UNK);             /* extern */
 
-void func_029F0BD0(void *arg0, s32 arg1) {
+void func_029F0BD0(u8 *arg0, s32 arg1) {
     M2C_UNK *temp_r30;
     M2C_UNK *temp_r3;
     M2C_UNK *var_r31;

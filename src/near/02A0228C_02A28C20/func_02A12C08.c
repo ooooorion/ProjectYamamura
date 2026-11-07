@@ -82,7 +82,7 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-s32 func_02A12C08(s32 arg0, void *arg1, s16 arg2) {
+s32 func_02A12C08(s32 arg0, u8 *arg1, s16 arg2) {
     u32 sp20;
     s32 sp1C;
     s16 sp18;
@@ -106,7 +106,7 @@ s32 func_02A12C08(s32 arg0, void *arg1, s16 arg2) {
     sp14 = 0x1013DA58;
     if (temp_r9 < 0) {
         temp_r9_2 = M2C_FIELD(arg1, u64 (**)(s8 *, M2C_UNK), 4);
-        temp_ret = temp_r9_2(&sp10, temp_r9_2);
+        temp_ret = temp_r9_2(&sp10, (M2C_UNK)temp_r9_2);
         temp_r3 = temp_ret;
         temp_r4 = (u32) temp_ret;
         spC = temp_r4;
@@ -114,8 +114,8 @@ s32 func_02A12C08(s32 arg0, void *arg1, s16 arg2) {
         sp1C = temp_r3;
         sp8 = temp_r3;
     } else {
-        temp_r9_3 = M2C_FIELD((*(arg0 + M2C_FIELD(arg1, s16 *, 0) + M2C_FIELD(arg1, s16 *, 6)) + (temp_r9 * 8)), u64 (**)(s8 *, M2C_UNK), 4);
-        temp_ret_2 = temp_r9_3(&sp10, temp_r9_3);
+        temp_r9_3 = M2C_FIELD((*(M2C_UNK *)(arg0 + M2C_FIELD(arg1, s16 *, 0) + M2C_FIELD(arg1, s16 *, 6)) + (temp_r9 * 8)), u64 (**)(s8 *, M2C_UNK), 4);
+        temp_ret_2 = temp_r9_3(&sp10, (M2C_UNK)temp_r9_3);
         temp_r3_2 = temp_ret_2;
         temp_r4_2 = (u32) temp_ret_2;
         sp20 = temp_r4_2;

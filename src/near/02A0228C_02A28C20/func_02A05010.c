@@ -82,19 +82,18 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-s8 func_02A046D4(M2C_UNK, s32, s32);                /* extern */
 
 s32 func_02A05010(s32 arg0, s32 arg1) {
     s8 temp_r3;
-    void *temp_r12;
+    u8 *temp_r12;
 
     temp_r3 = func_02A046D4(1, arg0, arg1);
     if (temp_r3 == 0) {
-        *M2C_ERROR(/* Read from unset register $r9 */) = temp_r3;
+        *(M2C_UNK *)M2C_ERROR(/* Read from unset register $r9 */) = temp_r3;
         return 0;
     }
-    temp_r12 = M2C_FIELD(M2C_ERROR(/* Read from unset register $r8 */), void **, 4);
-    *M2C_ERROR(/* Read from unset register $r9 */) = *(M2C_FIELD(temp_r12, s32 *, 0x10) + M2C_FIELD(temp_r12, s32 *, 0x1C) + M2C_FIELD(M2C_ERROR(/* Read from unset register $r8 */), s32 *, 8));
+    temp_r12 = M2C_FIELD(M2C_ERROR(/* Read from unset register $r8 */), u8 **, 4);
+    *(M2C_UNK *)M2C_ERROR(/* Read from unset register $r9 */) = *(M2C_UNK *)(M2C_FIELD(temp_r12, s32 *, 0x10) + M2C_FIELD(temp_r12, s32 *, 0x1C) + M2C_FIELD(M2C_ERROR(/* Read from unset register $r8 */), s32 *, 8));
     M2C_FIELD(M2C_ERROR(/* Read from unset register $r8 */), s32 *, 8) = (s32) (M2C_FIELD(M2C_ERROR(/* Read from unset register $r8 */), s32 *, 8) + 1);
     return 1;
 }
