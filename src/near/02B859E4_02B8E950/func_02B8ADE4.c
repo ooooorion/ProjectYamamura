@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -90,17 +97,17 @@ void func_02B8ADE4(s32 arg0, s32 arg1, s32 arg2) {
     s32 var_ctr_2;
     u8 temp_r11;
     u8 temp_r12;
-    void *var_r10;
-    void *var_r10_2;
-    void *var_r4;
-    void *var_r4_2;
+    u8 *var_r10;
+    u8 *var_r10_2;
+    u8 *var_r4;
+    u8 *var_r4_2;
 
     if (arg2 != 0) {
-        temp_r8 = arg0 - arg1;
-        temp_r0 = temp_r8 >> 0x1F;
-        temp_r9 = arg2 >> 0x1F;
+        temp_r8 = (s32)arg0 - (s32)arg1;
+        temp_r0 = (s32)(temp_r8 >> 0x1F);
+        temp_r9 = (s32)(arg2 >> 0x1F);
         if (((u32) temp_r0 <= (u32) temp_r9) && (((u32) temp_r0 < (u32) temp_r9) || ((u32) temp_r8 <= (u32) arg2))) {
-            var_ctr = arg2;
+            var_ctr = (s32)(arg2);
             var_r10 = arg0 + arg2;
             var_r4 = arg1 + arg2;
             do {
@@ -112,7 +119,7 @@ void func_02B8ADE4(s32 arg0, s32 arg1, s32 arg2) {
             } while (var_ctr != 0);
             return;
         }
-        var_ctr_2 = arg2;
+        var_ctr_2 = (s32)(arg2);
         var_r4_2 = arg1 - 1;
         var_r10_2 = arg0 - 1;
         do {

@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,22 +89,21 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-s32 func_02B8D13C(s32);                             /* extern */
-M2C_UNK func_02B8D250(void *, M2C_UNK *, s32);      /* extern */
-s32 func_02B9BF9C(s32, M2C_UNK *, void *, s32, u16); /* extern */
-M2C_UNK func_02B9C244(s32, M2C_UNK *, s32, s32, s32, s32, s32, f32, f32); /* extern */
-
+s32 func_02B8D13C(); /* extern */
+M2C_UNK func_02B8D250(); /* extern */
+s32 func_02B9BF9C(); /* extern */
+M2C_UNK func_02B9C244(); /* extern */
 /* Warning: Gap in callee-saved word stack region.
  * Saved: [0x20, 0x24, 0x28, 0x2c, 0x30, 0x34, 0x38, 0x3c, 0x48, 0x4c], gap at: 0x40. */
-s32 func_02B8D2D4(void *arg0, s32 arg1, s32 arg3, s32 arg4, s32 arg7, f32 farg0, f32 farg1) {
+s32 func_02B8D2D4(u8 *arg0, s32 arg1, s32 arg3, s32 arg4, s32 arg7, f32 farg0, f32 farg1) {
     M2C_UNK sp8;
     s32 temp_r28;
     s32 var_r3;
 
     M2C_ERROR(/* unknown instruction: vmhaddshs v31, v31, v31, v18 */);
     M2C_ERROR(/* unknown instruction: vmhaddshs v30, v30, v30, v18 */);
-    temp_r28 = arg0 + 0x144 + (func_02B8D13C(arg1) * 0x68);
-    var_r3 = func_02B9BF9C(temp_r28, &sp8, arg0, arg1, (u16) M2C_ERROR(/* Read from unset register $r5 */));
+    temp_r28 = (s32)(arg0 + 0x144 + (func_02B8D13C(arg1) * 0x68));
+    var_r3 = (s32)(func_02B9BF9C(temp_r28, &sp8, arg0, arg1, (u16) M2C_ERROR(/* Read from unset register $r5 */)));
     if (var_r3 == 0) {
         func_02B9C244(temp_r28, &sp8, arg3, arg4, arg7, arg1, ((u32) M2C_FIELD(arg0, u32 *, 0x128) >> 3U) & 1, farg0, farg1);
         func_02B8D250(arg0 + 0x794, &sp8, arg1);

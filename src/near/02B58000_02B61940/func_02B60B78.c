@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,22 +89,22 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-s32 func_02B60B78(void *arg0, s32 arg1, s32 arg2) {
+s32 func_02B60B78(u8 *arg0, s32 arg1, s32 arg2) {
     M2C_UNK sp47;
-    M2C_UNK (*temp_r9)(void *, s32, M2C_UNK, M2C_UNK, s32);
+    M2C_UNK (*temp_r9)(u8 *, s32, M2C_UNK, M2C_UNK, s32);
     s32 temp_r10;
     s32 temp_r11;
     s32 temp_r30;
     s32 temp_r9_2;
     s32 var_ctr;
     u16 temp_r0;
-    void *temp_r3;
-    void *temp_r3_2;
-    void *var_r10;
-    void *var_r11;
+    u8 *temp_r3;
+    u8 *temp_r3_2;
+    u8 *var_r10;
+    u8 *var_r11;
 
-    temp_r11 = M2C_FIELD(arg0, s32 *, 8);
-    if ((temp_r11 == 0) || (temp_r0 = M2C_FIELD(arg0, u16 *, 0xC), (((s32) temp_r0 == 0) != 0)) || (temp_r3 = M2C_FIELD(arg0, void **, 0), temp_r9 = M2C_FIELD(M2C_FIELD(temp_r3, void **, 0xC), M2C_UNK (**)(void *, s32, M2C_UNK, M2C_UNK, s32), 0x94), temp_r10 = temp_r0 * arg2, temp_r9(temp_r3, temp_r11 + temp_r10, 0, temp_r9, temp_r10), temp_r3_2 = M2C_FIELD(arg0, void **, 0), temp_r30 = (s32) &sp47 & 0xFFFFFFC0, ((M2C_FIELD(M2C_FIELD(temp_r3_2, void **, 0xC), s32 (**)(void *, s32, M2C_UNK), 0x24)(temp_r3_2, temp_r30, 0x100) == 0x100) == 0))) {
+    temp_r11 = (s32)(M2C_FIELD(arg0, s32 *, 8));
+    if ((temp_r11 == 0) || (temp_r0 = M2C_FIELD(arg0, u16 *, 0xC), (((s32) temp_r0 == 0) != 0)) || (temp_r3 = M2C_FIELD(arg0, u8 **, 0), temp_r9 = M2C_FIELD(M2C_FIELD(temp_r3, u8 **, 0xC), M2C_UNK (**)(u8 *, s32, M2C_UNK, M2C_UNK, s32), 0x94), temp_r10 = temp_r0 * arg2, temp_r9(temp_r3, temp_r11 + temp_r10, 0, (M2C_UNK) temp_r9, temp_r10), temp_r3_2 = M2C_FIELD(arg0, u8 **, 0), temp_r30 = (s32) &sp47 & 0xFFFFFFC0, ((M2C_FIELD(M2C_FIELD(temp_r3_2, u8 **, 0xC), s32 (**)(u8 *, s32, u8 *), 0x24)(temp_r3_2, temp_r30, 0x100) == 0x100) == 0))) {
         return 0;
     }
     var_r10 = temp_r30 - 4;

@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,22 +89,21 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-u64 func_02B814D8(s32);                             /* extern */
-
-void func_02B81964(void *arg0) {
+u64 func_02B814D8(); /* extern */
+void func_02B81964(u8 *arg0) {
     s32 temp_r0;
     s32 var_r12;
     s32 var_r4;
     u16 var_r31;
 
-    var_r31 = M2C_FIELD(arg0, u16 *, 6);
+    var_r31 = (s32)(M2C_FIELD(arg0, u16 *, 6));
     if ((s32) var_r31 != 0) {
         var_r4 = 0;
         do {
-            temp_r0 = *M2C_ERROR(/* Read from unset register $r5 */);
+            temp_r0 = 0;
             var_r12 = 0;
             if (temp_r0 != 0) {
-                var_r12 = M2C_ERROR(/* Read from unset register $r5 */) + temp_r0;
+                var_r12 = (s32)(M2C_ERROR(/* Read from unset register $r5 */) + temp_r0);
             }
             var_r31 -= 1;
             var_r4 = (u32) func_02B814D8(var_r12 + var_r4) + 0x4C;

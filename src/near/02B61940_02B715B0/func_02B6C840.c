@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,9 +89,8 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-s32 func_02B58198(s32, s32);                        /* extern */
-
-void func_02B6C840(s32 arg0, u32 arg1, void *arg2, s32 arg3, s32 arg4, s32 arg5, f32 farg0) {
+s32 func_02B58198(); /* extern */
+void func_02B6C840(s32 arg0, u32 arg1, u8 *arg2, s32 arg3, s32 arg4, s32 arg5, f32 farg0) {
     M2C_UNK (*temp_r24)(s32, s32, s32, f32);
     s16 temp_r25;
     s16 temp_r26;
@@ -93,22 +99,22 @@ void func_02B6C840(s32 arg0, u32 arg1, void *arg2, s32 arg3, s32 arg4, s32 arg5,
     s32 var_r23;
     u32 var_r28;
 
-    var_r28 = arg1;
+    var_r28 = (s32)(arg1);
     M2C_ERROR(/* unknown instruction: vmhaddshs v31, v31, v31, v18 */);
     var_r23 = 0;
     if (var_r28 != 0) {
-        temp_r25 = M2C_FIELD(arg2, s16 *, 2);
+        temp_r25 = (s32)(M2C_FIELD(arg2, s16 *, 2));
         temp_r24 = M2C_FIELD(arg2, M2C_UNK (**)(s32, s32, s32, f32), 4);
-        temp_r26 = M2C_FIELD(arg2, s16 *, 0);
-        temp_r22 = temp_r25 * 8;
+        temp_r26 = (s32)(M2C_FIELD(arg2, s16 *, 0));
+        temp_r22 = (s32)(temp_r25 * 8);
 loop_2:
         if (var_r28 & 1) {
-            temp_r3 = func_02B58198(arg0, var_r23);
+            temp_r3 = (s32)(func_02B58198(arg0, var_r23));
             if (temp_r3 != 0) {
                 if (temp_r25 < 0) {
                     temp_r24(arg3, arg4, arg5, farg0);
                 } else {
-                    M2C_FIELD((*(temp_r3 + temp_r26 + (s16) temp_r24) + temp_r22), M2C_UNK (**)(s32, s32, s32, f32), 4)(arg3, arg4, arg5, farg0);
+                    M2C_FIELD((*(u8 *)(temp_r3 + temp_r26 + (s16) temp_r24) + temp_r22), M2C_UNK (**)(s32, s32, s32, f32), 4)(arg3, arg4, arg5, farg0);
                 }
             }
         }

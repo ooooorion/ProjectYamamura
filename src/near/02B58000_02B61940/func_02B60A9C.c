@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,34 +89,34 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-s32 func_02B60A9C(void *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
+s32 func_02B60A9C(u8 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
     M2C_UNK sp47;
-    M2C_UNK (*temp_r10)(void *, s32, M2C_UNK, M2C_UNK);
+    M2C_UNK (*temp_r10)(u8 *, s32, M2C_UNK, u8 *);
     s32 temp_r27;
     s32 temp_r28;
     s32 var_ctr;
     s32 var_r7;
     u16 temp_r8;
-    void *temp_r3;
-    void *temp_r3_2;
-    void *var_r6;
+    u8 *temp_r3;
+    u8 *temp_r3_2;
+    u8 *var_r6;
 
-    temp_r3 = M2C_FIELD(arg0, void **, 0);
-    temp_r27 = arg4 * 4;
-    temp_r10 = M2C_FIELD(M2C_FIELD(temp_r3, void **, 0xC), M2C_UNK (**)(void *, s32, M2C_UNK, M2C_UNK), 0x94);
-    temp_r10(temp_r3, M2C_FIELD(arg0, s32 *, 4) + (temp_r27 * arg3) + 8, 0, temp_r10);
-    if ((temp_r27 > 0x40) || (temp_r3_2 = M2C_FIELD(arg0, void **, 0), temp_r28 = (s32) &sp47 & 0xFFFFFFC0, ((M2C_FIELD(M2C_FIELD(temp_r3_2, void **, 0xC), u32 (**)(void *, s32, s32), 0x24)(temp_r3_2, temp_r28, temp_r27) == (u32) temp_r27) == 0))) {
+    temp_r3 = M2C_FIELD(arg0, u8 **, 0);
+    temp_r27 = (s32)(arg4 * 4);
+    temp_r10 = M2C_FIELD(M2C_FIELD(temp_r3, u8 **, 0xC), M2C_UNK (**)(u8 *, s32, M2C_UNK, u8 *), 0x94);
+    temp_r10(temp_r3, M2C_FIELD(arg0, s32 *, 4) + (temp_r27 * arg3) + 8, 0, (M2C_UNK) temp_r10);
+    if ((temp_r27 > 0x40) || (temp_r3_2 = M2C_FIELD(arg0, u8 **, 0), temp_r28 = (s32) &sp47 & 0xFFFFFFC0, ((M2C_FIELD(M2C_FIELD(temp_r3_2, u8 **, 0xC), u32 (**)(u8 *, s32, s32), 0x24)(temp_r3_2, temp_r28, temp_r27) == (u32) temp_r27) == 0))) {
         return 0;
     }
     if (arg4 > 0) {
-        var_ctr = arg4;
+        var_ctr = (s32)(arg4);
         var_r7 = 0;
         var_r6 = temp_r28 - 4;
         do {
             temp_r8 = M2C_FIELD(var_r6, u16 *, 4);
             var_r6 += 4;
-            *(arg1 + var_r7) = temp_r8;
-            *(arg2 + var_r7) = M2C_FIELD(var_r6, u16 *, 2);
+            *(u8 *)(arg1 + var_r7) = temp_r8;
+            *(u8 *)(arg2 + var_r7) = M2C_FIELD(var_r6, u16 *, 2);
             var_r7 += 2;
             var_ctr -= 1;
         } while (var_ctr != 0);

@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,17 +89,16 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-M2C_UNK func_02B5BE44(s32, s32, s32);               /* extern */
-u64 func_02B61928(M2C_UNK, s32);                    /* extern */
-s32 func_02B61940(M2C_UNK);                         /* extern */
-s8 func_02B61990(u32);                              /* extern */
-s8 func_02B619B0(u32);                              /* extern */
-s8 func_02B61A1C(u32);                              /* extern */
-s8 func_02B61A88(u32);                              /* extern */
-f32 func_02B61AF4(u32);                             /* extern */
-void *func_02B61B60(u32);                           /* extern */
-
-s32 func_02B61BD8(void *arg0, void *arg1, s32 arg2) {
+M2C_UNK func_02B5BE44(); /* extern */
+u64 func_02B61928(); /* extern */
+s32 func_02B61940(); /* extern */
+s8 func_02B61990(); /* extern */
+s8 func_02B619B0(); /* extern */
+s8 func_02B61A1C(); /* extern */
+s8 func_02B61A88(); /* extern */
+f32 func_02B61AF4(); /* extern */
+u8 *func_02B61B60(); /* extern */
+s32 func_02B61BD8(u8 *arg0, u8 *arg1, s32 arg2) {
     f32 temp_ret_2;
     s32 temp_r10;
     s8 temp_ret_4;
@@ -102,16 +108,16 @@ s32 func_02B61BD8(void *arg0, void *arg1, s32 arg2) {
     u32 temp_r0;
     u32 temp_r4;
     u64 temp_ret;
-    void *temp_r11;
-    void *temp_r3_2;
-    void *temp_ret_3;
+    u8 *temp_r11;
+    u8 *temp_r3_2;
+    u8 *temp_ret_3;
 
-    temp_r10 = M2C_FIELD(arg0, s32 *, 4);
+    temp_r10 = (s32)(M2C_FIELD(arg0, s32 *, 4));
     func_02B5BE44(temp_r10, arg2, temp_r10);
     temp_ret = func_02B61928(M2C_ERROR(/* Read from unset register $r10 */), func_02B61940(M2C_ERROR(/* Read from unset register $r6 */)));
     temp_r3 = temp_ret;
     temp_r4 = (u32) temp_ret;
-    temp_r0 = *temp_r4;
+    temp_r0 = (s32)(*(u32 *)(temp_r4));
     if ((temp_r0 >= (u32) *temp_r3) || (temp_r11 = temp_r3 + 4 + (temp_r0 * 8), ((temp_r11 == NULL) != 0))) {
         return 0;
     }

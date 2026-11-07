@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,9 +89,8 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-u64 func_02B8F7C8(void *, M2C_UNK);                 /* extern */
-
-void func_02B8F7D0(void *arg0, void *arg1) {
+u64 func_02B8F7C8(); /* extern */
+void func_02B8F7D0(u8 *arg0, u8 *arg1) {
     f32 sp10;
     f32 spC;
     f32 sp8;
@@ -94,7 +100,7 @@ void func_02B8F7D0(void *arg0, void *arg1) {
     u64 temp_ret;
     u64 temp_ret_2;
     u64 temp_ret_3;
-    void *var_r4;
+    u8 *var_r4;
 
     var_r4 = arg1;
     spC = M2C_FIELD(var_r4, f32 *, 4);
@@ -103,7 +109,7 @@ void func_02B8F7D0(void *arg0, void *arg1) {
     if ((s32) M2C_FIELD(arg0, u8 *, 5) != 0) {
         temp_ret = func_02B8F7C8(var_r4);
         temp_f1 = M2C_BITWISE(f32, temp_ret);
-        var_r4 = (void *) (u32) temp_ret;
+        var_r4 = (u8 *) (u32) temp_ret;
         if ((s32) M2C_FIELD(M2C_ERROR(/* Read from unset register $r9 */), u8 *, 3) == 0) {
 
         } else {
@@ -113,17 +119,17 @@ void func_02B8F7D0(void *arg0, void *arg1) {
 block_4:
         temp_ret_2 = func_02B8F7C8(var_r4, M2C_ERROR(/* Read from unset register $f13 */));
         temp_f1_2 = M2C_BITWISE(f32, temp_ret_2);
-        var_r4 = (void *) (u32) temp_ret_2;
+        var_r4 = (u8 *) (u32) temp_ret_2;
     }
     if ((s32) M2C_FIELD(M2C_ERROR(/* Read from unset register $r9 */), u8 *, 4) != 0) {
         temp_ret_3 = func_02B8F7C8(var_r4, M2C_ERROR(/* Read from unset register $f12 */));
         temp_f1_3 = M2C_BITWISE(f32, temp_ret_3);
-        var_r4 = (void *) (u32) temp_ret_3;
+        var_r4 = (u8 *) (u32) temp_ret_3;
     }
-    *((M2C_FIELD(M2C_ERROR(/* Read from unset register $r9 */), u8 *, 2) * 4) + M2C_ERROR(/* Read from unset register $r12 */)) = M2C_ERROR(/* Read from unset register $f0 */);
-    *((*M2C_ERROR(/* Read from unset register $r9 */) * 4) + M2C_ERROR(/* Read from unset register $r12 */)) = M2C_ERROR(/* Read from unset register $f13 */);
-    *((M2C_FIELD(M2C_ERROR(/* Read from unset register $r9 */), u8 *, 1) * 4) + M2C_ERROR(/* Read from unset register $r12 */)) = M2C_ERROR(/* Read from unset register $f12 */);
-    M2C_FIELD(var_r4, f32 *, 0) = (f32) *M2C_ERROR(/* Read from unset register $r12 */);
+    *(u8 *)((M2C_FIELD(M2C_ERROR(/* Read from unset register $r9 */), u8 *, 2) * 4) + M2C_ERROR(/* Read from unset register $r12 */)) = 0;
+    *(u8 *)((M2C_ERROR(/* Read from unset register $r9 */) * 4) + M2C_ERROR(/* Read from unset register $r12 */)) = 0;
+    *(u8 *)((M2C_FIELD(M2C_ERROR(/* Read from unset register $r9 */), u8 *, 1) * 4) + M2C_ERROR(/* Read from unset register $r12 */)) = 0;
+    M2C_FIELD(var_r4, f32 *, 0) = (f32) M2C_ERROR(/* Read from unset register $r12 */);
     M2C_FIELD(var_r4, f32 *, 8) = (f32) M2C_FIELD(M2C_ERROR(/* Read from unset register $r12 */), f32 *, 8);
     M2C_FIELD(var_r4, f32 *, 4) = (f32) M2C_FIELD(M2C_ERROR(/* Read from unset register $r12 */), f32 *, 4);
 }

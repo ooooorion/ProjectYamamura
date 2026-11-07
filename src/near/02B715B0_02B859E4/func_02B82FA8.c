@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,11 +89,10 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-f32 func_02B7DCDC(void *, f32 *, f32);              /* extern */
-
+f32 func_02B7DCDC(); /* extern */
 /* Warning: Gap in callee-saved word stack region.
  * Saved: [0x14, 0x18, 0x1c, 0x20, 0x24, 0x28, 0x2c, 0x38, 0x3c], gap at: 0x30. */
-void func_02B82FA8(void *arg0, s32 arg1, f32 farg0) {
+void func_02B82FA8(u8 *arg0, s32 arg1, f32 farg0) {
     f32 sp8;
     f32 temp_f1;
     f32 temp_f31;
@@ -94,28 +100,28 @@ void func_02B82FA8(void *arg0, s32 arg1, f32 farg0) {
     s32 temp_r30;
     s32 var_r29;
     u8 var_r28;
-    void *temp_r3;
-    void *var_r11;
+    u8 *temp_r3;
+    u8 *var_r11;
 
     M2C_ERROR(/* unknown instruction: vmhaddshs v31, v31, v31, v18 */);
     M2C_ERROR(/* unknown instruction: vmhaddshs v30, v30, v30, v18 */);
-    var_r28 = M2C_FIELD(arg0, u8 *, 0xA);
+    var_r28 = (s32)(M2C_FIELD(arg0, u8 *, 0xA));
     if ((s32) var_r28 != 0) {
         temp_f31 = *(f32 *)0x101665B0;
         var_r29 = 0;
         do {
-            temp_r0 = M2C_FIELD(arg0, s32 *, 0x10);
+            temp_r0 = (s32)(M2C_FIELD(arg0, s32 *, 0x10));
             var_r11 = NULL;
             if (temp_r0 != 0) {
                 var_r11 = arg0 + 0x10 + temp_r0;
             }
             temp_r3 = var_r11 + var_r29;
-            temp_r30 = M2C_FIELD(temp_r3, s32 *, 4);
+            temp_r30 = (s32)(M2C_FIELD(temp_r3, s32 *, 4));
             sp8 = temp_f31;
             temp_f1 = func_02B7DCDC(temp_r3, &sp8, farg0);
             var_r29 += 0x24;
             var_r28 -= 1;
-            *(arg1 + temp_r30) = temp_f1;
+            *(u8 *)(arg1 + temp_r30) = temp_f1;
         } while (var_r28 != 0);
     }
     M2C_SYNC();

@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,12 +89,11 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-s32 func_02B8E088();                                /* extern */
-s32 func_02B963D8(s32, s32);                        /* extern */
-s32 func_02B96408(s32);                             /* extern */
-s32 func_02B97BAC(s32, s32);                        /* extern */
-M2C_UNK func_02B99E58(s32, s32, s32, s32, s32, s32); /* extern */
-
+s32 func_02B8E088(); /* extern */
+s32 func_02B963D8(); /* extern */
+s32 func_02B96408(); /* extern */
+s32 func_02B97BAC(); /* extern */
+M2C_UNK func_02B99E58(); /* extern */
 u32 func_02B96414(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5) {
     s32 temp_r0;
     s32 temp_r12;
@@ -99,15 +105,15 @@ u32 func_02B96414(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5) {
     var_r24 = 1;
     var_r31 = 0x13;
     if (arg3 != 0) {
-        var_r24 = func_02B97BAC(arg2, arg2);
+        var_r24 = (s32)(func_02B97BAC(arg2, arg2));
     }
     var_r25 = 0;
 loop_3:
-    temp_r0 = arg1 & (1 << var_r25);
+    temp_r0 = (s32)(arg1 & (1 << var_r25));
     if (temp_r0 == 0) {
         temp_r12 = var_r25 * 4;
         var_r25 += 1;
-        *(temp_r12 + arg0) = temp_r0;
+        *(u8 *)(temp_r12 + arg0) = temp_r0;
         if (var_r25 >= 0x13U) {
 
         } else {
@@ -118,8 +124,8 @@ loop_3:
             var_r31 = (s32) var_r25;
         }
         temp_r23 = var_r25 * 4;
-        *(arg0 + temp_r23) = func_02B96408(arg5);
-        func_02B99E58(*(arg0 + temp_r23), arg2, arg2, func_02B963D8(arg4, func_02B8E088()), var_r24, arg5);
+        *(u8 *)(arg0 + temp_r23) = func_02B96408(arg5);
+        func_02B99E58(*(u8 *)(arg0 + temp_r23), arg2, arg2, func_02B963D8(arg4, func_02B8E088()), var_r24, arg5);
         var_r25 += 1;
         if (var_r25 < 0x13U) {
             goto loop_3;

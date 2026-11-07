@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,7 +89,7 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-s32 func_02B66DA4(void *arg0) {
+s32 func_02B66DA4(u8 *arg0) {
     s32 temp_r11;
     s32 var_r10;
     s32 var_r4;
@@ -91,9 +98,9 @@ s32 func_02B66DA4(void *arg0) {
     s32 var_r8;
     s32 var_r9;
     u8 temp_r11_2;
-    void *temp_r12;
+    u8 *temp_r12;
 
-    temp_r11 = M2C_FIELD(arg0, s32 *, 0xC);
+    temp_r11 = (s32)(M2C_FIELD(arg0, s32 *, 0xC));
     if ((s32) M2C_FIELD(arg0, s32 *, 0x10) < temp_r11) {
         var_r8 = (s32) ((temp_r11 + 7) & 0xFFFFFFF8) / 8;
         var_r4 = 0;
@@ -101,14 +108,14 @@ s32 func_02B66DA4(void *arg0) {
             temp_r12 = arg0 + 0x14;
             var_r10 = 0;
 loop_3:
-            temp_r11_2 = *(temp_r12 + var_r4);
+            temp_r11_2 = (s32)(*(u8 *)(temp_r12 + var_r4));
             if ((s32) temp_r11_2 != 0xFF) {
                 var_r9 = var_r10;
                 var_r7 = 0;
                 var_r6 = 1;
 loop_5:
                 if (!(temp_r11_2 & var_r6)) {
-                    *(temp_r12 + var_r4) = temp_r11_2 | var_r6;
+                    *(u8 *)(temp_r12 + var_r4) = temp_r11_2 | var_r6;
                     M2C_FIELD(arg0, s32 *, 0x10) = (s32) (M2C_FIELD(arg0, s32 *, 0x10) + 1);
                     return M2C_FIELD(arg0, s32 *, 0) + (M2C_FIELD(arg0, s32 *, 8) * var_r9);
                 }

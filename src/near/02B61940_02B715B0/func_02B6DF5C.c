@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,18 +89,17 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-u32 func_02B6DE44();                                /* extern */
-M2C_UNK func_02B6DE60(void *);                      /* extern */
-M2C_UNK func_02B8519C(void *, s32, u32);            /* extern */
-M2C_UNK func_02B85684(void *);                      /* extern */
-
-s32 func_02B6DF5C(void *arg0, s32 arg1) {
+u32 func_02B6DE44(); /* extern */
+M2C_UNK func_02B6DE60(); /* extern */
+M2C_UNK func_02B8519C(); /* extern */
+M2C_UNK func_02B85684(); /* extern */
+s32 func_02B6DF5C(u8 *arg0, s32 arg1) {
     s32 temp_r9;
     s32 var_r11;
     u16 temp_r0;
     u32 temp_r3;
     u8 temp_r6;
-    void *var_r10;
+    u8 *var_r10;
 
     temp_r3 = func_02B6DE44();
     if (temp_r3 > (u32) M2C_ERROR(/* Read from unset register $r5 */)) {
@@ -101,12 +107,12 @@ s32 func_02B6DF5C(void *arg0, s32 arg1) {
     }
     M2C_FIELD(arg0, s32 *, 0x38) = arg1;
     func_02B6DE60(arg0);
-    temp_r6 = M2C_FIELD(arg0, u8 *, 7);
+    temp_r6 = (s32)(M2C_FIELD(arg0, u8 *, 7));
     if (temp_r6 > 1U) {
-        temp_r9 = M2C_FIELD(arg0, s32 *, 0xC);
+        temp_r9 = (s32)(M2C_FIELD(arg0, s32 *, 0xC));
         if (temp_r9 != 0) {
-            temp_r0 = M2C_FIELD(arg0, u16 *, 8);
-            var_r11 = temp_r0 * temp_r6;
+            temp_r0 = (s32)(M2C_FIELD(arg0, u16 *, 8));
+            var_r11 = (s32)(temp_r0 * temp_r6);
             if (var_r11 > 0) {
                 var_r10 = (temp_r9 + (temp_r0 * 4)) - 4;
                 do {

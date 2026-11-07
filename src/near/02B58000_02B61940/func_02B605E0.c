@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,16 +89,14 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-s32 func_02B603D8(M2C_UNK);                         /* extern */
-s32 func_02B605A0(s32, s32);                        /* extern */
-
+s32 func_02B603D8(); /* extern */
+s32 func_02B605A0(); /* extern */
 void func_02B605E0(s32 arg0, s32 arg1) {
     s32 temp_r3;
 
     if (func_02B605A0(arg0, arg1) != 0) {
-        *M2C_ERROR(/* Read from unset register $r7 */) = M2C_ERROR(/* Read from unset register $r10 */);
         temp_r3 = func_02B603D8(M2C_ERROR(/* Read from unset register $r10 */));
-        if ((u32) *(M2C_ERROR(/* Read from unset register $r10 */) + temp_r3) == 0x494E464FU) {
+        if ((u32) *(u8 *)(M2C_ERROR(/* Read from unset register $r10 */) + temp_r3) == 0x494E464FU) {
             M2C_FIELD(M2C_ERROR(/* Read from unset register $r7 */), s32 *, 4) = (s32) (M2C_ERROR(/* Read from unset register $r10 */) + temp_r3 + 8);
         }
     }

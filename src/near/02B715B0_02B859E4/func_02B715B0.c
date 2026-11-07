@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,9 +89,9 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-M2C_UNK func_02B711EC(M2C_UNK, void *, u32, M2C_UNK, f32, f32, f32, f32, f32, f32, f32, f32, f32, f32, f32, f32, f32); /* extern */
-
-void func_02B715B0(void *arg2, f32 farg0, f32 farg1, f32 farg2, f32 farg3) {
+M2C_UNK func_02B711EC(); /* extern */
+void func_02B715B0(u8 *arg2, f32 farg0, f32 farg1, f32 farg2, f32 farg3) {
+    s32 unksp14;
     f64 sp10;
     f32 temp_f10;
     f32 temp_f11;
@@ -98,7 +105,7 @@ void func_02B715B0(void *arg2, f32 farg0, f32 farg1, f32 farg2, f32 farg3) {
     f32 temp_f9;
     s32 temp_r0;
     u32 temp_r9;
-    void *temp_r8;
+    u8 *temp_r8;
 
     sp10 = ((f64) (farg0 * *(f32 *)0x101661A8) * *(f64 *)0x101661C0) + *(f64 *)0x101661C8;
     temp_r9 = unksp14 & 0xFFFFFF;
@@ -107,7 +114,7 @@ void func_02B715B0(void *arg2, f32 farg0, f32 farg1, f32 farg2, f32 farg3) {
     temp_f11 = (f32) (f64) temp_r9 * *(f32 *)0x101661D8;
     temp_f13 = (M2C_FIELD(temp_r8, f32 *, 0xC) * temp_f11) + M2C_FIELD(temp_r8, f32 *, 4);
     temp_f7 = __fres(temp_f13);
-    temp_f13_2 = farg2 * (((M2C_FIELD(temp_r8, f32 *, 8) * temp_f11) + *(0x101665B8 + temp_r0)) * -((temp_f13 * temp_f7 * temp_f7) - (2.0f * temp_f7)));
+    temp_f13_2 = farg2 * (((M2C_FIELD(temp_r8, f32 *, 8) * temp_f11) + *(u8 *)(0x101665B8 + temp_r0)) * -((temp_f13 * temp_f7 * temp_f7) - (2.0f * temp_f7)));
     temp_f12 = M2C_FIELD(arg2, f32 *, 4);
     temp_f11_2 = temp_f13_2 * temp_f12;
     temp_f10 = temp_f13_2 * farg1;

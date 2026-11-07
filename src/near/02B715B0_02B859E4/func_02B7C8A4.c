@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,9 +89,8 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-s8 func_02B7F178(s32, void *);                      /* extern */
-
-s32 func_02B7C8A4(void *arg0, void *arg1, void *arg2) {
+s8 func_02B7F178(); /* extern */
+s32 func_02B7C8A4(u8 *arg0, u8 *arg1, u8 *arg2) {
     s32 temp_r0;
     s32 temp_r0_2;
     s32 temp_r7;
@@ -93,31 +99,31 @@ s32 func_02B7C8A4(void *arg0, void *arg1, void *arg2) {
     s32 var_r3;
     s8 temp_r3;
     u16 var_r29;
-    void *var_r26;
-    void *var_r4;
+    u8 *var_r26;
+    u8 *var_r4;
 
     var_r31 = 0;
-    temp_r0 = M2C_FIELD(arg1, s32 *, 0x10);
+    temp_r0 = (s32)(M2C_FIELD(arg1, s32 *, 0x10));
     var_r26 = NULL;
-    var_r29 = M2C_FIELD(arg1, u16 *, 0);
+    var_r29 = (s32)(M2C_FIELD(arg1, u16 *, 0));
     if (temp_r0 != 0) {
         var_r26 = arg1 + 0x10 + temp_r0;
     }
-    var_r30 = M2C_FIELD(arg1, s32 *, 8);
+    var_r30 = (s32)(M2C_FIELD(arg1, s32 *, 8));
     if ((s32) var_r29 != 0) {
 loop_4:
         temp_r7 = M2C_FIELD(var_r26, s32 *, 4);
         var_r4 = NULL;
-        temp_r0_2 = M2C_FIELD(arg2, s32 *, 0x30);
+        temp_r0_2 = (s32)(M2C_FIELD(arg2, s32 *, 0x30));
         if (temp_r7 != 0) {
             var_r4 = (var_r26 + 4 + temp_r7) - 4;
         }
         var_r3 = 0;
         if (temp_r0_2 != 0) {
-            var_r3 = arg2 + 0x30 + temp_r0_2;
+            var_r3 = (s32)(arg2 + 0x30 + temp_r0_2);
         }
         temp_r3 = func_02B7F178(var_r3, var_r4);
-        *(M2C_FIELD(arg0, s32 *, 0x58) + var_r30) = temp_r3;
+        *(u8 *)(M2C_FIELD(arg0, s32 *, 0x58) + var_r30) = temp_r3;
         if (temp_r3 >= 0) {
             var_r31 |= 0xFFFF0000;
             var_r29 -= 1;

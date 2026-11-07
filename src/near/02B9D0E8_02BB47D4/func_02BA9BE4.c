@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,28 +89,27 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-M2C_UNK func_02C74520(s32, M2C_UNK);                /* extern */
-
-void func_02BA9BE4(void *arg0) {
+M2C_UNK func_02C74520(); /* extern */
+void func_02BA9BE4(u8 *arg0) {
     s32 temp_r30_2;
     s32 var_r28;
     u32 temp_r30;
-    void *temp_r12;
-    void *temp_r29;
+    u8 *temp_r12;
+    u8 *temp_r29;
 
     var_r28 = 0;
     if ((s32) M2C_FIELD(arg0, s32 *, 0x158) > 0) {
         do {
-            temp_r29 = M2C_FIELD((arg0 + (var_r28 * 4)), void **, 0x15C);
+            temp_r29 = M2C_FIELD((arg0 + (var_r28 * 4)), u8 **, 0x15C);
             if ((s32) M2C_FIELD(temp_r29, s32 *, 0x50) == 0) {
-                temp_r30 = M2C_FIELD(temp_r29, u32 *, 0x10);
+                temp_r30 = (s32)(M2C_FIELD(temp_r29, u32 *, 0x10));
                 if ((temp_r30 >= 4U) || ((s32) M2C_FIELD((arg0 + (temp_r30 * 4)), s32 *, 0xAC) == 0)) {
-                    temp_r12 = M2C_FIELD(arg0, void **, 0);
+                    temp_r12 = M2C_FIELD(arg0, u8 **, 0);
                     M2C_FIELD(temp_r12, u32 *, 0x18) = temp_r30;
                     M2C_FIELD(temp_r12, s32 *, 0x14) = 0x36;
-                    M2C_FIELD(temp_r12, M2C_UNK (**)(void *), 0)(arg0);
+                    M2C_FIELD(temp_r12, M2C_UNK (**)(u8 *), 0)(arg0);
                 }
-                temp_r30_2 = *M2C_FIELD(arg0, s32 (***)(void *, M2C_UNK, M2C_UNK), 4)(arg0, 1, 0x84);
+                temp_r30_2 = (s32)(((u8 *(*)()) M2C_FIELD(arg0, s32 (***)(u8 *, M2C_UNK, u8 *), 4))(arg0, 1, 0x84));
                 func_02C74520(M2C_FIELD((arg0 + (temp_r30 * 4)), s32 *, 0xAC), 0x84);
                 M2C_FIELD(temp_r29, s32 *, 0x50) = temp_r30_2;
             }

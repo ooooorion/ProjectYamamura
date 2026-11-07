@@ -10,27 +10,27 @@ Every row below is a non-match and is **not** claimed in
 
 | Function | Range | Bytes | Status | Words | First diff | File | Detail |
 |---|---|---:|---|---:|---|---|---|
-| `func_02B715B0` | `02B715B0..02B71698` | 236 | COMPILE | — | — | `func_02B715B0.c` | "build/batch/p30_03\func_02B715B0.c", line 104: error #20: identifier "unksp14" |
+| `func_02B715B0` | `02B715B0..02B71698` | 236 | BLOCKED | — | — | `func_02B715B0.c` | .L27@+0x56 |
 | `func_02B719B8` | `02B719B8..02B719E0` | 44 | DIFF | 8/11 | +0xC | `func_02B719B8.c` | — |
-| `func_02B719E4` | `02B719E4..02B71A58` | 120 | COMPILE | — | — | `func_02B719E4.c` | "build/batch/p30_03\func_02B719E4.c", line 97: error #75: operand of "*" must |
+| `func_02B719E4` | `02B719E4..02B71A58` | 120 | DIFF | 2/30 | +0x4 | `func_02B719E4.c` | — |
 | `func_02B71EF0` | `02B71EF0..02B71F58` | 108 | DIFF | 9/27 | +0x1C | `func_02B71EF0.c` | — |
-| `func_02B725FC` | `02B725FC..02B726B4` | 188 | COMPILE | — | — | `func_02B725FC.c` | "build/batch/p30_03\func_02B725FC.c", line 104: error #165: too few arguments |
-| `func_02B726B8` | `02B726B8..02B72768` | 180 | COMPILE | — | — | `func_02B726B8.c` | "build/batch/p30_03\func_02B726B8.c", line 104: error #165: too few arguments |
-| `func_02B7276C` | `02B7276C..02B72858` | 240 | COMPILE | — | — | `func_02B7276C.c` | "build/batch/p30_03\func_02B7276C.c", line 130: error #852: expression must be |
+| `func_02B725FC` | `02B725FC..02B726B4` | 188 | DIFF | 0/36 | +0x0 | `func_02B725FC.c` | — |
+| `func_02B726B8` | `02B726B8..02B72768` | 180 | DIFF | 1/39 | +0x0 | `func_02B726B8.c` | — |
+| `func_02B7276C` | `02B7276C..02B72858` | 240 | DIFF | 4/57 | +0x4 | `func_02B7276C.c` | — |
 | `func_02B72994` | `02B72994..02B729BC` | 44 | DIFF | 8/11 | +0xC | `func_02B72994.c` | — |
 | `func_02B72CE4` | `02B72CE4..02B72DA4` | 196 | DIFF | 13/24 | +0x18 | `func_02B72CE4.c` | — |
 | `func_02B73370` | `02B73370..02B73408` | 156 | DIFF | 35/39 | +0x8 | `func_02B73370.c` | — |
-| `func_02B7340C` | `02B7340C..02B734B0` | 168 | COMPILE | — | — | `func_02B7340C.c` | "build/batch/p30_03\func_02B7340C.c", line 106: error #75: operand of "*" must |
-| `func_02B734B4` | `02B734B4..02B7356C` | 188 | COMPILE | — | — | `func_02B734B4.c` | "build/batch/p30_03\func_02B734B4.c", line 94: warning #513-D: a value of type |
-| `func_02B735CC` | `02B735CC..02B73698` | 208 | COMPILE | — | — | `func_02B735CC.c` | "build/batch/p30_03\func_02B735CC.c", line 111: error #75: operand of "*" must |
+| `func_02B7340C` | `02B7340C..02B734B0` | 168 | DIFF | 2/35 | +0x8 | `func_02B7340C.c` | — |
+| `func_02B734B4` | `02B734B4..02B7356C` | 188 | DIFF | 9/45 | +0x24 | `func_02B734B4.c` | — |
+| `func_02B735CC` | `02B735CC..02B73698` | 208 | DIFF | 3/52 | +0x4 | `func_02B735CC.c` | — |
 | `func_02B7369C` | `02B7369C..02B7376C` | 212 | DIFF | 16/53 | +0x8 | `func_02B7369C.c` | — |
 | `func_02B73770` | `02B73770..02B73814` | 168 | DIFF | 12/42 | +0x8 | `func_02B73770.c` | — |
 | `func_02B73818` | `02B73818..02B73840` | 44 | DIFF | 3/11 | +0x0 | `func_02B73818.c` | — |
 | `func_02B73844` | `02B73844..02B738E4` | 164 | DIFF | 12/40 | +0x20 | `func_02B73844.c` | — |
 | `func_02B738E8` | `02B738E8..02B73914` | 48 | DIFF | 11/12 | +0xC | `func_02B738E8.c` | — |
-| `func_02B73A48` | `02B73A48..02B73AE0` | 156 | COMPILE | — | — | `func_02B73A48.c` | "build/batch/p30_03\func_02B73A48.c", line 97: warning #513-D: a value of type |
+| `func_02B73A48` | `02B73A48..02B73AE0` | 156 | DIFF | 14/39 | +0x14 | `func_02B73A48.c` | — |
 | `func_02B73AE4` | `02B73AE4..02B73BB4` | 212 | DIFF | 16/53 | +0x8 | `func_02B73AE4.c` | — |
-| `func_02B784D8` | `02B784D8..02B78564` | 144 | COMPILE | — | — | `func_02B784D8.c` | "build/batch/p30_03\func_02B784D8.c", line 111: error #852: expression must be |
+| `func_02B784D8` | `02B784D8..02B78564` | 144 | DIFF | 1/33 | +0x0 | `func_02B784D8.c` | — |
 | `func_02B78568` | `02B78568..02B78590` | 44 | DIFF | 8/11 | +0xC | `func_02B78568.c` | — |
 | `func_02B78A78` | `02B78A78..02B78A9C` | 40 | DIFF | 3/10 | +0x0 | `func_02B78A78.c` | — |
 | `func_02B78AA0` | `02B78AA0..02B78B30` | 148 | BLOCKED | — | — | `func_02B78AA0.c` | __gh_udiv64@+0x70 |
@@ -40,27 +40,27 @@ Every row below is a non-match and is **not** claimed in
 | `func_02B7996C` | `02B7996C..02B79A10` | 168 | DIFF | 12/42 | +0x8 | `func_02B7996C.c` | — |
 | `func_02B79A14` | `02B79A14..02B79AD8` | 200 | DIFF | 17/50 | +0x8 | `func_02B79A14.c` | — |
 | `func_02B7C878` | `02B7C878..02B7C8A0` | 44 | DIFF | 8/11 | +0xC | `func_02B7C878.c` | — |
-| `func_02B7C8A4` | `02B7C8A4..02B7C974` | 212 | COMPILE | — | — | `func_02B7C8A4.c` | "build/batch/p30_03\func_02B7C8A4.c", line 117: error #513: a value of type |
+| `func_02B7C8A4` | `02B7C8A4..02B7C974` | 212 | DIFF | 4/50 | +0x10 | `func_02B7C8A4.c` | — |
 | `func_02B7D44C` | `02B7D44C..02B7D474` | 44 | DIFF | 8/11 | +0xC | `func_02B7D44C.c` | — |
 | `func_02B7DB04` | `02B7DB04..02B7DB98` | 152 | DIFF | 1/15 | +0x4 | `func_02B7DB04.c` | — |
-| `func_02B7DCDC` | `02B7DCDC..02B7DD8C` | 180 | COMPILE | — | — | `func_02B7DCDC.c` | "build/batch/p30_03\func_02B7DCDC.c", line 97: warning #513-D: a value of type |
-| `func_02B7DFF8` | `02B7DFF8..02B7E098` | 164 | COMPILE | — | — | `func_02B7DFF8.c` | "build/batch/p30_03\func_02B7DFF8.c", line 110: error #32: expression must |
-| `func_02B7E09C` | `02B7E09C..02B7E134` | 156 | COMPILE | — | — | `func_02B7E09C.c` | "build/batch/p30_03\func_02B7E09C.c", line 110: error #32: expression must |
-| `func_02B7EE44` | `02B7EE44..02B7EF20` | 224 | COMPILE | — | — | `func_02B7EE44.c` | "build/batch/p30_03\func_02B7EE44.c", line 107: error #171: invalid type |
-| `func_02B7EF24` | `02B7EF24..02B7EF94` | 116 | COMPILE | — | — | `func_02B7EF24.c` | "build/batch/p30_03\func_02B7EF24.c", line 95: warning #513-D: a value of type |
+| `func_02B7DCDC` | `02B7DCDC..02B7DD8C` | 180 | DIFF | 2/43 | +0x8 | `func_02B7DCDC.c` | — |
+| `func_02B7DFF8` | `02B7DFF8..02B7E098` | 164 | DIFF | 16/41 | +0x14 | `func_02B7DFF8.c` | — |
+| `func_02B7E09C` | `02B7E09C..02B7E134` | 156 | DIFF | 19/39 | +0x14 | `func_02B7E09C.c` | — |
+| `func_02B7EE44` | `02B7EE44..02B7EF20` | 224 | DIFF | 3/44 | +0xC | `func_02B7EE44.c` | — |
+| `func_02B7EF24` | `02B7EF24..02B7EF94` | 116 | DIFF | 20/29 | +0x14 | `func_02B7EF24.c` | — |
 | `func_02B7F0A4` | `02B7F0A4..02B7F100` | 96 | DIFF | 18/24 | +0x20 | `func_02B7F0A4.c` | — |
-| `func_02B7F104` | `02B7F104..02B7F174` | 116 | COMPILE | — | — | `func_02B7F104.c` | "build/batch/p30_03\func_02B7F104.c", line 93: warning #513-D: a value of type |
+| `func_02B7F104` | `02B7F104..02B7F174` | 116 | DIFF | 22/29 | +0x28 | `func_02B7F104.c` | — |
 | `func_02B7F1DC` | `02B7F1DC..02B7F2BC` | 228 | DIFF | 4/57 | +0xC | `func_02B7F1DC.c` | — |
 | `func_02B7F2C0` | `02B7F2C0..02B7F3A0` | 228 | DIFF | 4/57 | +0xC | `func_02B7F2C0.c` | — |
-| `func_02B7FA70` | `02B7FA70..02B7FB4C` | 224 | COMPILE | — | — | `func_02B7FA70.c` | "build/batch/p30_03\func_02B7FA70.c", line 124: error #513: a value of type |
+| `func_02B7FA70` | `02B7FA70..02B7FB4C` | 224 | DIFF | 6/56 | +0x8 | `func_02B7FA70.c` | — |
 | `func_02B7FB50` | `02B7FB50..02B7FBBC` | 112 | DIFF | 12/28 | +0x18 | `func_02B7FB50.c` | — |
-| `func_02B806C0` | `02B806C0..02B80768` | 172 | COMPILE | — | — | `func_02B806C0.c` | "build/batch/p30_03\func_02B806C0.c", line 108: error #165: too few arguments |
+| `func_02B806C0` | `02B806C0..02B80768` | 172 | DIFF | 0/43 | +0x0 | `func_02B806C0.c` | — |
 | `func_02B81814` | `02B81814..02B81874` | 100 | DIFF | 14/25 | +0x0 | `func_02B81814.c` | — |
-| `func_02B81878` | `02B81878..02B818A0` | 44 | COMPILE | — | — | `func_02B81878.c` | "build/batch/p30_03\func_02B81878.c", line 89: error #75: operand of "*" must |
-| `func_02B818A4` | `02B818A4..02B818C0` | 32 | COMPILE | — | — | `func_02B818A4.c` | "build/batch/p30_03\func_02B818A4.c", line 86: error #75: operand of "*" must |
-| `func_02B818C4` | `02B818C4..02B818F0` | 48 | COMPILE | — | — | `func_02B818C4.c` | "build/batch/p30_03\func_02B818C4.c", line 89: error #75: operand of "*" must |
+| `func_02B81878` | `02B81878..02B818A0` | 44 | DIFF | 3/10 | +0x0 | `func_02B81878.c` | — |
+| `func_02B818A4` | `02B818A4..02B818C0` | 32 | DIFF | 1/8 | +0x0 | `func_02B818A4.c` | — |
+| `func_02B818C4` | `02B818C4..02B818F0` | 48 | DIFF | 1/12 | +0x0 | `func_02B818C4.c` | — |
 | `func_02B818F4` | `02B818F4..02B81960` | 112 | DIFF | 13/28 | +0x18 | `func_02B818F4.c` | — |
-| `func_02B81964` | `02B81964..02B819C0` | 96 | COMPILE | — | — | `func_02B81964.c` | "build/batch/p30_03\func_02B81964.c", line 97: error #75: operand of "*" must |
+| `func_02B81964` | `02B81964..02B819C0` | 96 | DIFF | 6/19 | +0x18 | `func_02B81964.c` | — |
 | `func_02B819C4` | `02B819C4..02B819F4` | 52 | DIFF | 1/13 | +0x0 | `func_02B819C4.c` | — |
 | `func_02B81B68` | `02B81B68..02B81BA0` | 60 | DIFF | 1/14 | +0x0 | `func_02B81B68.c` | — |
 | `func_02B82280` | `02B82280..02B822C0` | 68 | DIFF | 3/13 | +0xC | `func_02B82280.c` | — |
@@ -71,18 +71,18 @@ Every row below is a non-match and is **not** claimed in
 | `func_02B82908` | `02B82908..02B82944` | 64 | DIFF | 11/16 | +0x8 | `func_02B82908.c` | — |
 | `func_02B82948` | `02B82948..02B829B4` | 112 | DIFF | 12/28 | +0x18 | `func_02B82948.c` | — |
 | `func_02B829B8` | `02B829B8..02B82A24` | 112 | DIFF | 12/28 | +0x18 | `func_02B829B8.c` | — |
-| `func_02B82A34` | `02B82A34..02B82AFC` | 204 | COMPILE | — | — | `func_02B82A34.c` | "build/batch/p30_03\func_02B82A34.c", line 108: error #513: a value of type |
+| `func_02B82A34` | `02B82A34..02B82AFC` | 204 | DIFF | 1/50 | +0x0 | `func_02B82A34.c` | — |
 | `func_02B82B00` | `02B82B00..02B82BC4` | 200 | DIFF | 18/50 | +0x1C | `func_02B82B00.c` | — |
 | `func_02B82BC8` | `02B82BC8..02B82C6C` | 168 | DIFF | 14/42 | +0x1C | `func_02B82BC8.c` | — |
-| `func_02B82FA8` | `02B82FA8..02B83054` | 176 | COMPILE | — | — | `func_02B82FA8.c` | "build/batch/p30_03\func_02B82FA8.c", line 100: warning #174-D: expression has |
-| `func_02B83058` | `02B83058..02B830EC` | 152 | COMPILE | — | — | `func_02B83058.c` | "build/batch/p30_03\func_02B83058.c", line 97: warning #174-D: expression has |
+| `func_02B82FA8` | `02B82FA8..02B83054` | 176 | DIFF | 5/44 | +0x0 | `func_02B82FA8.c` | — |
+| `func_02B83058` | `02B83058..02B830EC` | 152 | DIFF | 4/38 | +0x0 | `func_02B83058.c` | — |
 | `func_02B83244` | `02B83244..02B832BC` | 124 | DIFF | 3/31 | +0x0 | `func_02B83244.c` | — |
-| `func_02B833F8` | `02B833F8..02B834D8` | 228 | COMPILE | — | — | `func_02B833F8.c` | "build/batch/p30_03\func_02B833F8.c", line 98: warning #174-D: expression has |
+| `func_02B833F8` | `02B833F8..02B834D8` | 228 | DIFF | 2/55 | +0x0 | `func_02B833F8.c` | — |
 | `func_02B834DC` | `02B834DC..02B83570` | 152 | DIFF | 13/38 | +0x10 | `func_02B834DC.c` | — |
 | `func_02B837B0` | `02B837B0..02B8381C` | 112 | DIFF | 16/28 | +0x10 | `func_02B837B0.c` | — |
-| `func_02B83860` | `02B83860..02B83918` | 188 | COMPILE | — | — | `func_02B83860.c` | "build/batch/p30_03\func_02B83860.c", line 110: error #32: expression must |
-| `func_02B83928` | `02B83928..02B839C0` | 156 | COMPILE | — | — | `func_02B83928.c` | "build/batch/p30_03\func_02B83928.c", line 91: warning #174-D: expression has |
-| `func_02B83BE4` | `02B83BE4..02B83C7C` | 156 | COMPILE | — | — | `func_02B83BE4.c` | "build/batch/p30_03\func_02B83BE4.c", line 91: warning #174-D: expression has |
+| `func_02B83860` | `02B83860..02B83918` | 188 | DIFF | 8/45 | +0xC | `func_02B83860.c` | — |
+| `func_02B83928` | `02B83928..02B839C0` | 156 | DIFF | 0/12 | +0x0 | `func_02B83928.c` | — |
+| `func_02B83BE4` | `02B83BE4..02B83C7C` | 156 | DIFF | 0/12 | +0x0 | `func_02B83BE4.c` | — |
 | `func_02B83C80` | `02B83C80..02B83CA4` | 40 | DIFF | 0/1 | +0x0 | `func_02B83C80.c` | — |
 | `func_02B83DA4` | `02B83DA4..02B83E3C` | 156 | DIFF | 0/9 | +0x0 | `func_02B83DA4.c` | — |
 | `func_02B83F3C` | `02B83F3C..02B83F80` | 72 | DIFF | 0/1 | +0x0 | `func_02B83F3C.c` | — |

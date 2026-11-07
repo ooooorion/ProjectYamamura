@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,31 +89,30 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-s32 func_02B9F5E8(u32, s32, M2C_UNK, f32, f64);     /* extern */
-M2C_UNK func_02B9F7B4(M2C_UNK, M2C_UNK);            /* extern */
-
+s32 func_02B9F5E8(); /* extern */
+M2C_UNK func_02B9F7B4(); /* extern */
 void func_02B9F5F4(s32 arg0, u32 arg1) {
     s32 spC;
     s32 sp8;
     f32 temp_f11;
     f64 temp_f12;
     s32 temp_r3;
-    void *temp_r3_2;
+    u8 *temp_r3_2;
 
     temp_f12 = (f64) arg1;
-    temp_r3 = func_02B9F5E8(arg1, arg0, 0x10170000, (f32) temp_f12, temp_f12);
-    sp8 = M2C_ERROR(/* Read from unset register $r10 */);
-    spC = temp_r3;
-    spC = M2C_ERROR(/* Read from unset register $r5 */);
+    temp_r3 = (s32)(func_02B9F5E8(arg1, arg0, 0x10170000, (f32) temp_f12, temp_f12));
+    sp8 = 0;
+    spC = (s32)(temp_r3);
+    spC = 0;
     spC = func_02B9F5E8(M2C_ERROR(/* Read from unset register $r5 */));
-    sp8 = M2C_ERROR(/* Read from unset register $r10 */);
+    sp8 = 0;
     temp_f11 = *(f32 *)0x10169B98;
-    temp_r3_2 = M2C_FIELD(M2C_ERROR(/* Read from unset register $r6 */), void **, 4);
+    temp_r3_2 = M2C_FIELD(M2C_ERROR(/* Read from unset register $r6 */), u8 **, 4);
     M2C_FIELD(temp_r3_2, f32 *, 4) = (f32) (temp_f11 / M2C_ERROR(/* Read from unset register $f8 */));
     M2C_FIELD(temp_r3_2, f32 *, 0) = (f32) (temp_f11 / M2C_ERROR(/* Read from unset register $f9 */));
     M2C_FIELD(temp_r3_2, f32 *, 8) = (f32) M2C_ERROR(/* Read from unset register $f7 */);
     M2C_FIELD(temp_r3_2, f32 *, 0xC) = (f32) ((f32) (M2C_BITWISE(f64, sp8) - *(f64 *)0x10169B90) / M2C_ERROR(/* Read from unset register $f8 */));
-    if ((s32) *M2C_ERROR(/* Read from unset register $r6 */) != 0) {
+    if ((s32) M2C_ERROR(/* Read from unset register $r6 */) != 0) {
         func_02B9F7B4(4, 0x100);
     }
 }

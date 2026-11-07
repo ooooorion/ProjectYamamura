@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -90,7 +97,7 @@ s32 func_02BC43A0(u16 *arg0, u32 arg1, s32 arg2, s32 arg3) {
     if (arg3 > 0) {
 loop_1:
         temp_r11 = var_r9 * 4;
-        if ((u16) *(arg2 + temp_r11) == arg1) {
+        if ((u16) *(u8 *)(arg2 + temp_r11) == arg1) {
             *arg0 = M2C_FIELD((arg2 + temp_r11), u16 *, 2);
             return 1;
         }

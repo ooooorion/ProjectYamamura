@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,31 +89,30 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-M2C_UNK func_02BA6664(void *);                      /* extern */
-u32 func_02BA8740(void *);                          /* extern */
-
-u32 func_02BA887C(void *arg0, s32 arg1) {
-    M2C_UNK (*temp_r10)(void *, M2C_UNK, M2C_UNK);
+M2C_UNK func_02BA6664(); /* extern */
+u32 func_02BA8740(); /* extern */
+u32 func_02BA887C(u8 *arg0, s32 arg1) {
+    M2C_UNK (*temp_r10)(u8 *, M2C_UNK, u8 *);
     s32 temp_r0;
     u32 var_r3;
-    void *temp_r11;
-    void *temp_r11_2;
+    u8 *temp_r11;
+    u8 *temp_r11_2;
 
-    temp_r0 = M2C_FIELD(arg0, s32 *, 0x14);
+    temp_r0 = (s32)(M2C_FIELD(arg0, s32 *, 0x14));
     if ((temp_r0 != 0xC8) && (temp_r0 != 0xC9)) {
-        temp_r11 = M2C_FIELD(arg0, void **, 0);
-        temp_r10 = M2C_FIELD(temp_r11, M2C_UNK (**)(void *, M2C_UNK, M2C_UNK), 0);
+        temp_r11 = M2C_FIELD(arg0, u8 **, 0);
+        temp_r10 = M2C_FIELD(temp_r11, M2C_UNK (**)(u8 *, M2C_UNK, u8 *), 0);
         M2C_FIELD(temp_r11, s32 *, 0x18) = temp_r0;
         M2C_FIELD(temp_r11, s32 *, 0x14) = 0x15;
-        temp_r10(arg0, 0x15, temp_r10);
+        temp_r10(arg0, 0x15, (M2C_UNK) temp_r10);
     }
-    var_r3 = func_02BA8740(arg0);
+    var_r3 = (s32)(func_02BA8740(arg0));
     switch (var_r3) {                               /* irregular */
     case 2:
         if (arg1 != 0) {
-            temp_r11_2 = M2C_FIELD(arg0, void **, 0);
+            temp_r11_2 = M2C_FIELD(arg0, u8 **, 0);
             M2C_FIELD(temp_r11_2, s32 *, 0x14) = 0x35;
-            M2C_FIELD(temp_r11_2, M2C_UNK (**)(void *, M2C_UNK, M2C_UNK), 0)(arg0);
+            M2C_FIELD(temp_r11_2, M2C_UNK (**)(u8 *, M2C_UNK, u8 *), 0)(arg0, 0, 0);
         }
         func_02BA6664(arg0);
         var_r3 = 2U;

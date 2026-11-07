@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,15 +89,12 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-Expected instruction argument to be a register, but found 0x0
-Expected instruction argument to be a register, but found 0x0
-M2C_UNK func_02BD66C4(s32);                         /* extern */
-M2C_UNK func_02BD66E8(s32);                         /* extern */
-
+M2C_UNK func_02BD66C4(); /* extern */
+M2C_UNK func_02BD66E8(); /* extern */
 void func_02BD670C(s32 arg0) {
     s32 temp_r31;
 
-    temp_r31 = arg0 + 8;
+    temp_r31 = (s32)(arg0 + 8);
     func_02BD66C4(temp_r31);
     do {
         // Error: Expected instruction argument to be a register, but found 0x0

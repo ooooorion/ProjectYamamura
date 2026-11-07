@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,14 +89,13 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-M2C_UNK func_02B8D158(s32, s32);                    /* extern */
-
+M2C_UNK func_02B8D158(); /* extern */
 void func_02B8D250(s32 arg0, s32 arg1, s32 arg2) {
     u32 var_r28;
 
     var_r28 = 0;
     do {
-        if ((s32) *(0x101684BC + (s32) ((arg2 * 3) + var_r28)) != 0) {
+        if ((s32) *(u8 *)(0x101684BC + (s32) ((arg2 * 3) + var_r28)) != 0) {
             func_02B8D158(arg0 + (var_r28 * 0x18), arg1);
         }
         var_r28 += 1;

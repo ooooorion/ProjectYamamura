@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,10 +89,9 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-s32 func_02BAE418(void *, s32, s32);                /* extern */
-s32 func_02BAE5C4(void *, s32, s32);                /* extern */
-
-s32 func_02BAE6A0(void *arg0, s32 arg1, u32 arg2, s32 arg3) {
+s32 func_02BAE418(); /* extern */
+s32 func_02BAE5C4(); /* extern */
+s32 func_02BAE6A0(u8 *arg0, s32 arg1, u32 arg2, s32 arg3) {
     s32 temp_r31;
     s32 temp_r7;
     s32 var_r3;
@@ -93,36 +99,36 @@ s32 func_02BAE6A0(void *arg0, s32 arg1, u32 arg2, s32 arg3) {
     u32 var_r28;
     u32 var_r30;
     u32 var_r9;
-    void *temp_r31_2;
-    void *temp_r8;
+    u8 *temp_r31_2;
+    u8 *temp_r8;
 
-    var_r30 = 0x3B9AC9F0U / arg2;
-    temp_r31_2 = M2C_FIELD(arg0, void **, 4);
+    var_r30 = (s32)(0x3B9AC9F0U / arg2);
+    temp_r31_2 = M2C_FIELD(arg0, u8 **, 4);
     if (var_r30 <= 0) {
-        temp_r8 = M2C_FIELD(arg0, void **, 0);
+        temp_r8 = M2C_FIELD(arg0, u8 **, 0);
         M2C_FIELD(temp_r8, s32 *, 0x14) = 0x48;
-        M2C_FIELD(temp_r8, M2C_UNK (**)(void *, void *), 0)(arg0, temp_r8);
+        M2C_FIELD(temp_r8, M2C_UNK (**)(u8 *, u8 *), 0)(arg0, temp_r8);
     }
     if ((s32) var_r30 >= arg3) {
-        var_r30 = (u32) arg3;
+        var_r30 = (s32)((u32) arg3);
     }
     M2C_FIELD(temp_r31_2, u32 *, 0x50) = var_r30;
     var_r28 = 0;
-    temp_r31 = func_02BAE418(arg0, arg1, arg3 * 4);
+    temp_r31 = (s32)(func_02BAE418(arg0, arg1, arg3 * 4));
     if ((u32) arg3 > 0U) {
         do {
-            temp_r0 = arg3 - var_r28;
+            temp_r0 = (s32)arg3 - (s32)var_r28;
             if (temp_r0 < var_r30) {
-                var_r30 = temp_r0;
+                var_r30 = (s32)(temp_r0);
             }
-            var_r3 = func_02BAE5C4(arg0, arg1, var_r30 * arg2);
+            var_r3 = (s32)(func_02BAE5C4(arg0, arg1, var_r30 * arg2));
             var_r9 = var_r30;
             if (var_r9 != 0) {
                 do {
                     temp_r7 = var_r28 * 4;
                     var_r28 += 1;
                     var_r9 -= 1;
-                    *(temp_r7 + temp_r31) = var_r3;
+                    *(u8 *)(temp_r7 + temp_r31) = var_r3;
                     var_r3 += arg2;
                 } while (var_r9 != 0);
             }

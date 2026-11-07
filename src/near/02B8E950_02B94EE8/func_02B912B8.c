@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,15 +89,14 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-M2C_UNK func_02B911A4(M2C_UNK);                     /* extern */
-s32 func_02B911A8(M2C_UNK);                         /* extern */
-s32 func_02B911BC(s32);                             /* extern */
-s16 func_02B911D0(M2C_UNK);                         /* extern */
-s16 func_02B911D8(M2C_UNK);                         /* extern */
-M2C_UNK func_02B911E0(M2C_UNK, s16);                /* extern */
-M2C_UNK func_02B911E8(M2C_UNK, s16);                /* extern */
-s32 func_02B91210(s32, s16);                        /* extern */
-
+M2C_UNK func_02B911A4(); /* extern */
+s32 func_02B911A8(); /* extern */
+s32 func_02B911BC(); /* extern */
+s16 func_02B911D0(); /* extern */
+s16 func_02B911D8(); /* extern */
+M2C_UNK func_02B911E0(); /* extern */
+M2C_UNK func_02B911E8(); /* extern */
+s32 func_02B91210(); /* extern */
 void func_02B912B8(s32 arg0, s32 arg1) {
     if (func_02B911BC(func_02B91210(arg0)) != 0) {
         func_02B91210(M2C_ERROR(/* Read from unset register $r10 */), func_02B911D8(M2C_ERROR(/* Read from unset register $r5 */)));

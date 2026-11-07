@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -90,11 +97,11 @@ s32 func_02B6D76C(f32 farg0) {
     M2C_ERROR(/* unknown instruction: stfiwx $f11, 0x0, $r9 */);
     temp_r9 = sp8;
     sp8 = 0x43300000;
-    temp_r11 = temp_r9 * 8;
+    temp_r11 = (s32)(temp_r9 * 8);
     if ((M2C_FIELD((temp_r11 + 0x10164CF8), f32 *, 4) * ((farg0 * *(f32 *)0x10164CE8) - (f32) (f64) temp_r9)) < *(f32 *)0x10165100) {
         M2C_ERROR(/* unknown instruction: stfiwx $f13, 0x0, $r7 */);
-        return *(0x10164CF8 + temp_r11) + sp8;
+        return *(u8 *)(0x10164CF8 + temp_r11) + sp8;
     }
     M2C_ERROR(/* unknown instruction: stfiwx $f13, 0x0, $r5 */);
-    return *(0x10164CF8 + temp_r11) + (sp8 + 0x80000000);
+    return *(u8 *)(0x10164CF8 + temp_r11) + (sp8 + 0x80000000);
 }

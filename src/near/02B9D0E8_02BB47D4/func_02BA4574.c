@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,30 +89,29 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-M2C_UNK func_02BA4368(void *, M2C_UNK);             /* extern */
-M2C_UNK func_02BA4784(void *);                      /* extern */
-
-void func_02BA4574(void *arg0, s32 arg1) {
-    M2C_UNK (*temp_r9)(void *, M2C_UNK, M2C_UNK);
+M2C_UNK func_02BA4368(); /* extern */
+M2C_UNK func_02BA4784(); /* extern */
+void func_02BA4574(u8 *arg0, s32 arg1) {
+    M2C_UNK (*temp_r9)(u8 *, M2C_UNK, u8 *);
     s32 temp_r0;
     s32 var_r0;
-    void *temp_r11;
+    u8 *temp_r11;
 
-    temp_r0 = M2C_FIELD(arg0, s32 *, 0x14);
+    temp_r0 = (s32)(M2C_FIELD(arg0, s32 *, 0x14));
     if (temp_r0 != 0x64) {
-        temp_r11 = M2C_FIELD(arg0, void **, 0);
-        temp_r9 = M2C_FIELD(temp_r11, M2C_UNK (**)(void *, M2C_UNK, M2C_UNK), 0);
+        temp_r11 = M2C_FIELD(arg0, u8 **, 0);
+        temp_r9 = M2C_FIELD(temp_r11, M2C_UNK (**)(u8 *, M2C_UNK, u8 *), 0);
         M2C_FIELD(temp_r11, s32 *, 0x18) = temp_r0;
         M2C_FIELD(temp_r11, s32 *, 0x14) = 0x15;
-        temp_r9(arg0, 0x15, temp_r9);
+        temp_r9(arg0, 0x15, (M2C_UNK) temp_r9);
     }
     if (arg1 != 0) {
         func_02BA4368(arg0, 0);
     }
-    M2C_FIELD(M2C_FIELD(arg0, void **, 0), M2C_UNK (**)(void *), 0x10)(arg0);
-    M2C_FIELD(M2C_FIELD(arg0, void **, 0x1C), M2C_UNK (**)(void *), 8)(arg0);
+    M2C_FIELD(M2C_FIELD(arg0, u8 **, 0), M2C_UNK (**)(u8 *), 0x10)(arg0);
+    M2C_FIELD(M2C_FIELD(arg0, u8 **, 0x1C), M2C_UNK (**)(u8 *), 8)(arg0);
     func_02BA4784(arg0);
-    *M2C_FIELD(arg0, M2C_UNK (***)(void *), 0x184)(arg0);
+    ((u8 *(*)()) M2C_FIELD(arg0, M2C_UNK (***)(u8 *), 0x184))(arg0);
     var_r0 = 0x65;
     M2C_FIELD(arg0, s32 *, 0x104) = 0;
     if ((s32) M2C_FIELD(arg0, s32 *, 0xD0) != 0) {

@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -93,20 +100,20 @@ s32 func_02BCD1E8(u32 arg0) {
     var_r7 = 0x575;
 loop_1:
     temp_r12 = var_r10 + ((s32) (var_r7 - var_r10) / 2);
-    temp_r11 = temp_r12 * 8;
-    temp_r0 = *(0x101A5B00 + temp_r11);
+    temp_r11 = (s32)(temp_r12 * 8);
+    temp_r0 = (s32)(*(u8 *)(0x101A5B00 + temp_r11));
     if (temp_r0 <= arg0) {
         if (temp_r0 >= arg0) {
             return temp_r11 + 0x101A5B00;
         }
-        var_r10 = temp_r12 + 1;
+        var_r10 = (s32)(temp_r12 + 1);
         if (var_r7 < var_r10) {
             /* Duplicate return node #7. Try simplifying control flow for better match */
             return 0;
         }
         goto loop_1;
     }
-    var_r7 = temp_r12 - 1;
+    var_r7 = (s32)(temp_r12 - 1);
     if (var_r7 < var_r10) {
         return 0;
     }

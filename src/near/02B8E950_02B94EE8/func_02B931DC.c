@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,9 +89,8 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-M2C_UNK func_02C6F300(s32, M2C_UNK, f32 *, f32, f32, s32); /* extern */
-
-void func_02B931DC(void *arg0) {
+M2C_UNK func_02C6F300(); /* extern */
+void func_02B931DC(u8 *arg0) {
     s32 sp24;
     s32 sp20;
     s32 sp1C;
@@ -96,24 +102,24 @@ void func_02B931DC(void *arg0) {
     f32 temp_r8_2;
     f32 temp_r9;
     s32 temp_r10;
-    void *temp_r8;
+    u8 *temp_r8;
 
     sp18 = 0;
     sp1C = 0;
     temp_r8 = (f32 *)0x10170000 - 0x7270;
     temp_r9 = M2C_FIELD(temp_r8, f32 *, 8);
     temp_r8_2 = M2C_FIELD(temp_r8, f32 *, 4);
-    sp14 = M2C_FIELD(temp_r8, s32 *, 0xC);
+    sp14 = (s32)(M2C_FIELD(temp_r8, s32 *, 0xC));
     spC = temp_r8_2;
     sp10 = temp_r9;
     sp8 = *(f32 *)0x10168D90;
     sp20 = 0;
     sp8 = M2C_FIELD(arg0, f32 *, 0x15C);
     sp24 = 0;
-    temp_r10 = M2C_FIELD(arg0, s32 *, 0x158);
+    temp_r10 = (s32)(M2C_FIELD(arg0, s32 *, 0x158));
     spC = M2C_FIELD(arg0, f32 *, 0x160);
     sp10 = M2C_FIELD(arg0, f32 *, 0x164);
-    sp18 = temp_r10 != 0;
+    sp18 = (s32)(temp_r10 != 0);
     func_02C6F300(M2C_FIELD(arg0, s32 *, 0x7C), 4, &sp8, temp_r8_2, temp_r9, temp_r10);
     func_02C6F300(M2C_FIELD(arg0, s32 *, 0x78), 4, (f32 *) &sp18);
     func_02C6F300(M2C_FIELD(arg0, s32 *, 0x80), 4, arg0 + 0x168);

@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,12 +89,11 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-M2C_UNK *func_0276FB54(M2C_UNK);                    /* extern */
-M2C_UNK *func_02BC4F30(s32, M2C_UNK);               /* extern */
-M2C_UNK *func_02BCC498();                           /* extern */
-M2C_UNK func_02C6E238(M2C_UNK);                     /* extern */
-
-M2C_UNK *func_02BC6A00(void *arg0, M2C_UNK *arg1, M2C_UNK ***arg2) {
+M2C_UNK *func_0276FB54(); /* extern */
+M2C_UNK *func_02BC4F30(); /* extern */
+M2C_UNK *func_02BCC498(); /* extern */
+M2C_UNK func_02C6E238(); /* extern */
+M2C_UNK *func_02BC6A00(u8 *arg0, M2C_UNK *arg1, M2C_UNK ***arg2) {
     M2C_UNK **temp_r12;
     M2C_UNK *temp_r29;
     M2C_UNK *var_r31;
@@ -101,7 +107,7 @@ M2C_UNK *func_02BC6A00(void *arg0, M2C_UNK *arg1, M2C_UNK ***arg2) {
     temp_r29 = var_r3;
     if (temp_r29 == NULL) {
         if ((var_r31 != NULL) || (var_r3 = func_0276FB54(4), var_r31 = var_r3, ((var_r31 == NULL) == 0))) {
-            *var_r31 = NULL;
+            *var_r31 = 0;
             return var_r3;
         }
         /* Duplicate return node #11. Try simplifying control flow for better match */
@@ -114,10 +120,10 @@ M2C_UNK *func_02BC6A00(void *arg0, M2C_UNK *arg1, M2C_UNK ***arg2) {
     temp_r12 = *arg2;
     M2C_FIELD(temp_r29, M2C_UNK ***, 4) = temp_r12;
     M2C_FIELD(temp_r29, M2C_UNK **, 0) = *temp_r12;
-    *temp_r12 = temp_r29;
+    *(void **)temp_r12 = temp_r29;
     M2C_FIELD(M2C_FIELD(temp_r29, M2C_UNK **, 0), M2C_UNK **, 4) = temp_r29;
     if ((var_r31 != NULL) || (var_r3 = func_0276FB54(4), var_r31 = var_r3, ((var_r31 == NULL) == 0))) {
-        *var_r31 = temp_r29;
+        *(void **)var_r31 = temp_r29;
     }
     return var_r3;
 }

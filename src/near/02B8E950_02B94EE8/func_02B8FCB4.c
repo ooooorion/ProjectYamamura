@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,21 +89,20 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-s32 func_02B8FC6C(u32);                             /* extern */
-
+s32 func_02B8FC6C(); /* extern */
 s32 func_02B8FCB4(u32 arg0) {
     s32 temp_ret;
     s32 temp_ret_2;
     s32 var_r3;
     u32 temp_r4;
 
-    temp_ret = func_02B8FC6C(arg0);
+    temp_ret = (s32)(func_02B8FC6C(arg0));
     if (temp_ret != 0) {
         temp_ret_2 = func_02B8FC6C((u32) (u64) temp_ret);
         temp_r4 = (u32) (u64) temp_ret_2;
         if (temp_ret_2 != 0) {
             var_r3 = 0;
-            if (((u16) *M2C_ERROR(/* Read from unset register $r8 */) == (u16) M2C_FIELD(temp_r4, u16 *, 0)) && ((u16) M2C_FIELD(M2C_ERROR(/* Read from unset register $r8 */), u16 *, 2) == (u16) M2C_FIELD(temp_r4, u16 *, 2)) && ((u16) M2C_FIELD(M2C_ERROR(/* Read from unset register $r8 */), u16 *, 4) == (u16) M2C_FIELD(temp_r4, u16 *, 4)) && ((u16) M2C_FIELD(M2C_ERROR(/* Read from unset register $r8 */), u16 *, 6) == (u16) M2C_FIELD(temp_r4, u16 *, 6)) && ((u16) M2C_FIELD(M2C_ERROR(/* Read from unset register $r8 */), u16 *, 8) == (u16) M2C_FIELD(temp_r4, u16 *, 8))) {
+            if (((u16) M2C_ERROR(/* Read from unset register $r8 */) == (u16) M2C_FIELD(temp_r4, u16 *, 0)) && ((u16) M2C_FIELD(M2C_ERROR(/* Read from unset register $r8 */), u16 *, 2) == (u16) M2C_FIELD(temp_r4, u16 *, 2)) && ((u16) M2C_FIELD(M2C_ERROR(/* Read from unset register $r8 */), u16 *, 4) == (u16) M2C_FIELD(temp_r4, u16 *, 4)) && ((u16) M2C_FIELD(M2C_ERROR(/* Read from unset register $r8 */), u16 *, 6) == (u16) M2C_FIELD(temp_r4, u16 *, 6)) && ((u16) M2C_FIELD(M2C_ERROR(/* Read from unset register $r8 */), u16 *, 8) == (u16) M2C_FIELD(temp_r4, u16 *, 8))) {
                 var_r3 = 1;
             }
             return var_r3;

@@ -8,8 +8,8 @@ commands are at the bottom.
 
 | | |
 |---|---|
-| Functions decompiled | 2,323 |
-| Byte-identical to `Block.elf` | **2,323 of 2,323** |
+| Functions decompiled | 2,331 |
+| Byte-identical to `Block.elf` | **2,331 of 2,331** |
 | Compiler | GHS `ccppc` 5.3.27 (licensed locally; licence material is not included) |
 | Harness | `tools/match.py` (table, applies object relocations), `tools/crack.py` (one candidate, with relocations) and `tools/batch.py` (an address band) |
 | Sources | `src/fn_*.c`, table in `src/functions.tsv` |
@@ -936,10 +936,15 @@ candidates and swept with `tools/batch.py --allow-calls --max-insn 60 --limit 0`
 | 8 | `02BB47D4..02BD8000` | 164 | 16 | 148 |
 | **Total** |  | **1,308** | **329** | **979** |
 
-The sweep added 329 exacts / 12,208 bytes. The 979 non-matches comprise 671
-`DIFF`, 289 `COMPILE` and 19 relocation-`BLOCKED` rows. The table now has
-2,323 functions / 106,196 bytes (8.52% of the 27,267 starts); the archive holds
-4,699 candidates; total done is 7,022 / 27,267 (~25.75%).
+The sweep added 329 exacts / 12,208 bytes. The initial 979 non-matches comprised 671
+`DIFF`, 289 `COMPILE` and 19 relocation-`BLOCKED` rows.
+
+The 289 pass-30 `COMPILE` rows were then rebuilt from repaired sources and
+rechecked. 288 now compile, including eight byte-identical candidates (676
+bytes) that were promoted; one source was never generated. The final non-match
+set is 971: 943 `DIFF`, one `COMPILE` and 27 relocation-`BLOCKED`. The table now has
+2,331 functions / 106,872 bytes (8.55% of the 27,267 starts); the archive holds
+4,691 candidates; total done is unchanged at 7,022 / 27,267 (~25.75%).
 
 ## Commands used
 
@@ -971,10 +976,10 @@ powerpc-eabi-objdump -d build/func_02025E2C.o
   but a relocation-bearing function still needs every referenced symbol in
   `config/symbols.txt`; otherwise the matcher reports `BLOCKED` rather than
   guessing.
-- 2,323 functions is 8.52% of the 27,267 starts. It proves the loop and gives
+- 2,331 functions is 8.55% of the 27,267 starts. It proves the loop and gives
   repeatable shapes, not the project; the year-end goal needs bulk export.
 - The `-O` level is narrowed to three indistinguishable levels, not pinned to
   one; other GHS flags of the original build are still unknown.
-- The 4,699 archived candidates show that byte equality can depend on
+- The 4,691 archived candidates show that byte equality can depend on
   scratch-register allocation that no source spelling tried here controls; the
   archive keeps every failed shape reviewable.

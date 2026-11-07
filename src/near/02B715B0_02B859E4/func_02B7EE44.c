@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,9 +89,8 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-s32 func_02B7EE1C(M2C_UNK);                         /* extern */
-
-void *func_02B7EE44(void *arg0, s32 arg1, u32 arg2) {
+s32 func_02B7EE1C(); /* extern */
+u8 *func_02B7EE44(u8 *arg0, s32 arg1, u32 arg2) {
     s32 temp_r0;
     s32 temp_r0_2;
     s32 temp_r0_3;
@@ -94,25 +100,25 @@ void *func_02B7EE44(void *arg0, s32 arg1, u32 arg2) {
     u32 var_r4;
     u8 temp_r8_2;
     u8 temp_r9_2;
-    void *temp_r10;
-    void *temp_r6;
-    void *var_r11;
-    void *var_r12;
-    void *var_r7;
+    u8 *temp_r10;
+    u8 *temp_r6;
+    u8 *var_r11;
+    u8 *var_r12;
+    u8 *var_r7;
 
     temp_r6 = arg0 + 8;
-    temp_r9 = M2C_FIELD(arg0, u16 *, 0xC) * 0x10;
-    var_r4 = arg2;
+    temp_r9 = (s32)(M2C_FIELD(arg0, u16 *, 0xC) * 0x10);
+    var_r4 = (s32)(arg2);
     var_r11 = temp_r6 + temp_r9;
-    if ((u32) M2C_FIELD(arg0, u32 *, 8) > (u32) *(temp_r6 + temp_r9)) {
+    if ((u32) M2C_FIELD(arg0, u32 *, 8) > (u32) *(u8 *)(temp_r6 + temp_r9)) {
 loop_1:
         temp_ret = func_02B7EE1C(M2C_ERROR(/* Read from unset register $r7 */));
         var_r4 = (u32) (u64) temp_ret;
-        temp_r8 = *M2C_ERROR(/* Read from unset register $r11 */);
+        temp_r8 = 0;
         if (temp_ret != 0) {
             temp_r0 = M2C_FIELD(M2C_ERROR(/* Read from unset register $r11 */), u16 *, 6) * 0x10;
             var_r11 = M2C_ERROR(/* Read from unset register $r6 */) + temp_r0;
-            if (temp_r8 <= (u32) *(M2C_ERROR(/* Read from unset register $r6 */) + temp_r0)) {
+            if (temp_r8 <= (u32) *(u8 *)(M2C_ERROR(/* Read from unset register $r6 */) + temp_r0)) {
 
             } else {
                 goto loop_1;
@@ -120,7 +126,7 @@ loop_1:
         } else {
             temp_r0_2 = M2C_FIELD(M2C_ERROR(/* Read from unset register $r11 */), u16 *, 4) * 0x10;
             var_r11 = M2C_ERROR(/* Read from unset register $r6 */) + temp_r0_2;
-            if (temp_r8 > (u32) *(M2C_ERROR(/* Read from unset register $r6 */) + temp_r0_2)) {
+            if (temp_r8 > (u32) *(u8 *)(M2C_ERROR(/* Read from unset register $r6 */) + temp_r0_2)) {
                 goto loop_1;
             }
         }

@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,10 +89,10 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-void func_02B5E6DC(void *arg0, void *arg1) {
+void func_02B5E6DC(u8 *arg0, u8 *arg1) {
     s32 var_ctr;
     s32 var_r10;
-    void *temp_r12;
+    u8 *temp_r12;
 
     M2C_FIELD(arg1, s32 *, 4) = (s32) M2C_FIELD(arg0, s32 *, 0x130);
     M2C_FIELD(arg1, f32 *, 0x38) = (f32) (M2C_FIELD(arg1, f32 *, 0x38) + M2C_FIELD(arg0, f32 *, 0x134));
@@ -95,7 +102,7 @@ void func_02B5E6DC(void *arg0, void *arg1) {
     temp_r12 = arg1 + 0x44;
     M2C_FIELD(arg1, f32 *, 0x40) = (f32) (M2C_FIELD(arg1, f32 *, 0x40) + M2C_FIELD(arg0, f32 *, 0x13C));
     do {
-        *(temp_r12 + var_r10) = *(temp_r12 + var_r10) + *(arg0 + 0x140 + var_r10);
+        *(u8 *)(temp_r12 + var_r10) = *(u8 *)(temp_r12 + var_r10) + *(u8 *)(arg0 + 0x140 + var_r10);
         var_r10 += 4;
         var_ctr -= 1;
     } while (var_ctr != 0);

@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,9 +89,9 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-void func_02BAFAA0(void *arg0, s32 arg1) {
-    s32 (**temp_r6)(M2C_UNK, M2C_UNK, M2C_UNK, M2C_UNK);
-    s32 (*temp_r7)(M2C_UNK, M2C_UNK, M2C_UNK *, M2C_UNK);
+void func_02BAFAA0(u8 *arg0, s32 arg1) {
+    s32 (**temp_r6)(M2C_UNK, M2C_UNK, M2C_UNK, u8 *);
+    s32 (*temp_r7)(M2C_UNK, M2C_UNK, M2C_UNK *, u8 *);
     s32 temp_r11;
     s32 temp_r11_2;
     s32 temp_r3;
@@ -93,11 +100,11 @@ void func_02BAFAA0(void *arg0, s32 arg1) {
     s32 var_r4;
     s32 var_r5;
 
-    temp_r6 = M2C_FIELD(arg0, s32 (***)(M2C_UNK, M2C_UNK, M2C_UNK, M2C_UNK), 4);
+    temp_r6 = M2C_FIELD(arg0, s32 (***)(M2C_UNK, M2C_UNK, M2C_UNK, u8 *), 4);
     temp_r7 = *temp_r6;
-    temp_r3 = temp_r7(1, 0x400, temp_r6, temp_r7);
+    temp_r3 = (s32)(temp_r7(1, 0x400, temp_r6, (M2C_UNK) temp_r7));
     var_r4 = 0;
-    temp_r8 = (arg1 << 9) - 0x200;
+    temp_r8 = (s32)((arg1 << 9) - 0x200);
     do {
         var_r5 = 0;
 loop_2:
@@ -105,7 +112,7 @@ loop_2:
         if (temp_r7_2 < 0) {
             temp_r11 = var_r5 * 4;
             var_r5 += 1;
-            *(temp_r11 + (temp_r3 + (var_r4 << 6))) = -((s32) -temp_r7_2 / temp_r8);
+            *(u8 *)(temp_r11 + (temp_r3 + (var_r4 << 6))) = -((s32) -temp_r7_2 / temp_r8);
             if (var_r5 >= 0x10) {
 
             } else {
@@ -114,7 +121,7 @@ loop_2:
         } else {
             temp_r11_2 = var_r5 * 4;
             var_r5 += 1;
-            *(temp_r11_2 + (temp_r3 + (var_r4 << 6))) = temp_r7_2 / temp_r8;
+            *(u8 *)(temp_r11_2 + (temp_r3 + (var_r4 << 6))) = temp_r7_2 / temp_r8;
             if (var_r5 < 0x10) {
                 goto loop_2;
             }

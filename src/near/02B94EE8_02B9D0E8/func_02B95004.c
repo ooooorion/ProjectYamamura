@@ -2,6 +2,13 @@
    m2c valid-syntax first pass; not verified until the bytes match. */
 #include "block.h"
 #include <string.h>
+#pragma diag_suppress 1547
+#pragma diag_suppress 174
+#pragma diag_suppress 513
+#pragma diag_suppress 767
+#pragma diag_suppress 1053
+#pragma diag_suppress 1518
+#pragma diag_suppress 167
 
 /*
  * This header contains macros emitted by m2c in "valid syntax" mode,
@@ -82,26 +89,25 @@ typedef s64 M2C_UNK64;
 #endif
 
 
-M2C_UNK func_02B94EE0(s32);                         /* extern */
-M2C_UNK func_02B94F0C(s32, s32, s32, M2C_UNK, s32); /* extern */
-M2C_UNK func_02B94F88(s32, s32, s32, M2C_UNK, s32); /* extern */
-s32 func_02B9A504(M2C_UNK *, s32, s32);             /* extern */
-
+M2C_UNK func_02B94EE0(); /* extern */
+M2C_UNK func_02B94F0C(); /* extern */
+M2C_UNK func_02B94F88(); /* extern */
+s32 func_02B9A504(); /* extern */
 void func_02B95004(s32 arg0, s32 arg1, s32 arg2) {
     M2C_UNK sp8;
     s32 temp_r26;
     s32 temp_r27;
     s32 temp_r30_2;
     u32 var_r25;
-    void *temp_r30;
+    u8 *temp_r30;
 
     var_r25 = 0;
     do {
-        temp_r27 = arg0 + 0x184 + (var_r25 * 0x28);
+        temp_r27 = (s32)(arg0 + 0x184 + (var_r25 * 0x28));
         temp_r30 = (var_r25 * 8) + 0x10170000;
         func_02B94EE0(temp_r27);
-        temp_r26 = M2C_FIELD(temp_r30, s32 *, -0x7008);
-        temp_r30_2 = arg2 + *(func_02B9A504(&sp8, arg2 + 0x1410, temp_r26) + (M2C_FIELD((temp_r30 - 0x7008), s32 *, 4) * 0x10));
+        temp_r26 = (s32)(M2C_FIELD(temp_r30, s32 *, -0x7008));
+        temp_r30_2 = (s32)(arg2 + *(u8 *)(func_02B9A504(&sp8, arg2 + 0x1410, temp_r26) + (M2C_FIELD((temp_r30 - 0x7008), s32 *, 4) * 0x10)));
         func_02B94F0C(temp_r27, temp_r30_2, temp_r26, 0, arg1);
         func_02B94F0C(temp_r27 + 0xC, temp_r30_2, temp_r26, 1, arg1);
         func_02B94F88(temp_r27 + 0x18, temp_r30_2, temp_r26, 5, arg1);
