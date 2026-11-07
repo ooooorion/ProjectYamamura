@@ -86,6 +86,21 @@ archives covering the next 1 MB:
 | [`02B49A00_02B58000`](02B49A00_02B58000/) | 124 |
 | **Total** | **1,075** |
 
+The thirtieth pass added eight contiguous shard archives covering the next
+512 KB:
+
+| Band | Candidates |
+|---|---:|
+| [`02B58000_02B61940`](02B58000_02B61940/) | 134 |
+| [`02B61940_02B715B0`](02B61940_02B715B0/) | 151 |
+| [`02B715B0_02B859E4`](02B715B0_02B859E4/) | 102 |
+| [`02B859E4_02B8E950`](02B859E4_02B8E950/) | 107 |
+| [`02B8E950_02B94EE8`](02B8E950_02B94EE8/) | 102 |
+| [`02B94EE8_02B9D0E8`](02B94EE8_02B9D0E8/) | 120 |
+| [`02B9D0E8_02BB47D4`](02B9D0E8_02BB47D4/) | 115 |
+| [`02BB47D4_02BD8000`](02BB47D4_02BD8000/) | 148 |
+| **Total** | **979** |
+
 The 120 candidate sources that previously failed to compile in these four
 archives were repaired for GHS and rechecked. All 640 remaining pass-27
 candidates now compile; 117 remain `DIFF`, one is relocation-`BLOCKED`, and two
@@ -97,7 +112,7 @@ the twenty-fourth pass added 179 more; the twenty-fifth pass added 813 and the
 twenty-sixth added 505. The pass-26 recovery then promoted eighteen candidates;
 the twenty-seventh pass added 803 candidates (26 exact); replaying its 724
 m2c generation failures recovered 135 more exacts, taking the archive to
-2,645 archived candidates. The twenty-eighth pass added 587 candidates (98 exact), and the twenty-ninth added 493 (87 exact), taking the archive to 3,720. The pass-28/29 compile repair made 184 more candidates compile as `DIFF`, left five relocation-`BLOCKED` and 64 `COMPILE`, and promoted five exacts, reducing these eight archives to 1,075 candidates.
+2,645 archived candidates. The twenty-eighth pass added 587 candidates (98 exact), and the twenty-ninth added 493 (87 exact), taking the archive to 3,720. The pass-28/29 compile repair made 184 more candidates compile as `DIFF`, left five relocation-`BLOCKED` and 64 `COMPILE`, and promoted five exacts, reducing these eight archives to 1,075 candidates. The thirtieth pass contributed 329 exacts and archived 979 non-matches (671 DIFF, 289 COMPILE, 19 BLOCKED), taking the archive to 4,699.
 
 | File | Range | Status | Words | First diff |
 |---|---|---|---|---|
