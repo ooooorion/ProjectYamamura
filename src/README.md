@@ -54,12 +54,12 @@ in `functions.tsv` or changes what the matcher verifies. See
 
 ## Near-miss archive
 
-[`near/`](near/README.md) holds the 2,645 candidates that decompiled but are
+[`near/`](near/README.md) holds the 3,725 candidates that decompiled but are
 not byte-identical to `Block.elf`. They are not in `functions.tsv` and are
 not claims of a match; `tools/match.py` ignores them.
 
 These 35 representative rows are byte-identical to the retail build at
-`-O2`; the full 1,804-row table is in `functions.tsv`. See
+`-O2`; the full 1,989-row table is in `functions.tsv`. See
 `../docs/DECOMPILATION.md` for the listings and the codegen traps.
 
 These files are a derivative work. Read `../LICENSE-DECOMPILED` before reusing
