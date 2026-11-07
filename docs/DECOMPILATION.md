@@ -8,8 +8,8 @@ commands are at the bottom.
 
 | | |
 |---|---|
-| Functions decompiled | 1,667 |
-| Byte-identical to `Block.elf` | **1,667 of 1,667** |
+| Functions decompiled | 1,802 |
+| Byte-identical to `Block.elf` | **1,802 of 1,802** |
 | Compiler | GHS `ccppc` 5.3.27 (licensed locally; licence material is not included) |
 | Harness | `tools/match.py` (table, applies object relocations), `tools/crack.py` (one candidate, with relocations) and `tools/batch.py` (an address band) |
 | Sources | `src/fn_*.c`, table in `src/functions.tsv` |
@@ -833,16 +833,17 @@ with `tools/batch.py --allow-calls --max-insn 60 --limit 0`.
 
 | Shard | Range | Candidates | Exact | Archived |
 |---|---|---:|---:|---:|
-| 1 | `029D8000..029EA458` | 201 | 8 | 193 |
-| 2 | `029EA458..02A0228C` | 201 | 12 | 189 |
-| 3 | `02A0228C..02A28C20` | 200 | 4 | 196 |
-| 4 | `02A28C20..02A58000` | 201 | 2 | 199 |
-| **Total** |  | **803** | **26** | **777** |
+| 1 | `029D8000..029EA458` | 201 | 54 | 147 |
+| 2 | `029EA458..02A0228C` | 201 | 42 | 159 |
+| 3 | `02A0228C..02A28C20` | 200 | 29 | 171 |
+| 4 | `02A28C20..02A58000` | 201 | 36 | 165 |
+| **Total** |  | **803** | **161** | **642** |
 
-The 26 exacts add 764 bytes. All were registered and the full table passes
-`tools/match.py`: 1,667 functions, 79,760 bytes, 6.11% of the 27,267 starts.
-The 777 non-matches are archived under `src/near/`, taking the archive to
-2,782 candidates; 53 have generated sources and 724 are m2c failures.
+The initial sweep found 26 exacts and added 764 bytes. Replaying the 724 m2c
+generation failures recovered 135 more exacts / 5,464 bytes, for 161 exacts /
+6,228 bytes from this pass. The full table now has 1,802 functions / 85,224
+bytes (6.61% of the 27,267 starts), and 642 pass-27 non-matches remain archived:
+469 recovered `DIFF` rows, 120 GHS compile failures, and 53 earlier near misses.
 
 ### Pass-27 compile-failure repair
 
@@ -852,6 +853,14 @@ and the unset-register placeholders in `func_02A04A0C`; all 14 now compile.
 Rechecking them leaves 0 exact matches and 14 `DIFF` rows, so the archive and
 table counts are unchanged. The four shard READMEs now report their measured
 word differences.
+
+### Pass-27 generation-failure replay
+
+The 724 rows where m2c had produced no C were replayed from their saved shard
+assembly with the same `--valid-syntax` command. All 724 produced C. 135 were
+byte-identical, 469 were `DIFF`, and 120 failed GHS compilation. The 135 exacts
+added 5,464 bytes, taking the table to 1,802 functions / 85,224 bytes (6.61%).
+The 642 non-matches leave 2,647 near misses; total done remains 4,449 / 27,267.
 
 ## Commands used
 
@@ -883,10 +892,10 @@ powerpc-eabi-objdump -d build/func_02025E2C.o
   but a relocation-bearing function still needs every referenced symbol in
   `config/symbols.txt`; otherwise the matcher reports `BLOCKED` rather than
   guessing.
-- 1,667 functions is 6.11% of the 27,267 starts. It proves the loop and gives
+- 1,802 functions is 6.61% of the 27,267 starts. It proves the loop and gives
   repeatable shapes, not the project; the year-end goal needs bulk export.
 - The `-O` level is narrowed to three indistinguishable levels, not pinned to
   one; other GHS flags of the original build are still unknown.
-- The 2,782 archived candidates show that byte equality can depend on
+- The 2,647 archived candidates show that byte equality can depend on
   scratch-register allocation that no source spelling tried here controls; the
   archive keeps every failed shape reviewable.

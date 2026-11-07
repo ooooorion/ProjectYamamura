@@ -63,18 +63,19 @@ The twenty-seventh pass added four contiguous shard archives covering the next
 
 | Band | Candidates |
 |---|---:|
-| [`029D8000_029EA458`](029D8000_029EA458/) | 193 |
-| [`029EA458_02A0228C`](029EA458_02A0228C/) | 189 |
-| [`02A0228C_02A28C20`](02A0228C_02A28C20/) | 196 |
-| [`02A28C20_02A58000`](02A28C20_02A58000/) | 199 |
-| **Total** | **777** |
+| [`029D8000_029EA458`](029D8000_029EA458/) | 147 |
+| [`029EA458_02A0228C`](029EA458_02A0228C/) | 159 |
+| [`02A0228C_02A28C20`](02A0228C_02A28C20/) | 171 |
+| [`02A28C20_02A58000`](02A28C20_02A58000/) | 165 |
+| **Total** | **642** |
 
 Those passes added 173 and 138 candidates respectively. Fourteen close
 call-bearing candidates were repaired and promoted to `src/functions.tsv`, and
 the twenty-fourth pass added 179 more; the twenty-fifth pass added 813 and the
 twenty-sixth added 505. The pass-26 recovery then promoted eighteen candidates;
-the twenty-seventh pass added 803 candidates (26 exact), taking the archive to
-2,782 archived candidates.
+the twenty-seventh pass added 803 candidates (26 exact); replaying its 724
+m2c generation failures recovered 135 more exacts, taking the archive to
+2,647 archived candidates.
 
 | File | Range | Status | Words | First diff |
 |---|---|---|---|---|
