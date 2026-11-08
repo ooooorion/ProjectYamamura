@@ -341,7 +341,7 @@ the candidate workflow.
 
 After the gate, scale up: pick the next function by the SDK call it makes, not by address order.
 
-Stage 7 has been executed on the 2,331 functions in `src/`; all 2,331 compile
+Stage 7 has been executed on the 2,360 functions in `src/`; all 2,360 compile
 byte-identical to `Block.elf` with `python tools/match.py`.
 `docs/DECOMPILATION.md` records the loop, the toolchain setup, and the three
 codegen traps (return type, CR mask, source shape).

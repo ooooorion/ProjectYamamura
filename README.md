@@ -14,9 +14,9 @@ and nothing here can be assembled into a playable game. See
 |:---|:---|
 | **TARGET** | `Block.elf` (20,927,360 B, PowerPC big-endian) |
 | **FUNCTIONS IDENTIFIED** | 27,267 |
-| **FUNCTIONS MATCHED** | 2,331 |
-| **FUNCTIONS NEAR** | 4,691 |
-| **TOTAL DONE** | **7,022 / 27,267** (~25.75%) |
+| **FUNCTIONS MATCHED** | 2,360 |
+| **FUNCTIONS NEAR** | 4,894 |
+| **TOTAL DONE** | **7,254 / 27,267** (~26.60%) |
 
 ## SECONDARY STATUS
 

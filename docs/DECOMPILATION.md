@@ -1,4 +1,4 @@
-# Decompilation notes -- first through thirtieth passes (Stage 7)
+# Decompilation notes -- first through thirty-second passes (Stage 7)
 
 Working notes for the decompilation and byte-match passes against
 `Block.elf`. Every number here came from a command that was run; the exact
@@ -8,8 +8,8 @@ commands are at the bottom.
 
 | | |
 |---|---|
-| Functions decompiled | 2,331 |
-| Byte-identical to `Block.elf` | **2,331 of 2,331** |
+| Functions decompiled | 2,360 |
+| Byte-identical to `Block.elf` | **2,360 of 2,360** |
 | Compiler | GHS `ccppc` 5.3.27 (licensed locally; licence material is not included) |
 | Harness | `tools/match.py` (table, applies object relocations), `tools/crack.py` (one candidate, with relocations) and `tools/batch.py` (an address band) |
 | Sources | `src/fn_*.c`, table in `src/functions.tsv` |

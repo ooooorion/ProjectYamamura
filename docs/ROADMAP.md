@@ -32,5 +32,5 @@ match, while `__init` does not.
   starts, with the 2,360 matched functions kept as the verified core.
 
 Step 4 was taken before step 3 on purpose: the toolchain had to be proven
-before subsystem work was worth doing. With 2,331 matches, the bootstrap
+before subsystem work was worth doing. With 2,360 matches, the bootstrap
 subsystem now has its first reconstruction.
