@@ -55,8 +55,10 @@ carry internal branch relocations, which the harness applies. `tools/match.py` n
 parses each object's `.rela.text`, resolves symbols through
 `config/symbols.txt`, and applies `R_PPC_ADDR16_HA`/`LO`, `R_PPC_ADDR32`,
 `R_PPC_ADDR24`, `R_PPC_REL24`, `R_PPC_REL14` and `R_PPC_REL32` before the word
-comparison. Unresolved relocations print `BLOCKED` and are never counted as
-matches. Existing objects also carry internal branch relocations; applying
+comparison. Unresolved relocations print `BLOCKED` only when they could
+account for every remaining difference; a difference outside the relocation
+sites prints `DIFF`. Neither is ever counted as a match. Existing objects also
+carry internal branch relocations; applying
 them leaves the other 31 matches intact.
 
 ## func_02015FCC -- 0x02015FCC..0x02015FF0, 10 instructions, 40 bytes
@@ -949,6 +951,44 @@ relocation-`BLOCKED` rows. The table now has
 2,331 functions / 106,872 bytes (8.55% of the 27,267 starts); the archive holds
 4,691 candidates; total done is unchanged at 7,022 / 27,267 (~25.75%).
 
+## Thirty-first pass -- 21 exacts through `0x02C58000`
+
+The next 512 KB was divided into four contiguous shards and swept with
+`tools/batch.py --allow-calls --max-insn 60 --limit 0`.
+
+| Shard | Range | Candidates | Exact | Archived |
+|---|---|---:|---:|---:|
+| 1 | `02BD8000..02BF0A5C` | 43 | 5 | 38 |
+| 2 | `02BF0A5C..02C0DD8C` | 43 | 8 | 35 |
+| 3 | `02C0DD8C..02C30608` | 43 | 5 | 38 |
+| 4 | `02C30608..02C58000` | 44 | 3 | 41 |
+| **Total** |  | **173** | **21** | **152** |
+
+The sweep added 20 exacts / 952 bytes. The 49 `COMPILE` rows were then rebuilt
+from repaired sources and rechecked. All 49 compile, including one byte-identical
+candidate (132 bytes) that was promoted; the missing source was reconstructed
+from its retained assembly slice and archived as a `DIFF`. The final non-match
+set is 152 `DIFF`, with no `COMPILE` or relocation-`BLOCKED` rows. The table now
+has 2,352 functions / 107,956 bytes (8.63% of the 27,267 starts); the archive
+holds 4,843 candidates.
+
+## Thirty-second pass -- 8 exacts through the end of `.text`
+
+The remaining 59 candidates in `0x02C58000..0x02C70000` were swept as one
+contiguous shard with the same command.
+
+| Shard | Range | Candidates | Exact | Archived |
+|---|---|---:|---:|---:|
+| 1 | `02C58000..02C70000` | 59 | 8 | 51 |
+| **Total** |  | **59** | **8** | **51** |
+
+The tail added 8 exacts / 276 bytes and 51 non-matches (41 `DIFF`, 10
+`COMPILE`). The pass-31/32 compile repair rebuilt all 59 failures; the ten
+pass-32 `COMPILE` rows all compile as `DIFF`, so the tail's final non-match set
+is 51 `DIFF`. The table now has 2,360 functions / 108,232 bytes (8.65% of the
+27,267 starts); the archive holds 4,894 candidates. Total done is 7,254 / 27,267
+(~26.60%). No `COMPILE` or relocation-`BLOCKED` rows remain in these shards.
+
 ## Commands used
 
 ```
@@ -978,11 +1018,12 @@ powerpc-eabi-objdump -d build/func_02025E2C.o
   Relocation-aware comparison is built,
   but a relocation-bearing function still needs every referenced symbol in
   `config/symbols.txt`; otherwise the matcher reports `BLOCKED` rather than
-  guessing.
-- 2,331 functions is 8.55% of the 27,267 starts. It proves the loop and gives
+  guessing, unless the bytes already differ outside the unresolved sites, in
+  which case the row is `DIFF`.
+- 2,360 functions is 8.65% of the 27,267 starts. It proves the loop and gives
   repeatable shapes, not the project; the year-end goal needs bulk export.
 - The `-O` level is narrowed to three indistinguishable levels, not pinned to
   one; other GHS flags of the original build are still unknown.
-- The 4,691 archived candidates show that byte equality can depend on
+- The 4,894 archived candidates show that byte equality can depend on
   scratch-register allocation that no source spelling tried here controls; the
   archive keeps every failed shape reviewable.

@@ -16,7 +16,9 @@ comparison; absolute and conditional-link calls remain ineligible.
 Each candidate is sliced, decompiled by m2c, compiled with GHS and compared
 word for word, with the object's relocations applied. Results are written to
 build/batch/results.tsv and summarised on stdout. A MATCH means equal bytes
-and equal size; everything else is DIFF, COMPILE or BLOCKED and is not a match.
+and equal size; everything else is DIFF, COMPILE or BLOCKED and is not a
+match. BLOCKED is reserved for unresolved relocations that could account for
+every remaining difference; a difference outside those sites is DIFF.
 """
 from __future__ import annotations
 
@@ -146,12 +148,14 @@ def compare(elf, symbols, start, target, object_path, name):
     if value is None:
         return "NO-SYMBOL", 0, 0, None, None
     got = match.object_bytes(object_path, name)
-    got, applied, unresolved = match.apply_relocations(
+    got, _applied, unresolved, unresolved_sites = match.apply_relocations(
         got, start, obj_elf, value, symbols, elf)
-    if unresolved:
-        return "BLOCKED", 0, 0, None, unresolved[0]
-    same, total, first, exact = match.compare(target, got)
-    return ("MATCH" if exact else "DIFF"), same, total, first, None
+    status, same, total, first, _exact = match.classify(
+        target, got, unresolved_sites)
+    if status == "BLOCKED":
+        return "BLOCKED", 0, 0, None, "unresolved relocations: " + unresolved[0]
+    detail = "diff outside relocation sites" if unresolved else None
+    return status, same, total, first, detail
 
 
 def run(args):

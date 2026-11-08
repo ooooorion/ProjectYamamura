@@ -197,15 +197,20 @@ def checked_object(elf, target, obj_path, symbol, start, symbols):
         print("no symbol %s in %s" % (symbol, obj_path))
         return None
     got = match.object_bytes(obj_path, symbol)
-    got, applied, unresolved = match.apply_relocations(
+    got, applied, unresolved, unresolved_sites = match.apply_relocations(
         got, start, obj_elf, value, symbols, elf)
-    if unresolved:
+    status, same, total, first, exact = match.classify(
+        target, got, unresolved_sites)
+    if status == "BLOCKED":
         print("BLOCKED %s: unresolved relocations: %s"
               % (symbol, ", ".join(unresolved[:4])))
         return None
     if applied:
         print("  %d relocation(s) applied" % len(applied))
-    return match.compare(target, got), got
+    if unresolved:
+        print("  %d unresolved relocation(s); difference outside them"
+              % len(unresolved))
+    return (same, total, first, exact), got
 
 
 def decode(blob, objdump, outdir):

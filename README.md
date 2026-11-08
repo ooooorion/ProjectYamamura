@@ -50,13 +50,14 @@ game-facing text belongs in history.
 
 ## Progress
 
-Thirty passes, the pass-27 generation replay and the pass-28/29 and pass-30 compile repairs have matched
-**2,331 functions / 106,872 bytes** (8.55% of the 27,267 starts) and archived
-**4,691 near misses**. The work began with early
-leaf functions and the bootstrap chain, then added call-aware matching, the
-selector-family repair, and leaf-first sweeps through `0x02BD8000`. The first
-subsystem -- entry point, chain, and constructor table -- is mapped, with both
-bootstrap runtime functions reconstructed; `__init` is still a near miss.
+Thirty-two passes, the pass-27 generation replay, and the pass-28/29,
+pass-30 and pass-31/32 compile repairs have matched **2,360 functions /
+108,232 bytes** (8.65% of the 27,267 starts) and archived **4,894 near misses**. The work began
+with early leaf functions and the bootstrap chain, then added call-aware
+matching, the selector-family repair, and leaf-first sweeps through the end of
+`.text`. The first subsystem -- entry point, chain, and constructor table -- is
+mapped, with both bootstrap runtime functions reconstructed; `__init` is still
+a near miss.
 
 See [`docs/DECOMPILATION.md`](docs/DECOMPILATION.md) for the pass-by-pass log
 and [`docs/BOOTSTRAP.md`](docs/BOOTSTRAP.md) for the bootstrap map.
@@ -107,7 +108,10 @@ The first compiles every row of `src/functions.tsv` with GHS MULTI 5.3.27,
 applies the object's relocations from `config/symbols.txt`, and compares it
 against the retail range, reporting `MATCH` only when bytes and size agree. It
 exits non-zero if any row differs, fails to compile, or has an unresolved
-relocation. The second repeats the comparison across optimisation levels.
+relocation. A row is reported `BLOCKED` only when an unresolved relocation
+could account for every remaining difference; a difference outside the
+relocation sites is `DIFF`. The second repeats the comparison across
+optimisation levels.
 
 Requirements are a licensed GHS `ccppc`, the extracted `Block.elf`, and the
 listing/section artefacts described in [`docs/EXTRACTION.md`](docs/EXTRACTION.md).

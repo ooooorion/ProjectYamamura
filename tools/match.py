@@ -12,8 +12,9 @@ reported. A function counts as matched only when every byte is equal and the
 sizes agree.
 
 Object relocations in the function range are applied from config/symbols.txt
-before the bytes are compared. An unresolved relocation is reported BLOCKED
-and is never treated as a match.
+before the bytes are compared. A row is BLOCKED only when unresolved
+relocations could account for every remaining difference; a difference outside
+those sites is DIFF. An unresolved relocation is never treated as a match.
 
 If the compiler is missing or unlicensed, this stops and prints its error. An
 unverified function is reported as unverified, never as a match.
@@ -181,35 +182,50 @@ def symbol_value(elf, symbols, name):
     return value if value else None
 
 
+def relocation_width(kind):
+    """Number of bytes a relocation can rewrite at its site."""
+    if kind in (R_PPC_ADDR16, R_PPC_ADDR16_LO, R_PPC_ADDR16_HI,
+                R_PPC_ADDR16_HA):
+        return 2
+    return 4
+
+
 def apply_relocations(blob, target_start, obj_elf, obj_value, symbols, target_elf):
     """Apply one object's .rela.text records to its function bytes.
 
-    Returns (bytes, applied, unresolved). Unresolved entries are reported by
-    the caller and are never treated as a match.
+    Returns (bytes, applied, unresolved, unresolved_sites). The sites are
+    (offset, width) pairs, so the caller can distinguish a raw-byte mismatch
+    from a difference that an unresolved relocation might still explain.
+    Unresolved entries are reported by the caller and never treated as a
+    match.
     """
     data = bytearray(blob)
     object_symbols = obj_elf.symbols()
     applied = []
     unresolved = []
+    unresolved_sites = []
     for rel in obj_elf.relocations(".rela.text"):
         local = rel["offset"] - obj_value
         if local < 0 or local >= len(blob):
             continue
+        kind = rel["type"]
+        width = relocation_width(kind)
         index = rel["sym"]
         if index >= len(object_symbols):
             unresolved.append("bad symbol index %d" % index)
+            unresolved_sites.append((local, width))
             continue
         name = object_symbols[index]["name"]
         base = symbol_value(target_elf, symbols, name)
         if base is None:
             unresolved.append("%s@+0x%X" % (name or "<unnamed>", local))
+            unresolved_sites.append((local, width))
             continue
         addend = rel["addend"]
         if addend & 0x80000000:
             addend -= 0x100000000
         value = base + addend
         place = target_start + local
-        kind = rel["type"]
         if kind == R_PPC_ADDR32:
             struct.pack_into(">I", data, local, value & 0xFFFFFFFF)
         elif kind == R_PPC_ADDR16_HA:
@@ -236,9 +252,10 @@ def apply_relocations(blob, target_start, obj_elf, obj_value, symbols, target_el
             struct.pack_into(">I", data, local, (value - place) & 0xFFFFFFFF)
         else:
             unresolved.append("%s@+0x%X type %d" % (name or "<unnamed>", local, kind))
+            unresolved_sites.append((local, width))
             continue
         applied.append((local, kind, name))
-    return bytes(data), applied, unresolved
+    return bytes(data), applied, unresolved, unresolved_sites
 
 
 def object_bytes(path, symbol):
@@ -264,6 +281,42 @@ def compare(target, got):
             first = i
     exact = len(target) == len(got) and same == total
     return same, total, first, exact
+
+
+def classify(target, got, unresolved_sites=()):
+    """Classify a comparison, using unresolved relocation sites as uncertainty.
+
+    Returns (status, same, total, first, exact). A difference outside every
+    unresolved site is DIFF: no relocation can explain it. If the only
+    differences lie inside unresolved sites (or there are none at all), the
+    result is BLOCKED, because those bytes could still change. An unresolved
+    relocation is never treated as a match.
+    """
+    same, total, first, exact = compare(target, got)
+    if not unresolved_sites:
+        return ("MATCH" if exact else "DIFF"), same, total, first, exact
+
+    if len(target) != len(got):
+        return "DIFF", same, total, first, False
+
+    unresolved = bytearray(len(got))
+    for local, width in unresolved_sites:
+        for i in range(max(0, local), min(len(unresolved), local + width)):
+            unresolved[i] = 1
+
+    first_outside = None
+    for i in range(total):
+        base = i * 4
+        for j in range(4):
+            if (target[base + j] != got[base + j] and
+                    not unresolved[base + j]):
+                first_outside = i
+                break
+        if first_outside is not None:
+            break
+    if first_outside is not None:
+        return "DIFF", same, total, first_outside, False
+    return "BLOCKED", same, total, None, False
 
 
 def compile_one(cc, flags, src, out):
@@ -305,24 +358,29 @@ def run(args):
             obj_value, _obj_size = obj_elf.symbol(name)
             got = object_bytes(obj, name)
             applied = []
+            unresolved = []
+            unresolved_sites = []
             if obj_value is not None:
-                got, applied, unresolved = apply_relocations(
+                got, applied, unresolved, unresolved_sites = apply_relocations(
                     got, start, obj_elf, obj_value, symbols, elf)
-                if unresolved:
-                    print("BLOCKED %s: unresolved relocations: %s"
-                          % (name, ", ".join(unresolved[:4])))
-                    if args.sweep:
-                        continue
-                    return 2
-            same, total, first, exact = compare(target, got)
+            status, same, total, first, _exact = classify(
+                target, got, unresolved_sites)
             best[name] = max(best.get(name, (0, 0)), (same, total))
             suffix = " [%d relocs]" % len(applied) if applied else ""
-            if exact:
+            if status == "BLOCKED":
+                print("BLOCKED %s: unresolved relocations: %s"
+                      % (name, ", ".join(unresolved[:4])))
+                if args.sweep:
+                    continue
+                return 2
+            if status == "MATCH":
                 print("%-16s %3d B  MATCH%s" % (name, len(target), suffix))
                 continue
             detail = "%d/%d words" % (same, total)
             if applied:
                 detail += ", %d relocs applied" % len(applied)
+            if unresolved:
+                detail += ", %d unresolved" % len(unresolved)
             if first is not None:
                 detail += ", first diff at +0x%X" % (first * 4)
             if len(target) != len(got):
