@@ -14,13 +14,14 @@ One person, one list.
 
 ## Current position
 
-2,360 functions matched (108,232 bytes, 8.65% of the 27,267 starts) and 4,894
-near misses archived. The bootstrap chain is mapped; both runtime helpers
-match, while `__init` does not.
+2,360 functions matched (108,232 bytes, 8.65% of the 27,267 starts) and 4,937
+near misses archived; total done is 7,297 / 27,267 (~26.76%). The bootstrap
+chain is mapped; both runtime helpers match, while `__init` does not.
 
 ## Next
 
-- The leaf-first, call-aware sweep is complete to the end of `.text`.
+- The leaf-first sweep and the expanded tail pass are complete; 7,297 starts
+  are covered.
 - Revisit the closest call-bearing near misses. The dropped-argument,
   absolute-address and `rlwinm`-allocation patterns have been productive.
 - Keep `__init` as the outstanding bootstrap target.

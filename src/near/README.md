@@ -110,14 +110,15 @@ covering the remaining listing:
 | [`02BF0A5C_02C0DD8C`](02BF0A5C_02C0DD8C/) | 35 |
 | [`02C0DD8C_02C30608`](02C0DD8C_02C30608/) | 38 |
 | [`02C30608_02C58000`](02C30608_02C58000/) | 41 |
-| [`02C58000_02C70000`](02C58000_02C70000/) | 51 |
-| **Total** | **203** |
+| [`02C58000_02C70000`](02C58000_02C70000/) | 94 |
+| **Total** | **246** |
 
 The thirty-first pass added 153 candidates (20 exact), and the thirty-second
 added 51 (8 exact), taking the archive to 4,895 before the compile repair. The
 pass-31/32 repair compiled all 59 failures, promoted one exact (132 bytes), and
 left 203 `DIFF` non-matches; no generated sources are missing, taking the archive
-to 4,894.
+to 4,894. The thirty-third expanded-tail pass added 43 more `DIFF` candidates to
+the final band without a new exact, taking the archive to 4,937.
 
 The 120 candidate sources that previously failed to compile in these four
 archives were repaired for GHS and rechecked. All 640 remaining pass-27

@@ -15,8 +15,8 @@ and nothing here can be assembled into a playable game. See
 | **TARGET** | `Block.elf` (20,927,360 B, PowerPC big-endian) |
 | **FUNCTIONS IDENTIFIED** | 27,267 |
 | **FUNCTIONS MATCHED** | 2,360 |
-| **FUNCTIONS NEAR** | 4,894 |
-| **TOTAL DONE** | **7,254 / 27,267** (~26.60%) |
+| **FUNCTIONS NEAR** | 4,937 |
+| **TOTAL DONE** | **7,297 / 27,267** (~26.76%) |
 
 ## SECONDARY STATUS
 
@@ -50,9 +50,9 @@ game-facing text belongs in history.
 
 ## Progress
 
-Thirty-two passes, the pass-27 generation replay, and the pass-28/29,
+Thirty-three passes, the pass-27 generation replay, and the pass-28/29,
 pass-30 and pass-31/32 compile repairs have matched **2,360 functions /
-108,232 bytes** (8.65% of the 27,267 starts) and archived **4,894 near misses**. The work began
+108,232 bytes** (8.65% of the 27,267 starts) and archived **4,937 near misses**. The work began
 with early leaf functions and the bootstrap chain, then added call-aware
 matching, the selector-family repair, and leaf-first sweeps through the end of
 `.text`. The first subsystem -- entry point, chain, and constructor table -- is

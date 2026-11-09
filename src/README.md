@@ -54,7 +54,7 @@ in `functions.tsv` or changes what the matcher verifies. See
 
 ## Near-miss archive
 
-[`near/`](near/README.md) holds the 4,894 candidates that decompiled but are
+[`near/`](near/README.md) holds the 4,937 candidates that decompiled but are
 not byte-identical to `Block.elf`. They are not in `functions.tsv` and are
 not claims of a match; `tools/match.py` ignores them.
 

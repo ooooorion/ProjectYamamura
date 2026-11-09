@@ -1,4 +1,4 @@
-# Decompilation notes -- first through thirty-second passes (Stage 7)
+# Decompilation notes -- first through thirty-third passes (Stage 7)
 
 Working notes for the decompilation and byte-match passes against
 `Block.elf`. Every number here came from a command that was run; the exact
@@ -989,6 +989,22 @@ is 51 `DIFF`. The table now has 2,360 functions / 108,232 bytes (8.65% of the
 27,267 starts); the archive holds 4,894 candidates. Total done is 7,254 / 27,267
 (~26.60%). No `COMPILE` or relocation-`BLOCKED` rows remain in these shards.
 
+## Thirty-third pass -- expanded tail audit
+
+The final 512 KB was re-swept with `--allow-calls --max-insn 250` after
+excluding the 59 pass-32 candidates. The wider size limit made 102 starts
+eligible; 43 had not been processed before. The 27 initial compile failures
+were rebuilt from repaired sources, and all 43 compile. There were no exacts;
+the final set is 43 `DIFF`.
+
+| Shard | Range | Candidates | Exact | Archived |
+|---|---|---:|---:|---:|
+| 1 | `02C58000..02C70000` | 43 | 0 | 43 |
+| **Total** |  | **43** | **0** | **43** |
+
+The table is unchanged at 2,360 functions / 108,232 bytes; the archive now
+holds 4,937 candidates. Total done is 7,297 / 27,267 (~26.76%).
+
 ## Commands used
 
 ```
@@ -1024,6 +1040,6 @@ powerpc-eabi-objdump -d build/func_02025E2C.o
   repeatable shapes, not the project; the year-end goal needs bulk export.
 - The `-O` level is narrowed to three indistinguishable levels, not pinned to
   one; other GHS flags of the original build are still unknown.
-- The 4,894 archived candidates show that byte equality can depend on
+- The 4,937 archived candidates show that byte equality can depend on
   scratch-register allocation that no source spelling tried here controls; the
   archive keeps every failed shape reviewable.
