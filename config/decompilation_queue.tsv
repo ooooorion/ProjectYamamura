@@ -1,0 +1,27 @@
+# Adjacent decompilation queue. end is exclusive, as in config/function_boundaries.tsv.
+# status: exact = byte-verified, queued = not yet attempted.
+rank	start	end	bytes	shape	neighbor	status
+1	020909DC	020909E4	8	li r3,1; blr	func_020909D4	exact
+2	021174A8	021174B0	8	li r3,10; blr	func_021174A0	exact
+3	021D7358	021D7360	8	li r3,8; blr	func_021D7350	exact
+4	02231B94	02231B9C	8	li r3,96; blr	func_02231B8C	exact
+5	023A97FC	023A9804	8	li r3,4; blr	func_023A97F4	exact
+6	02086FF8	02087000	8	lis r3,112; blr	func_02086FF0	exact
+7	023EEC3C	023EEC44	8	lbz r3,1697(r3); blr	func_023EEC34	exact
+8	023EED7C	023EED84	8	lbz r3,1704(r3); blr	func_023EED54	exact
+9	023EF254	023EF25C	8	stw r4,1584(r3); blr	func_023EF24C	exact
+10	023EFCF8	023EFD04	12	lwz; stw; blr	func_023EFCEC	exact
+11	023D7B20	023D7B2C	12	li r0,1; stb; blr	func_023D7B18	exact
+12	023E4020	023E4030	16	lwz; cntlzw; srwi; blr	func_023E400C	exact
+13	023D24E8	023D24F0	8	stw r4,604(r3); blr	func_023D24F0	exact
+14	023EEC2C	023EEC34	8	lbz r3,1692(r3); blr	func_023EEC34	exact
+15	023EED24	023EED2C	8	lbz r3,1728(r3); blr	func_023EED2C	exact
+16	02464770	02464778	8	stw r4,2676(r3); blr	func_02464768	exact
+17	024698CC	024698D4	8	stw r4,672(r3); blr	func_024698C4	exact
+18	024750F4	024750FC	8	stw r4,648(r3); blr	func_024750EC	exact
+19	024D8BB4	024D8BBC	8	stb r4,998(r3); blr	func_024D8BA0	exact
+20	024F1F00	024F1F08	8	lbz r3,806(r3); blr	func_024F1EF8	exact
+21	023D62BC	023D62C4	8	stw r4,620(r3); b tail	func_023D62C4	queued
+22	0245763C	02457644	8	lwz r3,560(r3); b tail	func_02457644	queued
+23	023EFD68	023EFD70	8	lwz r3,1532(r3); b tail	func_023EFD70	queued
+24	02015FC4	02015FCC	8	li r5,3; b tail	func_02015FCC	queued
