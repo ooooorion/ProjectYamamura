@@ -51,11 +51,11 @@ rank	start	end	bytes	shape	neighbor	status
 48	024F19A8	024F19B4	12	stw r5,584(r3); stw r6,588(r3); blr	func_024F19A0	exact
 
 # Band: 1KB-10KB. These need structural reconstruction; they are not leaf accessors.
-101	02638CAC	026390B8	1036	1KB+ candidate	func_02638C38	queued
-102	02307678	02307A88	1040	1KB+ candidate	func_02307A88	queued
-103	02342990	02342DA0	1040	1KB+ candidate	func_0234291C	queued
-104	0235216C	0235257C	1040	1KB+ candidate	func_023520F8	queued
-105	02A34E20	02A35234	1044	1KB+ candidate	func_02A34E10	queued
+101	02638CAC	026390B8	1036	1KB+ candidate	func_02638C38	blocked
+102	02307678	02307A88	1040	1KB+ candidate	func_02307A88	blocked
+103	02342990	02342DA0	1040	1KB+ candidate	func_0234291C	blocked
+104	0235216C	0235257C	1040	1KB+ candidate	func_023520F8	blocked
+105	02A34E20	02A35234	1044	1KB+ candidate	func_02A34E10	blocked
 106	021968F4	021971B4	2240	2 calls, 1 branch, 200 stores; m2c 0/374 words	func_02197358	blocked
 
 # Band: 10KB+. No adjacent untried function has an exact neighbor; these are deferred.
