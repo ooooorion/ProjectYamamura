@@ -33,7 +33,7 @@ playable build is included. See [`docs/PROVENANCE.md`](docs/PROVENANCE.md).
 
 ## Progress
 
-[![Function-boundary coverage: 17.9% reconstructed](docs/progress.svg)](docs/progress.svg)
+[![Function-boundary coverage: 17.9% reconstructed](docs/progress.svg)](https://ooooorion.github.io/ProjectYamamura/progress.html)
 
 The chart uses Ghidra's function manager, so its denominator is larger than the
 27,267 direct `bl`-target starts. It includes pointer-reached functions, thunks,
@@ -45,7 +45,7 @@ without hitting the analysis cap, and produced the same 40,782 starts as the
 earlier export. Ten boundaries Ghidra did not split are retained explicitly:
 five verified exact starts and five direct `bl` targets.
 
-- [Interactive coverage graph](docs/progress.html) — download and open locally
+- [Interactive coverage graph](https://ooooorion.github.io/ProjectYamamura/progress.html) — live GitHub Pages version
 - [Function-boundary inventory](config/function_boundaries.tsv)
 - [Boundary audit](docs/BOUNDARY_AUDIT.md) — `bl`-target and tiny-function checks
 - [Decompilation log](docs/DECOMPILATION.md) — pass-by-pass notes
