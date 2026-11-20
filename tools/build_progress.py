@@ -25,6 +25,7 @@ from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+REPO_URL = "https://github.com/ooooorion/ProjectYamamura"
 TEXT_LO = 0x02000020
 TEXT_HI = 0x02C6E298
 BAND_SIZE = 0x10000
@@ -628,7 +629,7 @@ footer {{ color: var(--muted); font-size: 12px; margin-top: 28px; display: flex;
   </section>
 
   <footer>
-    <span>Boundary inventory: <a href="../config/function_boundaries.tsv">function_boundaries.tsv</a> · <a href="../README.md">repository</a></span>
+    <span>Boundary inventory: <a href="{REPO_URL}/blob/main/config/function_boundaries.tsv">function_boundaries.tsv</a> · <a href="{REPO_URL}">repository</a></span>
     <span>Ghidra 12.1.2 · exact/near statuses from the project tables</span>
   </footer>
 </main>
