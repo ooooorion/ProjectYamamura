@@ -1,5 +1,5 @@
 # Adjacent decompilation queue. end is exclusive, as in config/function_boundaries.tsv.
-# status: exact = byte-verified, queued = not yet attempted.
+# status: exact = byte-verified, queued = not yet attempted, blocked = attempted but not matched, deferred = no exact anchor.
 rank	start	end	bytes	shape	neighbor	status
 1	020909DC	020909E4	8	li r3,1; blr	func_020909D4	exact
 2	021174A8	021174B0	8	li r3,10; blr	func_021174A0	exact
@@ -37,15 +37,34 @@ rank	start	end	bytes	shape	neighbor	status
 34	02910F74	02910F7C	8	lwz r3,0(r3); blr	func_02910F64	exact
 35	02973640	02973648	8	stb r4,3(r3); blr	func_02973638	exact
 36	029CB608	029CB610	8	lwz r3,280(r3); blr	func_029CB5FC	exact
-37	02A4D920	02A4D928	8	stw r4,40(r3); blr	func_02A4D928	queued
-38	02ACCB54	02ACCB5C	8	lwz r3,16(r3); blr	func_02ACCB5C	queued
-39	02AD4040	02AD4048	8	lwz r3,256(r3); blr	func_02AD4038	queued
-40	02B5FEA8	02B5FEB0	8	stw r4,284(r3); blr	func_02B5FEB0	queued
-41	02B853C8	02B853D0	8	stw r4,12(r3); blr	func_02B853D0	queued
-42	02010A08	02010A14	12	li r0,1; stb r0,420(r3); blr	func_02010A14	queued
-43	024DCF18	024DCF24	12	li r0,255; stb r0,313(r3); blr	func_024DCF10	queued
-44	029E2038	029E2044	12	li r0,1; stb r0,29(r3); blr	func_029E202C	queued
-45	02A44FBC	02A44FC8	12	li r0,0; stw r0,40(r3); blr	func_02A44FB4	queued
-46	024E1C54	024E1C60	12	lwz r12,56(r3); lwz r3,588(r12); blr	func_024E1CA4	queued
-47	0270B9BC	0270B9C8	12	lis r3,4144; addi r3,r3,20728; blr	func_0270B9B0	queued
-48	024F19A8	024F19B4	12	stw r5,584(r3); stw r6,588(r3); blr	func_024F19A0	queued
+37	02A4D920	02A4D928	8	stw r4,40(r3); blr	func_02A4D928	exact
+38	02ACCB54	02ACCB5C	8	lwz r3,16(r3); blr	func_02ACCB5C	exact
+39	02AD4040	02AD4048	8	lwz r3,256(r3); blr	func_02AD4038	exact
+40	02B5FEA8	02B5FEB0	8	stw r4,284(r3); blr	func_02B5FEB0	exact
+41	02B853C8	02B853D0	8	stw r4,12(r3); blr	func_02B853D0	exact
+42	02010A08	02010A14	12	li r0,1; stb r0,420(r3); blr	func_02010A14	exact
+43	024DCF18	024DCF24	12	li r0,255; stb r0,313(r3); blr	func_024DCF10	exact
+44	029E2038	029E2044	12	li r0,1; stb r0,29(r3); blr	func_029E202C	exact
+45	02A44FBC	02A44FC8	12	li r0,0; stw r0,40(r3); blr	func_02A44FB4	exact
+46	024E1C54	024E1C60	12	lwz r12,56(r3); lwz r3,588(r12); blr	func_024E1CA4	exact
+47	0270B9BC	0270B9C8	12	lis r3,4144; addi r3,r3,20728; blr	func_0270B9B0	exact
+48	024F19A8	024F19B4	12	stw r5,584(r3); stw r6,588(r3); blr	func_024F19A0	exact
+
+# Band: 1KB-10KB. These need structural reconstruction; they are not leaf accessors.
+101	02638CAC	026390B8	1036	1KB+ candidate	func_02638C38	queued
+102	02307678	02307A88	1040	1KB+ candidate	func_02307A88	queued
+103	02342990	02342DA0	1040	1KB+ candidate	func_0234291C	queued
+104	0235216C	0235257C	1040	1KB+ candidate	func_023520F8	queued
+105	02A34E20	02A35234	1044	1KB+ candidate	func_02A34E10	queued
+106	021968F4	021971B4	2240	2 calls, 1 branch, 200 stores; m2c 0/374 words	func_02197358	blocked
+
+# Band: 10KB+. No adjacent untried function has an exact neighbor; these are deferred.
+201	0280B5E8	0280E40C	11812	large function	(none)	deferred
+202	02B73570	02B767C8	12888	large function	(none)	deferred
+203	0262CC24	026301BC	13720	large function	(none)	deferred
+204	02715834	02719010	14300	large function	(none)	deferred
+205	02510C88	025146E8	14944	large function	(none)	deferred
+206	026BEC98	026C27D4	15164	large function	(none)	deferred
+207	023E430C	023E8ECC	19392	large function	(none)	deferred
+208	025C0D1C	025C6F64	25160	large function	(none)	deferred
+209	028643AC	0286A91C	25968	large function	(none)	deferred
