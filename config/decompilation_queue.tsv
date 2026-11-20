@@ -25,3 +25,27 @@ rank	start	end	bytes	shape	neighbor	status
 22	0245763C	02457644	8	lwz r3,560(r3); b tail	func_02457644	queued
 23	023EFD68	023EFD70	8	lwz r3,1532(r3); b tail	func_023EFD70	queued
 24	02015FC4	02015FCC	8	li r5,3; b tail	func_02015FCC	queued
+25	023EEC24	023EEC2C	8	lbz r3,1691(r3); blr	func_023EEC2C	exact
+26	023EED1C	023EED24	8	lbz r3,1710(r3); blr	func_023EED24	exact
+27	023EED84	023EED8C	8	lbz r3,1807(r3); blr	func_023EED7C	exact
+28	023EF25C	023EF264	8	lbz r3,1723(r3); blr	func_023EF254	exact
+29	02617FF8	02618000	8	lbz r3,1197(r3); blr	func_02617FD0	exact
+30	026557C8	026557D0	8	li r3,0; blr	func_026557BC	exact
+31	0268326C	02683274	8	lwz r3,108(r3); blr	func_02683260	exact
+32	026E1518	026E1520	8	li r3,0; blr	func_026E1510	exact
+33	0282C974	0282C97C	8	lfs f1,56(r3); blr	func_0282C96C	exact
+34	02910F74	02910F7C	8	lwz r3,0(r3); blr	func_02910F64	exact
+35	02973640	02973648	8	stb r4,3(r3); blr	func_02973638	exact
+36	029CB608	029CB610	8	lwz r3,280(r3); blr	func_029CB5FC	exact
+37	02A4D920	02A4D928	8	stw r4,40(r3); blr	func_02A4D928	queued
+38	02ACCB54	02ACCB5C	8	lwz r3,16(r3); blr	func_02ACCB5C	queued
+39	02AD4040	02AD4048	8	lwz r3,256(r3); blr	func_02AD4038	queued
+40	02B5FEA8	02B5FEB0	8	stw r4,284(r3); blr	func_02B5FEB0	queued
+41	02B853C8	02B853D0	8	stw r4,12(r3); blr	func_02B853D0	queued
+42	02010A08	02010A14	12	li r0,1; stb r0,420(r3); blr	func_02010A14	queued
+43	024DCF18	024DCF24	12	li r0,255; stb r0,313(r3); blr	func_024DCF10	queued
+44	029E2038	029E2044	12	li r0,1; stb r0,29(r3); blr	func_029E202C	queued
+45	02A44FBC	02A44FC8	12	li r0,0; stw r0,40(r3); blr	func_02A44FB4	queued
+46	024E1C54	024E1C60	12	lwz r12,56(r3); lwz r3,588(r12); blr	func_024E1CA4	queued
+47	0270B9BC	0270B9C8	12	lis r3,4144; addi r3,r3,20728; blr	func_0270B9B0	queued
+48	024F19A8	024F19B4	12	stw r5,584(r3); stw r6,588(r3); blr	func_024F19A0	queued
